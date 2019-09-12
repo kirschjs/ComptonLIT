@@ -1,0 +1,11 @@
+fort.*
+*.o
+*.exe
+*.log
+*OUT
+*.swp
+SCRATCH
+tmp*
+*.aux
+*out_*
+__pycache__*

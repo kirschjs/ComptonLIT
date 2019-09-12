@@ -1,0 +1,8 @@
+  9  1  1  1  1                             # NBAND,LAUS,KAUS,MAUS,MKAUS
+  1  1  1  1                                # IENT(NOP),NOP=1,NZOPER
+  1  1                                      # NZF,MUL
+  4  2                                      # [NZLW(MH),NZC(MH),NZPO(MH)],MH=1,NZF
+  0
+  1
+  2
+  3
