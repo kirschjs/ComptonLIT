@@ -88,12 +88,16 @@
 \newcommand{\na}{\nabla}
 \newcommand{\bra}[1] {\left\langle~#1~\right|}
 \newcommand{\ket}[1] {\left|~#1~\right\rangle}
+\newcommand{\bet}[1] {\left|#1\right|}
 \newcommand{\overlap}[2] {\left\langle~#1~\left|~#2~\right.\right\rangle}
 \newcommand{\me}[3] {\left\langle~#1~\left|~#2~\left|~#3~\right.\right.\right\rangle}
 \newcommand{\lam}[1]{$\Lambda=#1~$fm$^{-1}$}\newcommand{\tx}{\tilde{x}}
 \newcommand{\eftnopi}{\mbox{EFT($\slashed{\pi}$)}}
 \newcommand{\threej}[6]{\ensuremath{\begin{pmatrix}#1 & #2 & #3\\#4&#5&#6 \end{pmatrix}}}
-
+\newcommand{\clg}[6]{\ensuremath{\left(\begin{array}{cccc|cc}#1 & #2 & #3 & #4 & #5 & #6 \end{array}\right)}}
+\newcommand{\re}[1] {\mathcal{R}\left[#1\right]}
+\newcommand{\im}[1] {\mathcal{I}\left[#1\right]}
+\newcommand{\E}{\mathcal{E}}
 
 \DefineFNsymbols*{lamportnostar}[math]{\dagger\ddagger\S\P\|{\dagger\dagger}{\ddagger\ddagger}}
 \setfnsymbol{lamportnostar}
@@ -132,13 +136,45 @@ in a solution of the non-relativistic few-nucleon problem.
 
 %\maketitle
 
-%\section{Schr\"odinger and fields}
-%\la{sec:schroed-fields}
 
-\section{Photon scattering off nuclei}
+\paragraph{The ``LIT equation''}
+\be\la{eq.liteq}
+\left(\hat{H}_\text{nuclear}\underbrace{-E_0-\re{\sigma}-i~\im{\sigma}}_{:=-\E}\right)\Psi_\text{LIT}^{J^\pi}=
+\left[\hat{\mathcal{O}}_{LM}\left\lbrace\bet{\ve{k}},\ve{j}_{i}\right\rbrace\otimes\Psi_0^{J_0^{\pi_0}}\right]^{J^\pi}\;\;.
+\ee
+with
+\begin{align}\la{eq.liteq.descr}
+i\in&\left\lbrace~\ve{j}_o(\ve{x})=\ldots~,~\ve{j}_s(\ve{x})=\ldots~,~\ve{j}_{mec}(\ve{x})=\ldots~,~\ldots\right\rbrace\;\;;
+\end{align}
 
-\paragraph{\today}When
+\paragraph{The variational basis}
+\be\la{eq.basis}
+\Psi_\text{LIT}^{J^\pi}=\sum\limits_nc_n~\phi^{J^\pi}_n\;\;.
+\ee
+with
+\begin{align}\la{eq.basis.descr}
+\phi^{J^\pi}_n=\left[\xi_{S_n}\otimes\mathcal{Y}_{l_n}(\ve{\rho})\right]^J~e^{-\gamma_n\ve{\rho}^2}\;\;\;\;(\text{\ie, LS coupling})\;\;;
+\end{align}
 
+\paragraph{The matrix form of the ``LIT equation''}
+\be\la{eq.liteq.mat}
+\sum\limits_{s=1}^{N_\text{LIT}}\phi^{J^\pi}_r\left(\hat{H}_\text{nuclear}-\E\right)\phi^{J^\pi}_s~u_s=
+\phi^{J^\pi}_m\hat{\mathcal{O}}_{LM}\cdot\clg{L}{M}{J_0}{M_0}{J}{M}~\sum\limits_{n=1}^{N_0}\phi^{J_0^{\pi_0}}_n~c_n\;\;.
+\ee
+with
+\begin{align}\la{eq.liteq.mat.descr}
+...
+\end{align}
+
+\paragraph{The matrix element}
+\begin{align}\la{eq.me}
+\phi^{J^\pi}_m~\hat{\mathcal{O}}_{LM}~\phi^{J_0^{\pi_0}}_n:=&\me{mJ_lj_l}{\mathcal{A}~\mathcal{O}_{LM}}{nJ_rj_r} \\
+=&
+\end{align}
+with
+\begin{align}\la{eq.liteq.mat.descr}
+...
+\end{align}
 
 \newpage
 
