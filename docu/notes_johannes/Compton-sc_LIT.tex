@@ -1,20 +1,21 @@
 \documentclass[onecolumn,preprint,superscriptaddress,nofootinbib,notitlepage,10pt,linenumbers]{revtex4-1}
 
-\usepackage[perpage]{footmisc} %the perpage package
+\usepackage[perpage]{footmisc}
 \usepackage{epstopdf}
 \usepackage{epsfig}
 \usepackage{color}
-%\usepackage[nativepdf]{hyperref}
+\usepackage{hyperref}
 \usepackage{mathbbol}
 %\usepackage{bookmark}
 \usepackage{mathtools}
 \usepackage{bbold}
-\usepackage{amsmath}
+\usepackage{amsmath,array}
 \usepackage{amssymb}
 \usepackage{slashed}
 \usepackage{nicefrac}
 \usepackage{tikz-feynman}
 \usepackage{cjhebrew}
+\usepackage{enumitem}
 
 \setlength{\topmargin}{-1.0cm}
 \setlength{\headheight}{0.1cm} \setlength{\footskip}{1.cm}
@@ -35,6 +36,14 @@
 \definecolor{g3}{HTML}{7F7F7F}
 \definecolor{g4}{HTML}{D3D3D3}
 
+\newcommand{\xdownarrow}[1]{%
+  {\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
+}
+
+\newcommand{\black}[1]{\color{black}{#1}}
+\newcommand{\red}[1]{\color{red}{#1}}
+\newcommand{\blue}[1]{\color{blue}{#1}}
+\newcommand{\green}[1]{\color{green}{#1}}
 \newcommand{\caf}{\text{\cjRL{b}}}
 \newcommand{\he}{${}^4$He}
 \newcommand{\hes}{${}^3$He}
@@ -91,6 +100,7 @@
 \newcommand{\bet}[1] {\left|#1\right|}
 \newcommand{\overlap}[2] {\left\langle~#1~\left|~#2~\right.\right\rangle}
 \newcommand{\me}[3] {\left\langle~#1~\left|~#2~\left|~#3~\right.\right.\right\rangle}
+\newcommand{\redme}[3] {\left\langle~#1~\left|\left|~#2~\left|\left|~#3~\right.\right.\right.\right.\right\rangle}
 \newcommand{\lam}[1]{$\Lambda=#1~$fm$^{-1}$}\newcommand{\tx}{\tilde{x}}
 \newcommand{\eftnopi}{\mbox{EFT($\slashed{\pi}$)}}
 \newcommand{\threej}[6]{\ensuremath{\begin{pmatrix}#1 & #2 & #3\\#4&#5&#6 \end{pmatrix}}}
@@ -139,42 +149,86 @@ in a solution of the non-relativistic few-nucleon problem.
 
 \paragraph{The ``LIT equation''}
 \be\la{eq.liteq}
-\left(\hat{H}_\text{nuclear}\underbrace{-E_0-\re{\sigma}-i~\im{\sigma}}_{:=-\E}\right)\Psi_\text{LIT}^{J^\pi}=
-\left[\hat{\mathcal{O}}_{LM}\left\lbrace\bet{\ve{k}},\ve{j}_{i}\right\rbrace\otimes\Psi_0^{J_0^{\pi_0}}\right]^{J^\pi}\;\;.
+\left(\hat{H}_\text{nuclear}\underbrace{-E_0-\re{\sigma}-i~\im{\sigma}}_{:=-\E}\right)\Psi_\text{LIT}^{J^\pi m_j}=
+\left[\hat{\mathcal{O}}_{Lm_L}\left\lbrace\bet{\ve{k}},\ve{j}_{v}\right\rbrace\otimes\Psi_0^{J_0^{\pi_0}}\right]^{J^\pi m_j}\;\;.
 \ee
 with
 \begin{align}\la{eq.liteq.descr}
-i\in&\left\lbrace~\ve{j}_o(\ve{x})=\ldots~,~\ve{j}_s(\ve{x})=\ldots~,~\ve{j}_{mec}(\ve{x})=\ldots~,~\ldots\right\rbrace\;\;;
+v(\text{ertex})\in&\left\lbrace~\ve{j}_o(\ve{x})=\ldots~,~\ve{j}_s(\ve{x})=\ldots~,~\ve{j}_{mec}(\ve{x})=\ldots~,~\ldots\right\rbrace\;\;;
 \end{align}
 
 \paragraph{The variational basis}
 \be\la{eq.basis}
-\Psi_\text{LIT}^{J^\pi}=\sum\limits_nc_n~\phi^{J^\pi}_n\;\;.
+\Psi_\text{LIT}^{J^\pi m_j}=\sum\limits_nu_n~\phi^{J^\pi m_j}_n\;\;.
 \ee
 with
 \begin{align}\la{eq.basis.descr}
-\phi^{J^\pi}_n=\left[\xi_{S_n}\otimes\mathcal{Y}_{l_n}(\ve{\rho})\right]^J~e^{-\gamma_n\ve{\rho}^2}\;\;\;\;(\text{\ie, LS coupling})\;\;;
+\phi^{J^\pi m_j}_n=\left[\xi_{S_n}\otimes\mathcal{Y}_{l_n}(\ve{\rho})\right]^{J m_j}~e^{-\gamma_n\ve{\rho}^2}\;\;\;\;(\text{\ie, LS coupling})\;\;;
 \end{align}
 
 \paragraph{The matrix form of the ``LIT equation''}
 \be\la{eq.liteq.mat}
-\sum\limits_{s=1}^{N_\text{LIT}}\phi^{J^\pi}_r\left(\hat{H}_\text{nuclear}-\E\right)\phi^{J^\pi}_s~u_s=
-\phi^{J^\pi}_m\hat{\mathcal{O}}_{LM}\cdot\clg{L}{M}{J_0}{M_0}{J}{M}~\sum\limits_{n=1}^{N_0}\phi^{J_0^{\pi_0}}_n~c_n\;\;.
+\sum\limits_{s=1}^{N_\text{LIT}}\phi^{J^\pi m_j}_r\left(\hat{H}_\text{nuclear}-\E\right)\phi^{J^\pi m_j}_s~u_s=
+\sum\limits_{n=1}^{N_0}\sum\limits_{m_L}~c_n~\underbrace{\clg{L}{m_L}{J_0}{m_j-m_L}{J}{m_j}}_{\blue{\texttt{enemb:ecce}}}~\phi^{J^\pi m_j}_r\hat{\mathcal{O}}_{Lm_L}\,\phi^{J_0^{\pi_0}(m_j-m_L)}_n\;\;.
 \ee
 with
 \begin{align}\la{eq.liteq.mat.descr}
-...
+N_\text{LIT}~:&~\text{number of basis states used to expand the LIT state, \eg,} \Psi_\text{LIT}^{2^-}\;\;\;\;;\\
+N_0\leq N_\text{LIT}~:&~\text{number of basis states used to expand the target, \eg, the deuteron;}\\
 \end{align}
 
 \paragraph{The matrix element}
 \begin{align}\la{eq.me}
-\phi^{J^\pi}_m~\hat{\mathcal{O}}_{LM}~\phi^{J_0^{\pi_0}}_n:=&\me{mJ_lj_l}{\mathcal{A}~\mathcal{O}_{LM}}{nJ_rj_r} \\
-=&
+\phi^{J^\pi m_j}_m~\hat{\mathcal{O}}_{Lm_L}~\phi^{J_0^{\pi_0}m_{j_0}}_n:=&
+\me{m;l_lS_lJ_lm_{j_l}}{\mathcal{A}~\mathcal{O}_{Lm_L}}{l_rS_rJ_rm_{j_r};n} \\
+=&\underbrace{(-1)^{L-J_r+J_l}\frac{\clg{L}{m_L}{J_r}{m_{j_r}}{J_l}{m_{j_r}+m_L}}{\hat{J_l}}}_
+{\blue{\texttt{enemb:600ff}}}
+\underbrace{\redme{m;l_lS_lJ_l}{\mathcal{A}~\mathcal{O}_{L}}{l_rS_rJ_r;n}}_{\xdownarrow{.75cm}}\\
+&\underbrace{\hat{J_r}\hat{J_l}\hat{L}
+\left\lbrace\begin{array}{ccc}l^m_l & l^n_r & p\\ S^m_l & S^n_r & q \\ J_l & J_r & L\end{array}\right\rbrace}_{\blue{\texttt{enemb:ecce}}}
+\sum_\text{dc}\sum_{\mathcal{P}\in\text{dc}}
+\underbrace{\redme{m;l^m_l}{\mathcal{O}^o_p}{\mathcal{A}_\text{dc}l^n_r;n}}_{\red{\texttt{luise}}}\cdot
+\underbrace{\redme{m;S^m_l}{\mathcal{O}^s_q}{\mathcal{A}_\mathcal{P}S^n_r;n}}_{\red{\texttt{obem}}}
 \end{align}
 with
 \begin{align}\la{eq.liteq.mat.descr}
-...
+\hat{a}:=\sqrt{2a+1}\;\;;\\
+\mathcal{A}=\sum_{\mathcal{P}\in\mathcal{S}_{A-1}}(-1)^{\text{sgn}(\mathcal{P})}\hat{\mathcal{P}}=\oplus_\text{dc}\\
+\text{dc ~:~ double co-set}
 \end{align}
+
+\paragraph{The calculation}
+
+\begin{enumerate}[label=(\roman*)]
+\item Solve $$\hat{H}_\text{nuclear}~\Psi^{J_0^{\pi_0}}=E_0~\Psi^{J_0^{\pi_0}}$$ with ansatz
+$$\Psi^{J_0^{\pi_0}}=\sum\limits_nc_n~\phi^{J_0^{\pi_0}}_n\;\;\;.$$
+If $\hat{H}_\text{nuclear}$ is a spherical rank-0 operator -- a condition which most practical nuclear potentials satisfy --
+$\Psi^{J_0^{\pi_0}}\neq f(m_{j_0})$. We obtain $\Psi^{J_0\red{J_0}}$, in practice.
+\item Calculate
+$$H_{rs}:=\me{\phi^{J^\pi}_r}{\hat{H}_\text{nuclear}}{\phi^{J^\pi}_s}\;\;\text{and}\;\;N_{rs}:=\overlap{\phi^{J^\pi}_r}{\phi^{J^\pi}_s}\;\;\;
+\forall~|L-J_0|\leq J\leq|L+J_0|$$
+\item Calculate
+$$S^{Jm_j}_{rs}:=\me{\phi^{J^\pi m_j}_r}{\hat{\mathcal{O}}_{Lm_L}}{\phi^{J_0^{\pi_0}m_{j_0}}_s}\;\;,$$
+and superimpose these matrix elements according to Eq.\eqref{eq.liteq.mat}
+\be\la{eq.litinhomo}
+S^{Jm_j}_r:=\sum\limits_{m_L}~c_n~\clg{L}{m_L}{J_0}{m_{j_0}-m_L}{J}{m_j}~S^{Jm_j}_{rn}\;\;\;.
+\ee
+\item Solve the (complex) linear matrix equation
+\be\la{eq.liteq2}
+\left(H_{rs}-\E N_{rs}\right)u^{Jm_j}_s=S_r
+\ee
+to obtain the LIT state
+\be\la{eq.litstate}
+\psi^{v(\text{ertex}),(\text{mu})L(\text{tipolarity})}_{J_{i(\text{nitial})/f(\text{inal})};J_{(\text{i})n(\text{termediate})}m_n}(k,\sigma)
+=\blue{\psi^{v,L}_{J_0;Jm_j}(k,\sigma)}\black{:=
+\Psi_\text{LIT}^{J^\pi m_j}\big(\underbrace{\bet{\ve{k}},v,L}_{\text{vertex}\atop\text{quantum numbers}};\underbrace{E_0,J_0}_{\text{initial/final-state}\atop\text{quantum numbers}};\re{\sigma},\im{\sigma}\big)\;\;\;.}
+\ee
+\item The inner product
+\begin{align}\la{eq.litME}
+\mathcal{L}_{v'L',vL}^{J_f,J_i;J}(k',k,\sigma)=&(-1)^{J-J_i+L-L'+v'}N_{J,\sigma}\sum_{m_j}
+\underbrace{\overlap{\psi^{v',L'}_{J_f;Jm_j}(k',\sigma)}{\psi^{v,L}_{J_i;Jm_j}(k,\sigma)}}_{=\sum_{r,s}(u^{Jm_j}_r)^*u^{Jm_j}_s~N_{rs}}
+\end{align}
+\end{enumerate}
 
 \newpage
 
