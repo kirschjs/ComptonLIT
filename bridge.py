@@ -1,15 +1,18 @@
+import os
 import numpy as np
+import sympy as sy
+from sympy.physics.quantum.cg import CG
 
 from parameters_and_constants import *
 from rrgm_functions import *
 from two_particle_functions import *
 
-from pathlib import Path
-homedir = str(Path.home())
+pathbase = '/home_th/kirscher/kette_repo/source/ComptonLIT'
 
-av18path = homedir + '/kette_repo/sim_par/nucleus/2n/LIT_prep/beyond_siegert/av18_deuteron'
-BINBDGpath = homedir + '/kette_repo/source/seriell/untainted/'
-BINLITpath = homedir + '/kette_repo/source/seriell/lit_rrgm_elmag/new_noentw/'
+av18path = pathbase + '/av18_deuteron'
+litpath = pathbase + '/test/'
+BINBDGpath = pathbase + '/src_nucl/'
+BINLITpath = pathbase + '/src_elma/'
 
 mpii = '137'
 
@@ -28,6 +31,8 @@ eps_space = np.linspace(v_i, v_e, anzs)
 anze = 17
 
 multipolarity = 1
+mLrange = np.arange(-multipolarity, multipolarity + 1)
+
 anz_phot_e = 100
 phot_e_0 = 0.1  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
@@ -36,9 +41,21 @@ addw = 9
 scale = 1.1
 wini = w120
 sizeFrag = len(wini) - 1
+basdim = addw + len(wini)
 
 boundstatekanal = 'np-3SD1'
 streukanal = '0-'
+mJlrange = np.arange(-int(streukanal[0]), int(streukanal[0]) + 1)
+
+# find mL, mJl s.t. (L,mL;Jr,mJl-mL|Jl,mJl) != 0
+# ecce: Jr = Jdeuteron = 1
+mLmJl = []
+for mM in np.array(np.meshgrid(mLrange, mJlrange)).T.reshape(-1, 2):
+    clg = CG(1, mM[1] - mM[0], multipolarity, mM[0], int(streukanal[0]), mM[1])
+    if (clg.doit() == 0):
+        continue
+    mLmJl.append(mM)
+
 streukanalweiten = range(1, len(wini) + addw + 1)
 #wdim = 20
 #loc = 1e-4

@@ -16,6 +16,13 @@
 \usepackage{tikz-feynman}
 \usepackage{cjhebrew}
 \usepackage{enumitem}
+\usepackage{listings}
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily,
+  keywordstyle=\color{red},
+  commentstyle=\color{green},
+  morecomment=[l]{!\ }% Comment only with space after !
+}
 
 \setlength{\topmargin}{-1.0cm}
 \setlength{\headheight}{0.1cm} \setlength{\footskip}{1.cm}
@@ -40,10 +47,10 @@
   {\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
 }
 
-\newcommand{\black}[1]{\color{black}{#1}}
-\newcommand{\red}[1]{\color{red}{#1}}
-\newcommand{\blue}[1]{\color{blue}{#1}}
-\newcommand{\green}[1]{\color{green}{#1}}
+\newcommand{\black}[1]{\textcolor{black}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
 \newcommand{\caf}{\text{\cjRL{b}}}
 \newcommand{\he}{${}^4$He}
 \newcommand{\hes}{${}^3$He}
@@ -98,20 +105,19 @@
 \newcommand{\bra}[1] {\left\langle~#1~\right|}
 \newcommand{\ket}[1] {\left|~#1~\right\rangle}
 \newcommand{\bet}[1] {\left|#1\right|}
-\newcommand{\overlap}[2] {\left\langle~#1~\left|~#2~\right.\right\rangle}
-\newcommand{\me}[3] {\left\langle~#1~\left|~#2~\left|~#3~\right.\right.\right\rangle}
-\newcommand{\redme}[3] {\left\langle~#1~\left|\left|~#2~\left|\left|~#3~\right.\right.\right.\right.\right\rangle}
+\newcommand{\overlap}[2] {\left\langle\,#1\,\left|\,#2\,\right.\right\rangle}
+\newcommand{\me}[3] {\left\langle\,#1\,\left|\left.\,#2\,\right|\,#3\,\right.\right\rangle}
+\newcommand{\redme}[3] {\left\langle\,#1\,\left|\left|\,#2\,\left|\left|\,#3\,\right.\right.\right.\right.\right\rangle}
 \newcommand{\lam}[1]{$\Lambda=#1~$fm$^{-1}$}\newcommand{\tx}{\tilde{x}}
 \newcommand{\eftnopi}{\mbox{EFT($\slashed{\pi}$)}}
 \newcommand{\threej}[6]{\ensuremath{\begin{pmatrix}#1 & #2 & #3\\#4&#5&#6 \end{pmatrix}}}
-\newcommand{\clg}[6]{\ensuremath{\left(\begin{array}{cccc|cc}#1 & #2 & #3 & #4 & #5 & #6 \end{array}\right)}}
+\newcommand{\clg}[6]{\ensuremath{\left\langle\left.\,#1#2\,;\,#3#4\,\right\vert\right.\left.\,#5#6\,\right\rangle}}
 \newcommand{\re}[1] {\mathcal{R}\left[#1\right]}
 \newcommand{\im}[1] {\mathcal{I}\left[#1\right]}
 \newcommand{\E}{\mathcal{E}}
 
-\DefineFNsymbols*{lamportnostar}[math]{\dagger\ddagger\S\P\|{\dagger\dagger}{\ddagger\ddagger}}
-\setfnsymbol{lamportnostar}
-\renewcommand\thefootnote{\fnsymbol{footnote}}
+\usepackage{pifont}
+\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
 \let\endtitlepage\relax
 
 \begin{document}
@@ -169,7 +175,7 @@ with
 \paragraph{The matrix form of the ``LIT equation''}
 \be\la{eq.liteq.mat}
 \sum\limits_{s=1}^{N_\text{LIT}}\phi^{J^\pi m_j}_r\left(\hat{H}_\text{nuclear}-\E\right)\phi^{J^\pi m_j}_s~u_s=
-\sum\limits_{n=1}^{N_0}\sum\limits_{m_L}~c_n~\underbrace{\clg{L}{m_L}{J_0}{m_j-m_L}{J}{m_j}}_{\blue{\texttt{enemb:ecce}}}~\phi^{J^\pi m_j}_r\hat{\mathcal{O}}_{Lm_L}\,\phi^{J_0^{\pi_0}(m_j-m_L)}_n\;\;.
+\sum\limits_{n=1}^{N_0}\sum\limits_{m_L}~c_n~\underbrace{\clg{L}{J_0}{m_L}{m_j-m_L}{J}{m_j}}_{\text{Eq.\eqref{eq.litinhomo}}}~\phi^{J^\pi m_j}_r\hat{\mathcal{O}}_{Lm_L}\,\phi^{J_0^{\pi_0}(m_j-m_L)}_n\;\;.
 \ee
 with
 \begin{align}\la{eq.liteq.mat.descr}
@@ -181,41 +187,52 @@ N_0\leq N_\text{LIT}~:&~\text{number of basis states used to expand the target, 
 \begin{align}\la{eq.me}
 \phi^{J^\pi m_j}_m~\hat{\mathcal{O}}_{Lm_L}~\phi^{J_0^{\pi_0}m_{j_0}}_n:=&
 \me{m;l_lS_lJ_lm_{j_l}}{\mathcal{A}~\mathcal{O}_{Lm_L}}{l_rS_rJ_rm_{j_r};n} \\
-=&\underbrace{(-1)^{L-J_r+J_l}\frac{\clg{L}{m_L}{J_r}{m_{j_r}}{J_l}{m_{j_r}+m_L}}{\hat{J_l}}}_
+=&\underbrace{(-1)^{L-J_r+J_l}\frac{\clg{L}{J_r}{m_L}{m_{j_r}}{J_l}{m_{j_l}}}{\hat{J_l}}}_
 {\blue{\texttt{enemb:600ff}}}
 \underbrace{\redme{m;l_lS_lJ_l}{\mathcal{A}~\mathcal{O}_{L}}{l_rS_rJ_r;n}}_{\xdownarrow{.75cm}}\\
 &\underbrace{\hat{J_r}\hat{J_l}\hat{L}
 \left\lbrace\begin{array}{ccc}l^m_l & l^n_r & p\\ S^m_l & S^n_r & q \\ J_l & J_r & L\end{array}\right\rbrace}_{\blue{\texttt{enemb:ecce}}}
-\sum_\text{dc}\sum_{\mathcal{P}\in\text{dc}}
+\sum_\text{dc}\sum_{\mathfrak{p}\in\text{dc}}
 \underbrace{\redme{m;l^m_l}{\mathcal{O}^o_p}{\mathcal{A}_\text{dc}l^n_r;n}}_{\red{\texttt{luise}}}\cdot
-\underbrace{\redme{m;S^m_l}{\mathcal{O}^s_q}{\mathcal{A}_\mathcal{P}S^n_r;n}}_{\red{\texttt{obem}}}
+\underbrace{\redme{m;S^m_l}{\mathcal{O}^s_q}{\mathcal{A}_\mathfrak{p}S^n_r;n}}_{\red{\texttt{obem}}}\\
+=&~\hat{J_r}\hat{L}\clg{\green{J_r}}{\red{L}}{\green{m_{j_r}}}{\red{m_L}}{J_l}{m_{j_l}}\cdot
+\left\lbrace\begin{array}{ccc}l^m_l & l^n_r & p\\ S^m_l & S^n_r & q \\ J_l & J_r & L\end{array}\right\rbrace\\
+&\cdot\sum_\text{dc}\sum_{\mathfrak{p}\in\text{dc}}
+\redme{m;l^m_l}{\mathcal{O}^o_p}{\mathcal{A}_\text{dc}l^n_r;n}\cdot
+\redme{m;S^m_l}{\mathcal{O}^s_q}{\mathcal{A}_\mathfrak{p}S^n_r;n}
 \end{align}
 with
 \begin{align}\la{eq.liteq.mat.descr}
 \hat{a}:=\sqrt{2a+1}\;\;;\\
-\mathcal{A}=\sum_{\mathcal{P}\in\mathcal{S}_{A-1}}(-1)^{\text{sgn}(\mathcal{P})}\hat{\mathcal{P}}=\oplus_\text{dc}\\
+\mathcal{A}=\sum_{\mathfrak{p}\in\mathcal{S}_{A-1}}(-1)^{\text{sgn}(\mathfrak{p})}\hat{\mathfrak{p}}=\oplus_\text{dc}\\
 \text{dc ~:~ double co-set}
 \end{align}
 
 \paragraph{The calculation}
 
 \begin{enumerate}[label=(\roman*)]
+
 \item Solve $$\hat{H}_\text{nuclear}~\Psi^{J_0^{\pi_0}}=E_0~\Psi^{J_0^{\pi_0}}$$ with ansatz
 $$\Psi^{J_0^{\pi_0}}=\sum\limits_nc_n~\phi^{J_0^{\pi_0}}_n\;\;\;.$$
 If $\hat{H}_\text{nuclear}$ is a spherical rank-0 operator -- a condition which most practical nuclear potentials satisfy --
 $\Psi^{J_0^{\pi_0}}\neq f(m_{j_0})$. We obtain $\Psi^{J_0\red{J_0}}$, in practice.
+
 \item Calculate
-$$H_{rs}:=\me{\phi^{J^\pi}_r}{\hat{H}_\text{nuclear}}{\phi^{J^\pi}_s}\;\;\text{and}\;\;N_{rs}:=\overlap{\phi^{J^\pi}_r}{\phi^{J^\pi}_s}\;\;\;
+$$\mathbb{H}_{rs}:=\me{\phi^{J^\pi}_r}{\hat{H}_\text{nuclear}}{\phi^{J^\pi}_s}\;\;\text{and}\;\;\mathbb{N}_{rs}:=\overlap{\phi^{J^\pi}_r}{\phi^{J^\pi}_s}\;\;\;
 \forall~|L-J_0|\leq J\leq|L+J_0|$$
-\item Calculate
-$$S^{Jm_j}_{rs}:=\me{\phi^{J^\pi m_j}_r}{\hat{\mathcal{O}}_{Lm_L}}{\phi^{J_0^{\pi_0}m_{j_0}}_s}\;\;,$$
+
+\item \blue{$\forall m_j\,\&\,m_L$}, calculate
+$$S^{Jm_jJ_0}_{rs}:=\me{\phi^{J^\pi m_j}_r}{\hat{\mathcal{O}}_{Lm_L}}{\phi^{J_0^{\pi_0}J_0}_s}\;\;,$$
 and superimpose these matrix elements according to Eq.\eqref{eq.liteq.mat}
 \be\la{eq.litinhomo}
-S^{Jm_j}_r:=\sum\limits_{m_L}~c_n~\clg{L}{m_L}{J_0}{m_{j_0}-m_L}{J}{m_j}~S^{Jm_j}_{rn}\;\;\;.
+S^{Jm_j}_r:=\sum\limits_{m_L}~\clg{L}{J_0}{m_L}{\red{m_j}\black{-m_L}}{J}{m_j}~\underbrace{\sum\limits_{n}^{N_0}~c_n~S^{Jm_jJ_0}_{rn}}
+_{\text{\bf enemb.f OUT}}\;\;\;.
 \ee
+Ecce, $\Psi^{J_0^{\pi_0}}\neq f(m_{j_0})$ does not allow for an elimination of $m_j$ from this equation!
+
 \item Solve the (complex) linear matrix equation
 \be\la{eq.liteq2}
-\left(H_{rs}-\E N_{rs}\right)u^{Jm_j}_s=S_r
+\left(\mathbb{H}_{rs}-\E \mathbb{N}_{rs}\right)u^{Jm_j}_s=S^{Jm_j}_r
 \ee
 to obtain the LIT state
 \be\la{eq.litstate}
@@ -223,11 +240,14 @@ to obtain the LIT state
 =\blue{\psi^{v,L}_{J_0;Jm_j}(k,\sigma)}\black{:=
 \Psi_\text{LIT}^{J^\pi m_j}\big(\underbrace{\bet{\ve{k}},v,L}_{\text{vertex}\atop\text{quantum numbers}};\underbrace{E_0,J_0}_{\text{initial/final-state}\atop\text{quantum numbers}};\re{\sigma},\im{\sigma}\big)\;\;\;.}
 \ee
+
 \item The inner product
 \begin{align}\la{eq.litME}
 \mathcal{L}_{v'L',vL}^{J_f,J_i;J}(k',k,\sigma)=&(-1)^{J-J_i+L-L'+v'}N_{J,\sigma}\sum_{m_j}
-\underbrace{\overlap{\psi^{v',L'}_{J_f;Jm_j}(k',\sigma)}{\psi^{v,L}_{J_i;Jm_j}(k,\sigma)}}_{=\sum_{r,s}(u^{Jm_j}_r)^*u^{Jm_j}_s~N_{rs}}
+\underbrace{\overlap{\psi^{v',L'}_{J_f;Jm_j}(k',\sigma)}{\psi^{v,L}_{J_i;Jm_j}(k,\sigma)}}_{=\sum_{r,s}(u^{Jm_j}_r)^*u^{Jm_j}_s~\mathbb{N}_{rs}}\\
+\intertext{with $N_{J,\sigma}$ being the multiplicity of Lorentz states for given $J$ and $\sigma$.}
 \end{align}
+
 \end{enumerate}
 
 \newpage
@@ -235,12 +255,99 @@ to obtain the LIT state
 \section{formulas and constants}
 
 \begin{alignat}{2}
-\text{(Wigner) 3-$j$ symbol:} &\hspace{1cm}& \threej{L}{S}{J}{m_l}{m_s}{-m_j}=&~(-1)^{L-S+m_j}~(2J+1)^{-\frac{1}{2}}~(Lm_l~Sm_s~\vert~LS~Jm_j)\\
+\text{(Wigner) 3-$j$ symbol:} &\hspace{1cm}& \threej{L}{S}{J}{m_l}{m_s}{-m_j}=&~(-1)^{L-S+m_j}~(2J+1)^{-\frac{1}{2}}~\clg{L}{S}{m_l}{m_s}{J}{m_j}\\
 \text{Matrix for single-axis rotation:} &\hspace{1cm}&   \mathcal{D}_{m^\prime,m}^{(j)}(0~\beta~0)\equiv&~d_{m^\prime,m}^{(j)}(\beta)\nonumber\\
 &\hspace{1cm}& =&\left[\frac{(j+m^\prime)!(j-m^\prime)!}{(j+m)!(j-m)!}\right]^\frac{1}{2}\nonumber\\
 &\hspace{1cm}&&~\cdot\sum_\sigma\left(j+m\atop j-m^\prime-\sigma\right)\left(j-m\atop \sigma\right)(-1)^{j-m^\prime-\sigma}\nonumber\\
 &\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m^\prime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m^\prime}
 \end{alignat}
+
+\section{code}
+
+\subsection*{luise.f~$\to$~qual.f}
+$P_{dc}$ and width-independent quantities of $\Gamma_{l_1m_1,\ldots,l_zm_z}$ with $z=n_{c_l}-1+n_{c_r}-1+n_{ww}$.
+
+\subsection*{obem.f~$\to$~qual.f}
+
+
+\subsection*{qual.f~$\to$~enemb.f}
+
+\begin{lstlisting}
+ WRITE(NBAND1) NZF,MUL,(LREG(K),K=1,NZOPER),I,(NZRHO(K),K=1,NZF)
+
+ WRITE(NBAND1) N3,MMASSE(1,N1,K),MMASSE(2,N1,K),MLAD(1,N1,K),
+1 MLAD(2,N1,K),MSS(1,N1,K),MSS(2,N1,K),MS(N1,K),
+2 (LZWERT(L,N2,K),L=1,5),(RPAR(L,K),L=1,N3),KP(MC1,N4,K)
+
+ WRITE(NBAND1) NTE,NC,ND,ITV2
+
+ WRITE(NBAND1) ((IND(MM,NN), NN=1, JRHO), MM=1, IRHO)
+
+ WRITE(NBAND1) NUML, NUMR, IK1H, JK1H, LL1,
+*               ((F(K,L),(J-1,DM(K,L,J),J=1,LL1),L=1,JK1),
+*                                                K=1,IK1)
+\end{lstlisting}
+
+\section{``How to do an integral''}
+
+\paragraph{The multipole operators}
+\begin{itemize}
+  \item convection current\footnote{Indices referring to particles are put in brackets.}
+\begin{subequations}
+  \begin{align}
+  \ve{j}_o(\ve{x})=&\frac{e}{2m}\sum\limits_i^{A}\frac{1}{2}\left(1+\tau_z(i)\right)
+  \left\lbrace\ve{p}(i)~,~\delta^{(3)}(\ve{x}-\ve{r}(i))\right\rbrace\la{eq.conc}\\
+  \text{\bf(electric)}~
+   \mathcal{O}_{Lm_L}^{o^{\text{el}}}=&\frac{e\hbar}{mc}\hat{L}^{-1}\sum\limits_i^Ag_l(i)\left[\sqrt{L}\Delta_{LM}^{L+1}(\ve{r}(i))-\sqrt{L+1}\Delta_{LM}^{L-1}(\ve{r}(i))\right]\la{eq.convcel}\\
+   \text{\bf(magnetic)}~
+\mathcal{O}_{Lm_L}^{o^{\text{mag}}}=&i\frac{e\hbar}{mc}\sum\limits_i^Ag_l(i)\Delta_{LM}^L(\ve{r}(i))\la{eq.convcmag}
+  \end{align}
+\end{subequations}
+  \item spin current
+\begin{subequations}
+  \begin{align}
+  \ve{j}_s(\ve{x})=&\frac{e\hbar}{2m}\sum\limits_i^{A}\frac{1}{2}\left(g_{s_p}\left(1+\tau_z(i)\right)+g_{s_n}\left(1-\tau_z(i)\right)\right)\ve{\sigma}(i)\times\ve{\nabla}(i)\delta^{(3)}(\ve{x}-\ve{r}(i))\la{eq.spinc}\\
+  \text{\bf(electric)}~
+\mathcal{O}_{Lm_L}^{s^{\text{el}}}=&-\frac{e\hbar\red{|\ve{k}|}}{2mc}\sum\limits_i^Ag_s(i)\sum\limits_{M,\nu}\clg{L}{1}{M}{\nu}{L}{m_L}\cdot\ve{\sigma}_\nu(i)\Phi_{LM}(\ve{r}(i))\la{eq.spincel}\\
+\text{\bf(magnetic)}~
+\mathcal{O}_{Lm_L}^{s^{\text{mag}}}=&i\frac{e\hbar\red{|\ve{k}|}}{2mc}\hat{L}^{-1}\sum\limits_i^Ag_s(i)\sum\limits_{M,\nu}
+\left[\sqrt{L}\clg{L+1}{1}{M}{\nu}{L}{m_L}\ve{\sigma}_\nu(i)\Phi_{L+1M}(\ve{r}(i))\right.\\
+&\left.-\sqrt{L+1}\clg{L-1}{1}{M}{\nu}{L}{m_L}\ve{\sigma}_\nu(i)\Phi_{L-1M}(\ve{r}(i))\right]
+\la{eq.spincmag}
+\end{align}
+\end{subequations}
+\end{itemize}
+with
+\begin{align}\la{eq.multipoleop.descr}
+\Phi_{Lm_L}(\ve{r})=&j_L(kr)~Y_{Lm_L}(\Omega_r)&&&\footnotemark\\
+\Delta_{Lm_L}^J(\ve{r})=&\sum\limits_{M,\nu}\clg{L}{1}{M}{\nu}{J}{m_L}\Phi_{Lm_L}(\ve{r})~\ve{p}_\nu\;\;.&&&\footnotemark
+\end{align}
+\addtocounter{footnote}{-1}
+\footnotetext{rank-L spherical $\ve{L}^2$ tensor}
+\stepcounter{footnote}
+\footnotetext{linear combination of spherical $\ve{L}^2$ rank-L tensors, hence, itself a rank-L spherical $\ve{L}^2$ tensor and \red{not} 
+rank-J spherical $\ve{L}^2$.}
+
+\paragraph{Siegert form}
+\begin{align}\la{eq.siegert}
+&\me{f}{\left(\frac{1}{ck}\int d\ve{x}~\ve{j}(\ve{x})\cdot\ve{\nabla}_x\times\ve{L}\left[j_L(kx)Y_{LM}(\Omega_x)\right]\right)}{i}
+\\[1em]
+\overset{\scriptstyle k\to 0}{=}&~\frac{i}{k}\frac{L+1}{L}\me{f}{\left(\int d\ve{x}~\ve{j}(\ve{x})\cdot\ve{\nabla}_x\left[j_L(kx)Y_{LM}(\Omega_x)\right]\right)}{i}
+\\[1em]
+=&~\frac{1}{\hbar k}\frac{L+1}{L}\me{f}{\int d\ve{x}~\left[\,\rho(\ve{x})\,,\,\hat{H}_\text{nuclear}\,\right]~j_L(kx)Y_{LM}(\Omega_x)}{i}\\[1em]
+\overset{\scriptstyle L=1~\&~\rho=\rho^{(1)}}{=}&~\frac{2}{\hbar k}\me{f}{\sum\limits_i^A~q(i)~\left[\,j_1(kr(i))Y_{1M}(\Omega_{\ve{r}(i)})\,,\,\hat{H}_\text{nuclear}\,\right]}{i}
+\end{align}
+with
+\begin{align}\la{eq.siegert.descr}
+\ve{L}=&-i\hbar\left(\ve{x}\times\ve{\nabla}_x\right)\\
+\rho^{(1)}(\ve{x})=&\sum\limits_i^A\underbrace{\frac{e}{2}(1+\tau_z(i))}_{:=q(i)}\delta^{(3)}(\ve{x}-\ve{r}_i)\\
+\lim\limits_{x\to 0}j_l(x)=&\frac{x^l}{(2l+1)!!}
+\end{align}
+
+\paragraph{The non-trivial matrix element (which serves {\bf 2-body} currents, too)}
+\be\la{eq.theme}
+\me{m;l_lm_{l_l}}{\Phi_{Lm_L}(\ve{\rho_\nu})~e^{-\beta\ve{r}_{ij}}\prod\limits_{N}^{N_{\text{op}}}\mathcal{Y}_{L_NM_N}(\ve{r}_{ij})}{l_rm_{l_r};n}
+\ee
 
 \bibliography{refs}
 

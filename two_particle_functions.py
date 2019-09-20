@@ -168,7 +168,7 @@ def reduce_2n(w2rels,
               maxc2=3000,
               execut=''):
     cons_red = 1
-    print('reducing widths in %s channel...' % ch)
+    print('(ia)    reducing widths in %s channel...' % ch)
     while cons_red:
         tmp = red_mod_2(
             max_coeff=maxc2,
@@ -199,9 +199,9 @@ def reduce_2n(w2rels,
 
         cons_red = ((tmpa != tmpb) | (size2 <= int(tmp[1])))
         minc2 += 10
-        print(minc2, tmp[1], size2, tmpa, tmpb)
+        #print(minc2, tmp[1], size2, tmpa, tmpb)
 
-    print('reduction to %d widths complete.' % size2)
+    print('(ib)    reduction to %d widths complete.' % size2)
 
 
 def h2_inen_str_pdp(relw, costr, j=0, sc=0, ch=[1]):
@@ -454,9 +454,11 @@ def lit_inen(BUECO,
              KSTREU,
              rw,
              KBND,
+             JWSL,
+             JWSLM,
+             MULM2,
+             JWSR,
              MREG='',
-             JWSL=1,
-             JWSR=1,
              NPARL=2,
              NPARR=2,
              anzo=11,
@@ -484,8 +486,9 @@ def lit_inen(BUECO,
     s += '%11.4f%11.4f\n%11.4f\n' % (ANORML, ANORMR, EB)
     # nbrE , E0 , dE
     s += '%3d\n%-12.4f%-12.4f\n' % (NZE, EK0, EKDIFF)
-    # JWSL,JWSR,NPARL,NPARR=1,2(-,+)
-    s += '%3d%3d%3d%3d\n' % (2 * JWSL, 2 * JWSR, NPARL, NPARR)
+    # JWSL,JWSR,NPARL,NPARR=1,2(-,+),JWSLM,MULM2
+    s += '%3d%3d%3d%3d%3d%3d\n' % (2 * JWSL, 2 * JWSR, NPARL, NPARR, 2 * JWSLM,
+                                   2 * MULM2)
     # NZKL,NZKR,NZKPL,NZKPR
     s += '%3d%3d  0  0\n' % (1, len(BUECO))
     # uecof
