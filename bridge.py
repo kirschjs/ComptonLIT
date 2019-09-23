@@ -1,6 +1,7 @@
 import os
 import numpy as np
 import sympy as sy
+# CG(j1, m1, j2, m2, j3, m3)
 from sympy.physics.quantum.cg import CG
 
 from parameters_and_constants import *
@@ -51,11 +52,12 @@ mJlrange = np.arange(-int(streukanal[0]), int(streukanal[0]) + 1)
 # ecce: Jr = Jdeuteron = 1
 mLmJl = []
 for mM in np.array(np.meshgrid(mLrange, mJlrange)).T.reshape(-1, 2):
-    clg = CG(1, mM[1] - mM[0], multipolarity, mM[0], int(streukanal[0]), mM[1])
+    clg = CG(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]), mM[1])
     if (clg.doit() == 0):
         continue
     mLmJl.append(mM)
-
+print(mLmJl)
+exit()
 streukanalweiten = range(1, len(wini) + addw + 1)
 #wdim = 20
 #loc = 1e-4

@@ -11,7 +11,13 @@ from readLITsource import *
 
 # read uncoupled source ME's
 os.chdir(litpath)
-print(read_uncoupled_source())
+RHSofBV = read_uncoupled_source()
+
+for streukanalweite in range(1, basdim + 1):
+
+        for mM in mLmJl:
+
+
 exit()
 
 os.chdir(av18path)
