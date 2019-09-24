@@ -18,7 +18,10 @@ BINLITpath = pathbase + '/src_elma/'
 mpii = '137'
 
 cal = ['bdg', 'QUA']
-cal = ['bdg', 'QUA', 'reduce']
+cal = ['lit']
+cal = ['lit-plot']
+cal = ['bdg', 'QUA', 'reduce', 'lit', 'lit-plot']
+
 dbg = 2
 
 pot_scale = 1.
@@ -38,11 +41,34 @@ anz_phot_e = 100
 phot_e_0 = 0.1  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
-addw = 9
-scale = 1.1
-wini = w120
-sizeFrag = len(wini) - 1
+# deuteron/initial-state basis -------------------------------------------
+basisdim0 = 35
+
+laplace_loc, laplace_scale = 1., .4
+wLAPLACE = np.sort(
+    np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdim0)))
+wini0 = wLAPLACE
+
+addw = 8
+addwt = 'middle'
+scale = 1.
+min_spacing = 0.6
+
+print('initial width set : ', wini0)
+rw0 = wid_gen(
+    add=addw, addtype=addwt, w0=wini0, ths=[1e-5, 2e2, 0.2], sca=scale)
+rw0 = sparsify(rw0, min_spacing)
+print('extended width set: ', rw0)
+nzf0 = int(np.ceil(len(rw0) / 20.0))
+print('NZF = ', nzf0)
+
+#LIT basis ---------------------------------------------------------------
+
 basdim = addw + len(wini)
+
+basisdimLIT = 35
+winiLIT = np.geomspace(
+    start=0.1, stop=100, num=basisdimLIT, endpoint=True, dtype=None)
 
 boundstatekanal = 'np-3SD1'
 streukanal = '0-'
@@ -56,8 +82,7 @@ for mM in np.array(np.meshgrid(mLrange, mJlrange)).T.reshape(-1, 2):
     if (clg.doit() == 0):
         continue
     mLmJl.append(mM)
-print(mLmJl)
-exit()
+
 streukanalweiten = range(1, len(wini) + addw + 1)
 #wdim = 20
 #loc = 1e-4

@@ -1036,7 +1036,7 @@ C      A1 IST NORMIERUNG DER KANALFUNKTIONEN BEZUEGLICH EN
   304 CONTINUE
       DO 79 L=1,NZKA
 79    NUMK(L) = 10000. * OPWERT(2,L)
-      WRITE (NOUT,105) (NUMK(L),L=1,NZKA)
+      WRITE (NOUT,'(1X,10I8)') (NUMK(L),L=1,NZKA)
 C 105   FORMAT (1X,10I8)
 C replaced to enable compatibility with red_mod_2.py      
 105   FORMAT (I4,') ',1X,30I8)

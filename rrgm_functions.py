@@ -107,7 +107,30 @@ def get_bsv_rw_idx(chs=1, inen='INEN', bsorsc='b', outf=''):
     return ws
 
 
-def wid_gen(add=10, w0=w120, ths=[1e-5, 8e2, 0.1], sca=1.):
+def sparsify(menge, mindist):
+
+    lockereMenge = []
+    menge = np.sort(menge)
+    npointer = 1
+    nref = 0
+
+    while (npointer < len(menge)):
+
+        if (np.abs(float(menge[nref]) - float(menge[npointer])) > mindist):
+            lockereMenge.append(float(menge[nref]))
+            nref = npointer
+            npointer = nref + 1
+
+        else:
+            npointer += 1
+
+    if (np.abs(float(menge[-1]) - float(lockereMenge[-1])) > mindist):
+        lockereMenge.append(float(menge[-1]))
+
+    return np.sort(lockereMenge)
+
+
+def wid_gen(add=10, addtype='top', w0=w120, ths=[1e-5, 8e2, 0.1], sca=1.):
     tmp = []
     # rescale but consider upper and lower bounds
     for ww in w0:
@@ -117,23 +140,34 @@ def wid_gen(add=10, w0=w120, ths=[1e-5, 8e2, 0.1], sca=1.):
             tmp.append(float(ww))
     tmp.sort()
     w0 = tmp
-    #
+    w0diff = min(np.diff(tmp))
+
     # add widths
     n = 0
     addo = 0
     while n < add:
-        rn = random.randint(0, len(w0) - 1)
-        rf = random.uniform(0.1, 2.)
-        addo = float(w0[rn]) * rf
+
+        if addtype == 'top':
+            rf = random.uniform(1.2, 1.5)
+            addo = float(w0[-1]) * rf
+
+        elif addtype == 'middle':
+            rf = random.uniform(0.2, 2.1)
+            addo = random.choice(w0) * rf
+
+        elif addtype == 'bottom':
+            rf = random.uniform(0.1, 0.9)
+            addo = float(w0[0]) * rf
+
         tmp = np.append(np.array(w0), addo)
         tmp.sort()
-        dif = min(abs(np.diff(tmp) / tmp[:-1]))
-        #
-        if ((addo > ths[0]) & (addo < ths[1]) & (dif > ths[2])):
+        dif = min(abs(np.diff(tmp)))
+
+        if ((addo > ths[0]) & (addo < ths[1]) & (dif >= w0diff)):
             w0.append(addo)
             w0.sort()
             n = n + 1
-    #
+
     w0.reverse()
     w0 = ['%12.6f' % float(float(ww)) for ww in w0]
     return w0
@@ -195,9 +229,9 @@ def prep_pot_file_3N(lam3, ps3='', d10=0.0):
     return
 
 
-def parse_ev_coeffs(mult=0, outf='COEFF'):
-    os.system('cp ' + 'OUTPUT ' + 'tmp')
-    out = [line2 for line2 in open('OUTPUT')]
+def parse_ev_coeffs(mult=0, infil='OUTPUT', outf='COEFF'):
+    os.system('cp ' + infil + ' tmp')
+    out = [line2 for line2 in open(infil)]
     #for n in range(1,len(out)):
     #    if(out[n].strip()=="EIGENWERTE DES HAMILTONOPERATORS"):
     #        print(float(out[n+3].split()[0]))
@@ -232,7 +266,7 @@ def parse_ev_coeffs(mult=0, outf='COEFF'):
             #s += '%18.10g' % (coeffp[n]) + '\n'
     ss = s.replace('e', 'E')
     if bvc == 0:
-        print("No coefficients found in OUTPUT")
+        print("No coefficients found in %s" % infil)
     with open(outf, 'w') as outfile:
         outfile.write(ss)
     return
