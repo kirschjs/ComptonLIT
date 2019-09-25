@@ -149,8 +149,7 @@ def red_mod_2(max_coeff=11000,
             if lines_output[lnr].find('EIGENWERTE DES HAMILTONOPERATORS') >= 0:
                 bdg_end = float(lines_output[lnr + 3].split()[ord])
         diff = abs(bdg_end - bdg_ini)
-        #print('%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,
-        #                                           diff), )
+        #print('%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,diff), )
         if (diff > max_diff):
             #print('B(red)-B > maxD')
             os.system('cp inen_bkp INEN')
@@ -172,17 +171,19 @@ def purge_basis(max_coeff=11000,
     while (nc <= nbr_cycles):
 
         lines_output = [line for line in open('OUTPUT')]
+        os.system('cp OUTPUT out_bkp')
 
         for lnr in range(0, len(lines_output)):
             if lines_output[lnr].find('EIGENWERTE DES HAMILTONOPERATORS') >= 0:
-                bdg_ini = float(lines_output[lnr + 3].split()[ord])
-        print('Initial binding energy: B(3) = %f MeV' % (bdg_ini))
+                bdg_ini = float(lines_output[int(lnr + 3)].split()[0])
+
+        #print('Initial binding energy: B(3) = %f MeV' % (bdg_ini))
 
         bv_ent = []
         for lnr in range(0, len(lines_output)):
             if lines_output[lnr].find(
-                    'ENTWICKLUNG DES  %1d TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN'
-                    % (ord + 1)) >= 0:
+                    'ENTWICKLUNG DES  1 TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN'
+            ) >= 0:
                 for llnr in range(lnr + 2, len(lines_output)):
                     if lines_output[llnr] == '\n':
                         break
@@ -205,7 +206,7 @@ def purge_basis(max_coeff=11000,
         for nn in bv_ent:
             basis_size += len(nn) / 8
 
-        print(bv_ent, basis_size)
+        print('ENTW 1 EV in NO BV:\n', bv_ent, '\n BAS DIM:', basis_size)
 
         for bv in range(1, len(bv_ent) + 1):
             relw_to_del = []
@@ -226,10 +227,17 @@ def purge_basis(max_coeff=11000,
                 bv_to_del.append([bv, relw_to_del])
             except:
                 print('bv %d is relevant!' % bv)
+
         rednr = sum([len(tmp[1]) for tmp in bv_to_del])
+
+        bv_to_del = [tmp for tmp in bv_to_del if tmp[1] != []]
+
+        #print(bv_to_del)
+
         if rednr == 0:
             print('All abnormally large/small BV were removed.')
             break
+
         #if (len(bv_ent[0])/8==target_size):
         #   #os.system('cp inen_bkp INEN')
         #   print( 'target size (%d) reached. ' %int(len(bv_ent[0])/8))
@@ -241,10 +249,9 @@ def purge_basis(max_coeff=11000,
         #   # rel-width is the n-th calculated for this bv
 
         lines_inen = [line for line in open('INEN')]
-        bv_to_del = [tmp for tmp in bv_to_del if tmp[1] != []]
-        #print(bv_to_del)
         random.shuffle(bv_to_del)
         to_del = 1
+
         # 1. loop over all bv from which relw can be deleted
         for rem in bv_to_del[:max(1, min(to_del, len(bv_to_del) - 1))]:
             ll = ''
@@ -293,19 +300,22 @@ def purge_basis(max_coeff=11000,
             outfile.write(s)
 
         os.system(dr2executable)
-        os.system('cp OUTPUT out_bkp')
+
         lines_output = [line for line in open('OUTPUT')]
         for lnr in range(0, len(lines_output)):
             if lines_output[lnr].find('EIGENWERTE DES HAMILTONOPERATORS') >= 0:
-                bdg_end = float(lines_output[lnr + 3].split()[ord])
+                bdg_end = float(lines_output[lnr + 3].split()[0])
         diff = abs(bdg_end - bdg_ini)
-        #print('%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,
-        #                                           diff), )
+
+        print(
+            '%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,
+                                                 diff), )
         if (diff > max_diff):
             #print('B(red)-B > maxD')
             os.system('cp inen_bkp INEN')
             os.system('cp out_bkp OUTPUT')
         nc = nc + 1
+
     return bdg_end, basis_size
 
 

@@ -47,12 +47,12 @@ basisdim0 = 35
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdim0)))
-wini0 = wLAPLACE
+wini0 = wLAPLACE[::-1]
 
 addw = 8
 addwt = 'middle'
 scale = 1.
-min_spacing = 0.6
+min_spacing = 0.2
 
 print('initial width set : ', wini0)
 rw0 = wid_gen(
@@ -63,8 +63,6 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 print('NZF = ', nzf0)
 
 #LIT basis ---------------------------------------------------------------
-
-basdim = addw + len(wini)
 
 basisdimLIT = 35
 winiLIT = np.geomspace(
@@ -83,7 +81,7 @@ for mM in np.array(np.meshgrid(mLrange, mJlrange)).T.reshape(-1, 2):
         continue
     mLmJl.append(mM)
 
-streukanalweiten = range(1, len(wini) + addw + 1)
+streukanalweiten = range(1, len(winiLIT) + 1)
 #wdim = 20
 #loc = 1e-4
 #wini = abs(np.random.laplace(loc, scale, wdim))

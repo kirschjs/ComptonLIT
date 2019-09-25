@@ -127,7 +127,7 @@ def sparsify(menge, mindist):
     if (np.abs(float(menge[-1]) - float(lockereMenge[-1])) > mindist):
         lockereMenge.append(float(menge[-1]))
 
-    return np.sort(lockereMenge)
+    return np.sort(lockereMenge)[::-1]
 
 
 def wid_gen(add=10, addtype='top', w0=w120, ths=[1e-5, 8e2, 0.1], sca=1.):

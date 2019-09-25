@@ -64,7 +64,16 @@ else:
 if (('bdg' in cal) | ('reduce' in cal)):
 
     os.chdir(av18path)
+
     os.system(BINBDGpath + 'DR2END_AK.exe')
+
+    purge_basis(
+        max_coeff=11000,
+        min_coeff=150,
+        nbr_cycles=20,
+        max_diff=0.1,
+        dr2executable=BINBDGpath + 'DR2END_AK.exe')
+
     EBDG = get_h_ev()[0]
     if dbg:
         print(
