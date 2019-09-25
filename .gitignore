@@ -9,3 +9,4 @@ tmp*
 *.aux
 *out_*
 __pycache__*
+*.nfs*
