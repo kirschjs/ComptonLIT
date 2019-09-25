@@ -64,23 +64,20 @@ def overlap(bipa, chh, Lo=6.0, pair='singel', mpi='137'):
     return get_kopplungs_ME()
 
 
-def get_reduced_width_set(ws, inen, bsorsc='b', outf='WIDTHS_RED'):
-    ind = 6 if bsorsc == 'b' else 7
-    line = [
-        int(1 - int(en))
-        for en in [ll for ll in open(inen)][ind].split()[:len(ws)]
-    ]
+def purged_width_set(w0, infil='INEN'):
 
-    masked_widths = np.ma.array(ws, mask=line)
-    mma = []
-    msa = ''
-    for ww in masked_widths:
-        if ww:
-            mma.append(ww)
-            msa += ww + '\n'
-    with open(outf, 'w') as outfile:
-        outfile.write(msa)
-    return mma
+    lines = [line for line in open(infil)]
+    anzch = int(lines[4].split()[1])
+
+    rela = []
+    for nc in range(anzch):
+        rela.append(np.array(lines[int(6 + 2 * nc)].split()).astype(int))
+
+    indices_to_delete = np.nonzero(np.invert(np.any(rela, axis=0)))
+    wp = np.delete(w0, indices_to_delete)
+    relwip = np.delete(rela, indices_to_delete, axis=1)
+
+    return wp, relwip
 
 
 def get_quaf_width_set(inqua='INQUA_N'):
@@ -126,6 +123,23 @@ def sparsify(menge, mindist):
 
     if (np.abs(float(menge[-1]) - float(lockereMenge[-1])) > mindist):
         lockereMenge.append(float(menge[-1]))
+
+    return np.sort(lockereMenge)[::-1]
+
+
+def sparsifyOnlyOne(menge_to_add, menge_fix, mindist):
+
+    #print('Sorting\n', menge_to_add, '\n into\n', menge_fix, '...\n\n')
+
+    lockereMenge = []
+
+    for test_w in menge_to_add:
+        dazu = True
+        for ref_w in menge_fix:
+            if (np.abs(float(test_w - ref_w)) < mindist):
+                dazu = False
+        if (dazu):
+            lockereMenge = np.concatenate((lockereMenge, [test_w]))
 
     return np.sort(lockereMenge)[::-1]
 

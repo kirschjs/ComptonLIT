@@ -1,7 +1,8 @@
 F77     =      ifort
 #F77     =      gfortran
-FFLAGS =  -ipo -O3 -no-prec-div -fp-model fast=2 -xHost # = fast w/o -static
-#FFLAGS  =      -O2 -g -traceback -i8 -mcmodel=medium
+FFLAGS  =       -Ofast -g -traceback -i8 -mcmodel=medium
+#FFLAGS =  -ipo -O3 -no-prec-div -fp-model fast=2 -xHost # = fast w/o -static
+#FFLAGS  =      -O2 -g -traceback -i8 
 #FFLAGS  =       -g -O2 -Wall -ffpe-summary='none' -fcray-pointer -mcmodel=medium -finteger-4-integer-8 #-fdefault-integer-8 -ffpe-trap=denormal 
 LIBS    = -L${MKLROOT} -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -liomp5 -lm -ldl
 

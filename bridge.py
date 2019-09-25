@@ -16,11 +16,32 @@ BINBDGpath = pathbase + '/src_nucl/'
 BINLITpath = pathbase + '/src_elma/'
 
 mpii = '137'
+pots = 'AV18'
+
+rechtekanaele = {
+    # DEUTERON
+    'np-3SD1': [[1, 1, 2, 2], [1, 1, 2, 6]],
+}
+
+streukanaele = {
+    #       s1 s2 S  bvnr
+    '0+': [[1, 1, 0, 1]],  #     1S0
+    '0-': [[1, 1, 2, 4]],  #     3P0
+    '1+': [[1, 1, 2, 2], [1, 1, 2, 6]],  # 3S1 3D1
+    #'1-': [[1, 1, 0, 3], [1, 1, 2, 4]],  # 1P1 3P1
+    '1-': [[1, 1, 2, 4]],  # 3P1
+    '2+': [[1, 1, 0, 5], [1, 1, 2, 6]],  # 1D2 3D2
+    #'2-': [[1, 1, 2, 4], [1, 1, 2, 8]],  # 3P2 3F2
+    '2-': [[1, 1, 2, 4]],  # 3P2
+    '3+': [[1, 1, 2, 6]],  #     3D3
+    '3-': [[1, 1, 0, 7], [1, 1, 2, 8]],  # 1F3 3F3
+    '4-': [[1, 1, 2, 8]],  #     3F4
+}
 
 cal = ['bdg', 'QUA']
 cal = ['lit']
 cal = ['lit-plot']
-cal = ['bdg', 'QUA', 'reduce', 'lit', 'lit-plot']
+cal = ['bdg', 'QUA', 'lit', 'lit-plot']
 
 dbg = 2
 

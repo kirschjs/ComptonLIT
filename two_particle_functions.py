@@ -206,7 +206,7 @@ def purge_basis(max_coeff=11000,
         for nn in bv_ent:
             basis_size += len(nn) / 8
 
-        print('ENTW 1 EV in NO BV:\n', bv_ent, '\n BAS DIM:', basis_size)
+        #print('ENTW 1 EV in NO BV:\n', bv_ent, '\n BAS DIM:', basis_size)
 
         for bv in range(1, len(bv_ent) + 1):
             relw_to_del = []
@@ -219,7 +219,8 @@ def purge_basis(max_coeff=11000,
             for coeff in range(0, len(ueco)):
                 try:
                     if (abs(int(ueco[coeff])) > max_coeff) | (abs(
-                            int(ueco[coeff])) < min_coeff):
+                            int(ueco[coeff])) < min_coeff) | (
+                                ueco[coeff] == '********'):
                         relw_to_del.append(coeff)
                 except:
                     relw_to_del.append(coeff)
@@ -504,12 +505,12 @@ def lit_inob(anzo=13, nfrag=1):
     return
 
 
-def h2_inqua(relw, ps2):
+def h2_inqua(relw, ps2, withhead=True):
     s = ''
-    s += ' 10  8  9  3 00  0  0  0  0\n'
+    if (withhead):
+        s += ' 10  8  9  3 00  0  0  0  0\n'
 
-    #s += pot_dir + ps2 + '\n'
-    s += ps2 + '\n'
+        s += ps2 + '\n'
 
     wset = np.split(relw, 20 * np.arange(1, 1 + int(len(relw) / 20)))
     for rw in wset:
@@ -532,7 +533,10 @@ def h2_inqua(relw, ps2):
 
         s += '  2  4\n1.\n'  # 7:  n-p 1F3
         s += '  1  4\n1.\n'  # 8:  n-p 3F2,3,4
-    with open('INQUA_N', 'w') as outfile:
+
+    appe = 'w' if (withhead) else 'a'
+
+    with open('INQUA_N', appe) as outfile:
         outfile.write(s)
     return
     # r7 c2:   S  L           S_c
@@ -540,13 +544,15 @@ def h2_inqua(relw, ps2):
     #  2   :   1  0  3S1         2
 
 
-def lit_inqua(relw, anzo=13):
+def lit_inqua(relw, anzo=13, withhead=True):
     s = ''
-    # NBAND1,NBAND2,NBAND3,NBAND4,NBAND5,NAUS,MOBAUS,LUPAUS,NBAUS
-    s += ' 10  8  9  3 00  0  0  0  0\n'
-    for n in range(anzo):
-        s += '  1'
-    s += '\n  8\n'
+    if (withhead):
+        # NBAND1,NBAND2,NBAND3,NBAND4,NBAND5,NAUS,MOBAUS,LUPAUS,NBAUS
+        s += ' 10  8  9  3 00  0  0  0  0\n'
+        for n in range(anzo):
+            s += '  1'
+        s += '\n'
+    s += '  8\n'
     s += '  1%3d\n' % int(len(relw))
     s += '.0          .0\n'
     for relwl in range(0, int(np.ceil(float(len(relw)) / float(6)))):
@@ -567,7 +573,8 @@ def lit_inqua(relw, anzo=13):
     s += '  1  4\n1.\n'  # 8:  n-p 3F2,3,4
 
     # s += '%11.4f %11.4f' % (0.5, 0.0001)  # EKMAX ERRMAX
-    with open('INQUA', 'w') as outfile:
+    appe = 'w' if (withhead) else 'a'
+    with open('INQUA', appe) as outfile:
         outfile.write(s)
     return
     # r7 c2:   S  L           S_c
@@ -575,7 +582,15 @@ def lit_inqua(relw, anzo=13):
     #  2   :   1  0  3S1         2
 
 
-def h2_inen_bs(relw, costr, j=0, ch=1, anzo=14, nzz=0, EVein=[], nfrag=1):
+def h2_inen_bs(relw,
+               costr,
+               j=0,
+               ch=1,
+               anzo=14,
+               nzz=0,
+               EVein=[],
+               nfrag=1,
+               withhead=True):
     s = ''
     s += ' 10  2 12%3d  1  2%3d  0  1 -1  0  1\n' % (int(anzo), nzz)
     #       N  T Co CD^2 LS  T
@@ -602,7 +617,7 @@ def h2_inen_bs(relw, costr, j=0, ch=1, anzo=14, nzz=0, EVein=[], nfrag=1):
     return
 
 
-def h2_inen_str(relw, costr, j=0, sc=0, ch=1, anzo=7):
+def h2_inen_str(relw, costr, j=0, sc=0, ch=1, anzo=7, withhead=True):
     s = ''
     s += ' 10  2 12%3d  1  1 -0  0  0 -1\n' % int(anzo)
     #      N  T Co  CD^2 LS  T
@@ -625,7 +640,6 @@ def h2_inen_str(relw, costr, j=0, sc=0, ch=1, anzo=7):
 
 def lit_inen(BUECO,
              KSTREU,
-             rw,
              KBND,
              JWSL,
              JWSLM,
@@ -640,7 +654,8 @@ def lit_inen(BUECO,
              EB=-2.2134173,
              NZE=100,
              EK0=1e3,
-             EKDIFF=20.0):
+             EKDIFF=20.0,
+             withhead=True):
     s = ''
     # NBAND1,ISTEU,IGAK,KEIND,IQUAK,IMETH
     s += ' 10  2  1  1  0  1\n'
