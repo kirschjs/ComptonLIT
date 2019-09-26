@@ -7,6 +7,9 @@
 \usepackage{hyperref}
 \usepackage{mathbbol}
 %\usepackage{bookmark}
+\usepackage{tikz}
+\usetikzlibrary{matrix,shapes,arrows,positioning,chains}
+
 \usepackage{mathtools}
 \usepackage{bbold}
 \usepackage{amsmath,array}
@@ -348,6 +351,9 @@ with
 \be\la{eq.theme}
 \me{m;l_lm_{l_l}}{\Phi_{Lm_L}(\ve{\rho_\nu})~e^{-\beta\ve{r}_{ij}}\prod\limits_{N}^{N_{\text{op}}}\mathcal{Y}_{L_NM_N}(\ve{r}_{ij})}{l_rm_{l_r};n}
 \ee
+
+\paragraph{Notes on the \texttt{RRGM} implementation}
+\input{rrgm_flow.tex}
 
 \bibliography{refs}
 

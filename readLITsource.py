@@ -11,9 +11,11 @@ from bridge import *
 from sympy.physics.quantum.cg import CG
 
 
-def read_uncoupled_source():
+def read_uncoupled_source(basisSET=''):
 
     sourceRHS = {}
+    basdim = len(basisSET)
+
     for streukanalweite in range(1, basdim + 1):
 
         for mM in mLmJl:
@@ -23,6 +25,7 @@ def read_uncoupled_source():
                 line for line in open('endlitout_%d_%d-%d' % (streukanalweite,
                                                               mM[1], mM[0]))
             ]
+
             for ln in range(len(instream)):
 
                 if re.search('1AUSDRUCK', instream[ln]):
@@ -51,9 +54,12 @@ def read_uncoupled_source():
 
 
 # return S[ r,Jlit,m(Jlit),L, [k1,k2,...,kn] ]
-def couple_source(sourceRHS):
+def couple_source(sourceRHS, basisSET=''):
 
     coupledSOURCE = {}
+
+    basdim = len(basisSET)
+
     for streukanalweite in range(1, basdim + 1):
 
         # mM[0] = m(L) ; mM[1] = m(Jlit)

@@ -18,11 +18,13 @@ BINLITpath = pathbase + '/src_elma/'
 mpii = '137'
 pots = 'AV18'
 
+# convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
     # DEUTERON
     'np-3SD1': [[1, 1, 2, 2], [1, 1, 2, 6]],
 }
 
+# ECCE! bvnr for LIT basis states must be shifted after purge! (A2_lit)
 streukanaele = {
     #       s1 s2 S  bvnr
     '0+': [[1, 1, 0, 1]],  #     1S0
@@ -38,28 +40,13 @@ streukanaele = {
     '4-': [[1, 1, 2, 8]],  #     3F4
 }
 
-cal = ['bdg', 'QUA']
-cal = ['lit']
-cal = ['lit-plot']
 cal = ['bdg', 'QUA', 'lit', 'lit-plot']
-
-dbg = 2
-
-pot_scale = 1.
-
-anzs = 1
-v_i = 1.0
-v_e = 1.0
-over_space = [15., 0.1, 0.0001]
-eps_space = np.linspace(v_i, v_e, anzs)
-
-anze = 17
 
 multipolarity = 1
 mLrange = np.arange(-multipolarity, multipolarity + 1)
 
 anz_phot_e = 100
-phot_e_0 = 0.1  #  enems_e converts to fm^-1, but HERE the value is in MeV
+phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
@@ -75,19 +62,20 @@ addwt = 'middle'
 scale = 1.
 min_spacing = 0.2
 
-print('initial width set : ', wini0)
 rw0 = wid_gen(
     add=addw, addtype=addwt, w0=wini0, ths=[1e-5, 2e2, 0.2], sca=scale)
 rw0 = sparsify(rw0, min_spacing)
-print('extended width set: ', rw0)
+
 nzf0 = int(np.ceil(len(rw0) / 20.0))
-print('NZF = ', nzf0)
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 35
-winiLIT = np.geomspace(
-    start=0.1, stop=100, num=basisdimLIT, endpoint=True, dtype=None)
+basisdimLIT = 15
+#winiLITa = np.geomspace(
+#    start=1.0001, stop=20, num=basisdimLIT, endpoint=True, dtype=None)
+laplace_loc, laplace_scale = .1, 4.4
+winiLIT = np.sort(
+    np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdimLIT)))
 
 boundstatekanal = 'np-3SD1'
 streukanal = '0-'

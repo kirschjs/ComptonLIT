@@ -544,33 +544,40 @@ def h2_inqua(relw, ps2, withhead=True):
     #  2   :   1  0  3S1         2
 
 
-def lit_inqua(relw, anzo=13, withhead=True):
+def lit_inqua(relw, LREG='', anzo=13, withhead=True):
     s = ''
     if (withhead):
         # NBAND1,NBAND2,NBAND3,NBAND4,NBAND5,NAUS,MOBAUS,LUPAUS,NBAUS
         s += ' 10  8  9  3 00  0  0  0  0\n'
-        for n in range(anzo):
-            s += '  1'
+        if (LREG == ''):
+            for n in range(anzo):
+                s += '  1'
+        else:
+            s += LREG
         s += '\n'
-    s += '  8\n'
-    s += '  1%3d\n' % int(len(relw))
-    s += '.0          .0\n'
-    for relwl in range(0, int(np.ceil(float(len(relw)) / float(6)))):
-        for rr in range(0, 6):
-            if (relwl * 6 + rr) < len(relw):
-                s += '%12.4f' % float(relw[relwl * 6 + rr])
-        s += '\n'
-    s += '  2  1\n1.\n'  # 1:  n-p 1S0
-    s += '  1  1\n1.\n'  # 2:  n-p 3S1
 
-    s += '  2  2\n1.\n'  # 3:  n-p 1P1
-    s += '  1  2\n1.\n'  # 4:  n-p 3P0,1,2
+    wset = np.split(relw, 20 * np.arange(1, 1 + int(len(relw) / 20)))
 
-    s += '  2  3\n1.\n'  # 5:  n-p 1D2
-    s += '  1  3\n1.\n'  # 6:  n-p 3D1
+    for rw in wset:
+        s += '  8\n'
+        s += '  1%3d\n' % int(len(rw))
+        s += '.0          .0\n'
+        for relwl in range(0, int(np.ceil(float(len(rw)) / float(6)))):
+            for rr in range(0, 6):
+                if (relwl * 6 + rr) < len(rw):
+                    s += '%12.4f' % float(rw[relwl * 6 + rr])
+            s += '\n'
+        s += '  2  1\n1.\n'  # 1:  n-p 1S0
+        s += '  1  1\n1.\n'  # 2:  n-p 3S1
 
-    s += '  2  4\n1.\n'  # 7:  n-p 1F3
-    s += '  1  4\n1.\n'  # 8:  n-p 3F2,3,4
+        s += '  2  2\n1.\n'  # 3:  n-p 1P1
+        s += '  1  2\n1.\n'  # 4:  n-p 3P0,1,2
+
+        s += '  2  3\n1.\n'  # 5:  n-p 1D2
+        s += '  1  3\n1.\n'  # 6:  n-p 3D1
+
+        s += '  2  4\n1.\n'  # 7:  n-p 1F3
+        s += '  1  4\n1.\n'  # 8:  n-p 3F2,3,4
 
     # s += '%11.4f %11.4f' % (0.5, 0.0001)  # EKMAX ERRMAX
     appe = 'w' if (withhead) else 'a'

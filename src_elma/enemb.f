@@ -204,6 +204,7 @@ C     ELEKTRONENSTREUUNG
       EKDIFF=EKDIFF/HC
       DO 9, NEK=2, NZEK
        EK(NEK)=EK(NEK-1)+EKDIFF
+      EKNULL = EK(1)
 9     CONTINUE
 C     EK: K-VEKTOR DES (VIRTUELLEN) PHOTONS
       GOTO 11
@@ -308,8 +309,8 @@ c      AKM=GJL-GJR
       CL=CLG(INT(2*GJR),INT(2*AK),INT(2*GJL),
      1   INT(2*(GJLM-AKM)),INT(2*AKM))
 C      CL=YG(GJR,AK,GJL,GJR,AKM)
-      IF(CL.NE.0.) GOTO 101
       WRITE (6,1204) GJR,(GJLM-AKM),AK,AKM,GJL,GJLM,CL
+      IF(CL.NE.0.) GOTO 101
       STOP 4
 C
 C     PARITAETSCHECK
@@ -538,7 +539,6 @@ C
       DO 64, JWIED=1, KWIED
 C     LOOP UNTEROPERATOREN
 C
-      write(6,*)'JWIED,MKC',JWIED,MKC
       IF (MKC.GT.11 .AND. ITEH(JWIED).EQ.0) GOTO 64
       IF (KONTR.EQ.0 .AND. LAUF.EQ.2) THEN
          READ (NBAND) IK1, JK1, (((FG(NT,K,L), NT=1,2),
@@ -891,8 +891,9 @@ C       SPINOPERATOREN
 C
 605     CONTINUE
 C       SIEGERTOPERATOR
-        IF (EKNULL.GT.0.) OPWERT(NEK,MKC)=OPWERT(NEK,MKC)*
-     *                    EKNULL/EK(NEK)
+C       ecce: (jk,26.9.2019) this factor is now considered below in VF
+C        IF (EKNULL.GT.0.) OPWERT(NEK,MKC)=OPWERT(NEK,MKC)*
+C     *                    EKNULL/EK(NEK)
         GOTO 607
 C
 606     CONTINUE
@@ -939,7 +940,7 @@ C      VF=VF*EKNULL
 C      VFE=VF1/(DF(MUL2+1)**2)
 
 c Siegert for LIT benchmark (Eq.(55) in Bampa)
-      VF = SQRT(1./(EK(1)*2*137.03604))
+      VF = SQRT(1./(HC*EK(1)*2*137.03604))
       WRITE (6,*)"E_0 = ", EK(1)
       IF (MUL.GT.0) VF=VF*SQRT((FLOAT(MUL)+1.)/FLOAT(MUL))
       WRITE (6,*)"Vorfaktor = ", VF
