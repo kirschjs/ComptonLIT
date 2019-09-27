@@ -33,6 +33,7 @@ h2_inen_bs(
 
 os.system(BINBDGpath + 'DR2END_AK.exe')
 
+exit()
 purge_basis(
     max_coeff=11000,
     min_coeff=150,

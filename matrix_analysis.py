@@ -10,6 +10,10 @@ normham = np.array([float(line) for line in open(infil)])
 EN = np.reshape(normham[1:int(normham[0]**2 + 1)], (int(normham[0]), -1))
 H = np.reshape(normham[int(normham[0]**2 + 1):], (int(normham[0]), -1))
 
-ev, evr = linalg.eig(H, EN)
+evg, evrg = linalg.eig(H, EN)
+ev, evr = linalg.eig(H)
+ev2, evr2 = linalg.eig(EN)
 
-print(np.sort(ev))
+print('NORM EV:\n', np.sort(ev2)[::-1])
+print('HAMI EV:\n', np.sort(ev)[::-1])
+print('(HN) EV:\n', np.sort(evg)[::-1])

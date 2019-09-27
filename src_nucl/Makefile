@@ -1,11 +1,11 @@
 #F77     =       gfortran
 #FFLAGS  =       -g -O2 -Wall -ffpe-summary='none' -fcray-pointer -mcmodel=medium #-ffpe-trap=denormal 
-#LIBS    = -llapack -lblas 
 ## orig settings
 F77     =        ifort
 #FFLAGS  =       -g -O2 -mcmodel=medium #-ffpe-trap=denormal 
 FFLAGS  =       -O1 -g -traceback -i8
-LIBS    = -L${MKLROOT} -lmkl_intel_ilp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread -lm -ldl
+LIBS    = -L/usr/lib64/liblapack64 -L/usr/lib64/libblas64
+#LIBS    = -L${MKLROOT} -lmkl_intel_ilp64 -lmkl_lapack95_lp64 -lmkl_intel_thread -lmkl_core -liomp5# -lpthread -lm -ldl
 # ohne -g und -traceback erzeugt spoleinv runtime error in smatest,rrandb subroutinen wenn auf die variable nbess zugegriffen wird;
 # mit den optionen tritt der fehler nicht auf;
 #FFLAGS  =       -C -Wall
