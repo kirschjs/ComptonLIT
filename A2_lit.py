@@ -106,7 +106,8 @@ os.system(BINLITpath + 'qual.exe')
 
 leftpar = 1 if streukanal[1] == '-' else 2
 
-os.system('mv endlitout_* ./old')
+#os.system('mv endlitout_* ./old')
+os.system('rm endlitout_*')
 
 for mM in mLmJl:
     for streukanalweite in range(1, len(wLIT) + 1):

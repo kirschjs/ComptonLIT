@@ -599,7 +599,7 @@ def h2_inen_bs(relw,
                nfrag=1,
                withhead=True):
     s = ''
-    s += ' 10  2 12%3d  1  2%3d  0  1 -1  0  1\n' % (int(anzo), nzz)
+    s += ' 10  2 12%3d  1  1%3d  0  1 -1  0  1\n' % (int(anzo), nzz)
     #       N  T Co CD^2 LS  T
     s += '  1  1  1  1  1  1  1  1  1  1  1  1  1  1\n'
 

@@ -70,10 +70,10 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 15
+basisdimLIT = 10
 #winiLITa = np.geomspace(
 #    start=1.0001, stop=20, num=basisdimLIT, endpoint=True, dtype=None)
-laplace_loc, laplace_scale = .1, 4.4
+laplace_loc, laplace_scale = 1., .9
 winiLIT = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdimLIT)))
 
