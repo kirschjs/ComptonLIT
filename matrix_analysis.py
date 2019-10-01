@@ -3,17 +3,25 @@ import os, sys
 import numpy as np
 from scipy import linalg
 
-infil = '/home_th/kirscher/kette_repo/source/ComptonLIT/av18_deuteron/norm-ham-litME-0-'
+home = os.getenv("HOME")
+
+infil = home + '/kette_repo/ComptonLIT/av18_deuteron/norm-ham-litME-0-'
 
 normham = np.array([float(line) for line in open(infil)])
 
-EN = np.reshape(normham[1:int(normham[0]**2 + 1)], (int(normham[0]), -1))
-H = np.reshape(normham[int(normham[0]**2 + 1):], (int(normham[0]), -1))
+Norm = np.transpose(
+    np.reshape(normham[1:int(normham[0]**2 + 1)], (int(normham[0]), -1)))
+Ham = np.reshape(normham[int(normham[0]**2 + 1):], (int(normham[0]), -1))
 
-evg, evrg = linalg.eig(H, EN)
-ev, evr = linalg.eig(H)
-ev2, evr2 = linalg.eig(EN)
+ev_gen, evr_gen = linalg.eig(Ham, Norm)
+ev_h, evr_h = linalg.eig(Ham)
+ev_n, evr_n = linalg.eig(Norm)
 
-print('NORM EV:\n', np.sort(ev2)[::-1])
-print('HAMI EV:\n', np.sort(ev)[::-1])
-print('(HN) EV:\n', np.sort(evg)[::-1])
+print(Norm)
+print(Ham)
+
+#print('NORM     EV:\n', np.sort(ev_n))
+#print('H        EV:\n', np.sort(ev_h))
+print('(Hv=lNv) EV:\n', np.sort(ev_gen))
+exit()
+print('\n', evr_gen)

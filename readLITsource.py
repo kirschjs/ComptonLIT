@@ -74,14 +74,12 @@ def couple_source(sourceRHS, basisSET=''):
             #print(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]),mM[1], cgtmp)
 
             try:
-                coupledSOURCE[('%d' % (streukanalweite),
-                               '%d' % (2 * int(streukanal[0])),
-                               '%d' % (2 * mM[1]),
+                coupledSOURCE[('%d' % (streukanalweite), '%d' %
+                               (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
                                '%d' % (2 * multipolarity))] += tmp * cgtmp
             except:
-                coupledSOURCE[('%d' % (streukanalweite),
-                               '%d' % (2 * int(streukanal[0])),
-                               '%d' % (2 * mM[1]),
+                coupledSOURCE[('%d' % (streukanalweite), '%d' %
+                               (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
                                '%d' % (2 * multipolarity))] = tmp * cgtmp
 
     for mJ in mJlrange:
@@ -92,15 +90,13 @@ def couple_source(sourceRHS, basisSET=''):
         for nMom in range(anz_phot_e):
 
             for streukanalweite in range(1, basdim + 1):
-                outs += '%12.4f' % float(coupledSOURCE[(
+                outs += '%12.4E' % float(coupledSOURCE[(
                     '%d' % (streukanalweite), '%d' % (2 * int(streukanal[0])),
                     '%d' % (2 * mJ), '%d' % (2 * multipolarity))][nMom])
 
             outs += '\n'
-        with open(
-                av18path +
-                '/LIT_SOURCE_%s%d%d' % (streukanal, mJ, multipolarity),
-                'w') as outfile:
+        with open(av18path + '/LIT_SOURCE_%s%d%d' %
+                  (streukanal, mJ, multipolarity), 'w') as outfile:
             outfile.seek(0)
             outfile.write(outs)
 

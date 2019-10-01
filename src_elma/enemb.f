@@ -940,7 +940,7 @@ C      VF=VF*EKNULL
 C      VFE=VF1/(DF(MUL2+1)**2)
 
 c Siegert for LIT benchmark (Eq.(55) in Bampa)
-      VF = SQRT(1./(HC*EK(1)*2*137.03604))
+      VF = (1./(HC*EK(1)))*4.*SQRT(PI/137.03604)
       WRITE (6,*)"E_0 = ", EK(1)
       IF (MUL.GT.0) VF=VF*SQRT((FLOAT(MUL)+1.)/FLOAT(MUL))
       WRITE (6,*)"Vorfaktor = ", VF

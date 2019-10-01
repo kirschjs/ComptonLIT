@@ -8,7 +8,9 @@ from parameters_and_constants import *
 from rrgm_functions import *
 from two_particle_functions import *
 
-pathbase = '/home_th/kirscher/kette_repo/source/ComptonLIT'
+home = os.getenv("HOME")
+
+pathbase = home + '/kette_repo/ComptonLIT'
 
 av18path = pathbase + '/av18_deuteron'
 litpath = pathbase + '/test/'
@@ -50,7 +52,7 @@ phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 35
+basisdim0 = 25
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
@@ -70,12 +72,29 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 10
-#winiLITa = np.geomspace(
-#    start=1.0001, stop=20, num=basisdimLIT, endpoint=True, dtype=None)
+basisdimLIT = 20
+
+w0l, dw = 1.1, 2.0
+winiLITlin = np.linspace(
+    start=w0l,
+    stop=w0l + basisdimLIT * dw,
+    num=basisdimLIT,
+    endpoint=True,
+    dtype=None)
+
+exp0log, expmaxlog = -1, 2
+winiLITlog = np.logspace(
+    start=exp0log, stop=expmaxlog, num=basisdimLIT, endpoint=True, dtype=None)
+
+wmaxl = 10
+winiLITgeom = np.geomspace(
+    start=w0l, stop=wmaxl, num=basisdimLIT, endpoint=True, dtype=None)
+
 laplace_loc, laplace_scale = 1., .9
-winiLIT = np.sort(
+winiLITlaplace = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdimLIT)))
+
+winiLIT = winiLITlog
 
 boundstatekanal = 'np-3SD1'
 streukanal = '0-'

@@ -38,13 +38,13 @@ def red_mod_2(max_coeff=11000,
                         try:
                             if (int(lines_output[llnr].split(')')[0]) !=
                                     len(bv_ent) + 1):
-                                bv_ent[-1] += lines_output[
-                                    llnr][lines_output[llnr].find(')') +
-                                          1:].rstrip()[2:]
+                                bv_ent[-1] += lines_output[llnr][
+                                    lines_output[llnr].find(')') + 1:].rstrip(
+                                    )[2:]
                             else:
-                                bv_ent.append(lines_output[llnr]
-                                              [lines_output[llnr].find(')') +
-                                               1:].rstrip()[2:])
+                                bv_ent.append(
+                                    lines_output[llnr][lines_output[llnr].find(
+                                        ')') + 1:].rstrip()[2:])
                         except:
                             continue
                             #print( 'EOF.')
@@ -191,13 +191,13 @@ def purge_basis(max_coeff=11000,
                         try:
                             if (int(lines_output[llnr].split(')')[0]) !=
                                     len(bv_ent) + 1):
-                                bv_ent[-1] += lines_output[
-                                    llnr][lines_output[llnr].find(')') +
-                                          1:].rstrip()[2:]
+                                bv_ent[-1] += lines_output[llnr][
+                                    lines_output[llnr].find(')') + 1:].rstrip(
+                                    )[2:]
                             else:
-                                bv_ent.append(lines_output[llnr]
-                                              [lines_output[llnr].find(')') +
-                                               1:].rstrip()[2:])
+                                bv_ent.append(
+                                    lines_output[llnr][lines_output[llnr].find(
+                                        ')') + 1:].rstrip()[2:])
                         except:
                             continue
 
@@ -308,9 +308,8 @@ def purge_basis(max_coeff=11000,
                 bdg_end = float(lines_output[lnr + 3].split()[0])
         diff = abs(bdg_end - bdg_ini)
 
-        print(
-            '%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,
-                                                 diff), )
+        print('%2d:B(2,%d)=%f || B(red)-B = %f' % (nc, basis_size - 1, bdg_end,
+                                                   diff), )
         if (diff > max_diff):
             #print('B(red)-B > maxD')
             os.system('cp inen_bkp INEN')
@@ -606,7 +605,7 @@ def h2_inen_bs(relw,
     s += '%s\n' % costr
 
     #     2*J #ch s/b
-    s += '%4d%4d   1   0   2\n' % (int(2 * j), int(len(ch) * nfrag))
+    s += '%4d%4d   1   2   2\n' % (int(2 * j), int(len(ch) * nfrag))
 
     for n in range(nfrag):
         for c in ch:

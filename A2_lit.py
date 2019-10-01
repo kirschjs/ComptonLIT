@@ -33,7 +33,9 @@ h2_inen_bs(
 
 os.system(BINBDGpath + 'DR2END_AK.exe')
 
-exit()
+os.system('cp %s/MATOUT %s/norm-ham-litME-%s' % (av18path, av18path,
+                                                 streukanal))
+
 purge_basis(
     max_coeff=11000,
     min_coeff=150,
@@ -81,12 +83,16 @@ os.system(BINBDGpath + 'QUAFL_N.exe')
 os.system(BINBDGpath + 'DR2END_AK.exe')
 
 EBDG = get_h_ev()[0]
+
 print(
     '(iv)    LS-scheme: B(2,%s) = %4.4f MeV [' % (boundstatekanal, EBDG),
     get_h_ev(n=4),
     ']')
 
+np.savetxt('E0.dat', np.array([EBDG]), fmt='%12.4f')
+
 os.system('cp OUTPUT end_out_b && cp INEN inen_b')
+
 rrgm_functions.parse_ev_coeffs(infil='end_out_b')
 
 BUECO = [cof.strip() for cof in open('COEFF')]
@@ -133,8 +139,8 @@ for mM in mLmJl:
             EKDIFF=phot_e_d)
 
         os.system(BINLITpath + 'enemb.exe')
-        os.system(
-            'cp OUTPUT endlitout_%d_%d-%d' % (streukanalweite, mM[1], mM[0]))
+        os.system('cp OUTPUT endlitout_%d_%d-%d' % (streukanalweite, mM[1],
+                                                    mM[0]))
 
 print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
 
@@ -157,8 +163,8 @@ h2_inen_bs(
 
 os.system(BINBDGpath + 'DR2END_AK.exe')
 
-os.system(
-    'cp %s/MATOUT %s/norm-ham-litME-%s' % (av18path, av18path, streukanal))
+os.system('cp %s/MATOUT %s/norm-ham-litME-%s' % (av18path, av18path,
+                                                 streukanal))
 
 # read uncoupled source ME's
 os.chdir(litpath)
@@ -173,17 +179,16 @@ ax1.set_title(r'')
 ax1.set_xlabel('photon momentum [MeV]')
 mM = [0, 0]
 [
-    ax1.plot(
-        photEn, RHSofBV[('%d' % (streukanalweite), '%d' % int(streukanal[0]),
-                         '%d' % (2 * mM[1]), '%d' % (2 * multipolarity),
-                         '%d' % (2 * mM[0]))])
+    ax1.plot(photEn, RHSofBV[('%d' % (streukanalweite),
+                              '%d' % int(streukanal[0]), '%d' % (2 * mM[1]),
+                              '%d' % (2 * multipolarity), '%d' % (2 * mM[0]))])
     for streukanalweite in range(1,
                                  len(wLIT) + 1)
 ]
 [
-    ax2.plot(
-        photEn, RHSofmJ[('%d' % (streukanalweite), '%d' % int(streukanal[0]),
-                         '%d' % (2 * mM[1]), '%d' % (2 * multipolarity))])
+    ax2.plot(photEn,
+             RHSofmJ[('%d' % (streukanalweite), '%d' % int(streukanal[0]),
+                      '%d' % (2 * mM[1]), '%d' % (2 * multipolarity))])
     for streukanalweite in range(1,
                                  len(wLIT) + 1)
 ]

@@ -265,8 +265,20 @@ to obtain the LIT state
 \text{Matrix for single-axis rotation:} &\hspace{1cm}&   \mathcal{D}_{m^\prime,m}^{(j)}(0~\beta~0)\equiv&~d_{m^\prime,m}^{(j)}(\beta)\nonumber\\
 &\hspace{1cm}& =&\left[\frac{(j+m^\prime)!(j-m^\prime)!}{(j+m)!(j-m)!}\right]^\frac{1}{2}\nonumber\\
 &\hspace{1cm}&&~\cdot\sum_\sigma\left(j+m\atop j-m^\prime-\sigma\right)\left(j-m\atop \sigma\right)(-1)^{j-m^\prime-\sigma}\nonumber\\
-&\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m^\prime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m^\prime}
+&\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m^\prime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m^\prime}\\
 \end{alignat}
+\begin{table}
+\be\la{tab.constants}
+\renewcommand{\arraystretch}{2.4}
+\setlength{\tabcolsep}{8pt}
+\begin{array}{c|c|c}\hline
+\alpha=\frac{e^2}{4\pi}&\text{dimensionless}&\frac{1}{137.03604}\\
+\hbar c & & 197.32858~\text{MeV}\cdot\text{fm}^2 \\
+\hline\hline
+\end{array}
+\ee
+\caption{Implemented numerical values.}
+\end{table}
 
 \section{code}
 

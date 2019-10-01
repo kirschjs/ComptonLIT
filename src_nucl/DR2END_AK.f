@@ -1,10 +1,10 @@
       PROGRAM DR2END_AK
 C     FUER SMIN STATTDESSEN
 CC    SUBROUTINE ENDMAT(EOV)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C     STREU ENDMAT NUR FUER STREUPOTENTIALE (KEINE QUARKS!!!!!!!!)
 C     ZUSAETZLICH FUER 3-N-POTENTIALE!!!!!!!!!
-C     VORBEREITET FUER SMIN
+C     VORBEREITET FUER SMIN 
 C     JEWEILS SMIN SUCHEN UND NACH VORSCHRIFT HANDELN
 C     DAMIT DIE COMMONBLOCKS STIMMEN MUSS 'par/DR2END_AK' durch 'par/SMIN' ERSETZT
 C     WERDEN
@@ -86,7 +86,7 @@ C     NZKMAX:     "      "     "  KANAELE
 C     NZBMAX:     "      "     "  BASISVEKTOREN AUS QUAF
 C     NZUMAX:     "      "     "  UEBERLAGERUGNSKOEFFIZIENTEN
 C     NZFMAX:     "      "     "  ZERLEGUNGEN
-C     NZZMAX:     "      "     "  AUSGEDRUCKTEN EIGENFUNKTIONEN
+C     NDIMD:     "      "     "  AUSGEDRUCKTEN EIGENFUNKTIONEN
 C     NDIMD  :     "      "     "  RADIALPARAMETER*KANAELE
 C                                 NDIMD.LE.MZPARM*NZKMAX
 C
@@ -121,7 +121,7 @@ C
      *             H2M, E2R0 ,
      *  RUHM(2,NZKMAX), EBIN1(NZKMAX), NREL
 C
-      COMMON QQ(NDIMD,NZZMAX),
+      COMMON QQ(NDIMD,NDIMD),
      *       INPUT, NBAND3, NBAND9, NENTP, NZZ, IAUW,
      *       IDRU, NB15, IPLO
 C
@@ -131,7 +131,7 @@ C
      *          LUM(MZPARM+1,NZKMAX), DN(MZPARM,MZPARM,2),
      *          NZRHO(NZFMAX), MREG(NZOPER), KANUM(NZBMAX,KKMAX),
      *          OPW(NZOPER), UMKOF(NZKMAX,NZBMAX), JKK(NZBMAX)
-      DIMENSION OBWERT(NZOPER+2,NZZMAX,NZZMAX),
+      DIMENSION OBWERT(NZOPER+2,NDIMD,NDIMD),
      *          NUMK(NDIMD), UMK(NZBMAX), POTFAK(NZOPER),
      *          MUMK(NZBMAX), UNK(NZUMAX), NCOF(NZBMAX,NZKMAX)
 C
@@ -620,7 +620,7 @@ C
 C     1. DURCHLAUF: BERECHNUNG VON NORM- UND HAMILTONMATRIX,
 C                   DIAGONALISATION UND BESTIMMUNG DER EIGENVEKTOREN
 C     2. DURCHLAUF: NUR FUER BINDUNGSRECHNUNG; BESTIMMUNG DER EINELNEN
-C                   BEITRAEGE DER OPERATOREN FUER DIE ERSTEN NZZMAX E.V.
+C                   BEITRAEGE DER OPERATOREN FUER DIE ERSTEN NDIMD E.V.
 C
 C
       IIKUNT=2
@@ -839,7 +839,7 @@ C    *       CALL SCHEMA(DM(1,1,2,KPUTZ),MMM,MMM,NDIMD,10)
 C
       IF(ICOPMA.GT.0 .AND. MEMPT.EQ.1 ) THEN
       OPEN(UNIT=19,FILE='MATOUT',STATUS='UNKNOWN',FORM='FORMATTED')
-      WRITE(MATOU,'(G12.5)')
+      WRITE(MATOU,'(G20.8E3)')
      *  MMM,(((DM(N,M,2,JK1),N=1,MMM),M=1,MMM),JK1=1,2)
       ENDIF
 C
@@ -1068,7 +1068,7 @@ C
 1050  FORMAT(//,1X,'ENDE DER RECHNUNG VON ENDMAT')
       END
       SUBROUTINE POLKA(NBAND3)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
         INCLUDE 'par/DR2END_AK'
 C
@@ -1118,7 +1118,7 @@ C
       RETURN
       END
       SUBROUTINE CHEPOK(IDRUCK,MREG,NZOP)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C     CKECKT DIE ERGEBNISSE
 C
         INCLUDE 'par/DR2END_AK'
@@ -1262,7 +1262,7 @@ c     write(nout,*) 'wnorm',wnorm(k)
       STOP 'CHEPOK'
       END
       SUBROUTINE DEFPOK(NZP,NZKA,IND,NZKB,NZKPB)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C     DEFINIERT DIE POLYNOMKANAELE
 C
         INCLUDE 'par/DR2END_AK'
@@ -1307,7 +1307,7 @@ C    ZUORDNUNG POLYNOMKANAL LETZTER EINFACHER KANAL
       RETURN
       END
       SUBROUTINE ORTHO(NXH,EOV)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
         INCLUDE 'par/DR2END_AK'
 C
@@ -1325,21 +1325,23 @@ C
       COMMON /DREH/ MLWERT(5,NZBMAX),JWERT(3,NZKMAX),
      *              MMS(3,NZBMAX),JWS
 C
-      COMMON QQ(NDIMD,NZZMAX),
+      COMMON QQ(NDIMD,NDIMD),
      *       INPUT, NBAND3, NBAND9, NENTP, NZZ, IAUW,
      *       IDRU, NB15, IPLO
 C
       COMMON /STORE/ZH(NDIMD,NDIMD),H(NDIMD,NDIMD), EN(NDIMD,NDIMD)
 C
-      DIMENSION FC1(8*NDIMD), Q(NDIMD), IWORK(5*NDIMD), IFAIL(NDIMD)
+      DIMENSION FC1(8*NDIMD), Q(NXH), IWORK(5*NDIMD), IFAIL(NDIMD),
+     *          Qsrt(NXH) 
 
-      INTEGER   LDA, LDVL, LDVR, LWMAX, INFO, LWORK
+      INTEGER   LDA, LDVL, LDVR, LWMAX, INFO, LWORK,INFU(NXH)
+
       parameter (LWMAX = 1000)
       double precision VL(NXH,NXH), VR(NXH,NXH), WR(NXH), WI(NXH),
      *                 VL2(NXH,NXH),VR2(NXH,NXH),WR2(NXH),WI2(NXH),
      *                 WORK(LWMAX)
 c     DIMENSION FC1(NDIMD),FC2(NDIMD)
-      CHARACTER*1 JOBZ,UPLO, RANGE
+      CHARACTER*1 JOBZ,UPLO, RANGE,JOBVL,JOBVR
 C
 
 C
@@ -1400,7 +1402,7 @@ C
       WRITE (NOUT,*) ' EIGENWERTE DER NORMMATRIX'
       IF(IERR.NE.0) WRITE(NOUT,*) ' DIAGONALISATION FEHLERHAFT'
       WRITE (NOUT,1000) (Q(M),M=1,NX)
-      NZZ = MIN0(MAX0(1,NZZ),NX,NZZMAX)
+      NZZ = MIN0(MAX0(1,NZZ),NX,NDIMD)
       DO 1800  K=1,NZZ
       WRITE (NOUT,1008)  K
       WRITE(NOUT,1007) (ZH(M,K),M,M=1,NX)
@@ -1441,7 +1443,7 @@ C     LAPACK-AUFRUF
       RANGE='A' 
 C     'A' = find 'A'll Eigenvectors, there is an issue when 'I' is used here      
 C      IF(NENTP.NE.0) RANGE='I'
-c     FUER BINDUNGSRECHNUNGEN NUR NZZ EIGENWERTE UND VEKTOREN BERECHNEN
+c     FUER BINDUNGSRECHNUNGEN NUR NZZ EIGENWERTE UND VEKTORENEN BERECHNEN
 C      IL= 1
 C      IU= NZZ
       ABSTOL=0.00001
@@ -1453,25 +1455,29 @@ C      IU= NZZ
       LDVL = NXH
       LDVR = NXH
 C
-      WRITE (NOUT,*) NX,NXH,(( H(M,N),M=1,NX ),N=1,NX)
+C      WRITE (NOUT,*) NX,NXH,(( H(M,N),M=1,NX ),N=1,NX)
 
 C      CALL DGEEV('Vectors','Vectors',NXH, H, NDIMD, WR, WI, VL, LDVL,
 C     *            VR, LDVR, WORK, LWORK, INFO )
 C      CALL DGEEV('Vectors','Vectors',NXH, EN,NDIMD, WR2,WI2,VL2,LDVL,
 C     *            VR2, LDVR, WORK, LWORK, INFO )
+
+C   gen ev for real, non-symmetric matrix Hv=lNv
       CALL DGGEV('V','V',NXH,H,NDIMD,EN,NDIMD,WR,WI,WR2,
      *    VL, LDVL,VR, LDVR,WORK,LWORK,INFO)      
 C      CALL DSYGVX(ITYPE,JOBZ,RANGE,UPLO,NX,H,NDIMD,EN,NDIMD,VL,VU,
 C     *    IL,IU,ABSTOL,MOUT,Q,ZH,NDIMD,FC1,LWORK,IWORK,IFAIL,IERR)      
       DO 147   M = 1,NX
 147   Q(M) = WR(M)/WR2(M)
-      CALL dlasrt2('I',NX,Q,1)
-      WRITE (NOUT,1101)
+      DO 149   M = 1,NX
+149   Qsrt(M) = Q(M)
 
-      WRITE (NOUT,1000) ( WR(M)/WR2(M),M=1,NX )
-      WRITE (NOUT,1000) ( WI(M),M=1,NX )
-C      WRITE (NOUT,1103)
-C      WRITE (NOUT,1000) ( WR2(M),M=1,NX )      
+      CALL dlasrt('I',NX,Qsrt,INFO)
+      CALL cmpvec( Q, Qsrt, NX, INFU )
+
+      WRITE (NOUT,1101)
+      WRITE (NOUT,1000) ( Qsrt(M),M=1,NX )
+
       EOV = Q(1)
       IF(IERR.EQ.0) GOTO 950
       WRITE (NOUT,945) IERR
@@ -1479,17 +1485,23 @@ C      WRITE (NOUT,1000) ( WR2(M),M=1,NX )
       WRITE(NOUT,*) ' NOT CONVERGED AT ',(IFAIL(IX),IX=1,NZZ)
   950 CONTINUE
 C
+C      NENTP=0,   STREURECHNUNG
+C      NENTP=1,   BINDUNGSRECHNUNG FUER UNGEKOPPELTE FUNKTIONEN
 C
       IF (NENTP.EQ.0) GOTO 802
 C     BINGUNGSRECHNUNG MIT UND OHNE GEKOPPELTE FUNKTIONEN
-      NZZ = MIN0(MAX0(1,NZZ),NX,NZZMAX)
+c      NZZ = MIN0(MAX0(1,NZZ),NX,NDIMD)
+C if the eigensystem is solved without sorting, all EVs have to
+C be calculated
+      NZZ = NX      
       DO 800  K=1,NZZ
       KK=K
       IF (IAUW.NE.0)  READ (INPUT,1002)  KK
       WRITE (NOUT,1008)  KK
  1008 FORMAT(//16H ENTWICKLUNG DES,I3,17H TEN EIGENVEKTORS/)
       DO 144   M = 1,NX
-144   QQ(M,K)=ZH(M,KK)
+144   QQ(M,K)=VR(M,INFU(KK))
+C 144   QQ(M,K)=ZH(M,KK)
       WRITE(NOUT,1007) (QQ(M,K),M,M=1,NX)
   800 CONTINUE
  1007 FORMAT (4(1PE18.10,' /',I4,')'))
@@ -1517,7 +1529,7 @@ C
 990   RETURN
       END
       SUBROUTINE UMNORM (NENTP,NBAND9,MEMPT,KPUTZ,IPLO)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
         INCLUDE 'par/DR2END_AK'
 C
@@ -1562,7 +1574,7 @@ C
 1     RETURN
       END
       SUBROUTINE SCHEMA(S,IM1,IM2,JM2,IDH)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C  AUFRUF VON SCHEMA   (NAME,ZEILENZAHL,SPALTENZAHL,ZEILENDIMENSION)
         INCLUDE 'par/DR2END_AK'
       DIMENSION S(JM2*IM2)
@@ -1599,7 +1611,7 @@ C  AUFRUF VON SCHEMA   (NAME,ZEILENZAHL,SPALTENZAHL,ZEILENDIMENSION)
       RETURN
       END
       SUBROUTINE UMKOP(KL,LL,F)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C     UMKOP BERECHNET 9J(L1,L2,L3;S1,S2,S3;J1,J2,J3)*
 C      6J(J,S3,L5;L3,L4,J3)*
 C       HAT(J1,J2,L3,S3,L5,J3)*(-)**(L5+S3-J)
@@ -1620,7 +1632,7 @@ C
       RETURN
       END
       SUBROUTINE NOKEHA(NBAND9,IPLO)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C     FUHERT NORMKERNTRANSFORMATION DURCH
 C
         INCLUDE 'par/DR2END_AK'
@@ -1761,7 +1773,7 @@ C
       RETURN
       END
       SUBROUTINE PLOB(E,IPLO,NB15,NENTP)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
         INCLUDE 'par/DR2END_AK'
 C
@@ -1779,7 +1791,7 @@ C
 C
       COMMON /PLO/ SNORM(NZKMAX), QQN(NDIMD), SWW
 C
-      COMMON QQ(NDIMD,NZZMAX),
+      COMMON QQ(NDIMD,NDIMD),
      *       INPUT
 C
       NX=MMM
@@ -1828,7 +1840,7 @@ C     MAL WURZEL-SNORM
       RETURN
       END
       FUNCTION RELEN(P1,B1,M1,P2,B2,M2,L)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
         INCLUDE 'par/DR2END_AK'
 C
 C      RECHNET KINETISCHE ENERGIE DER RELATIVBEWEGUNG
@@ -1849,7 +1861,7 @@ C                      (IST LI. UND RE. SOWIESO
 C                       GLEICH)
 C
        INTEGER P1, P2, L, MAXDEG, K
-       REAL*8  B1, B2, M1, M2, HC, PI, ALPHA, E1, E2,
+       double precision  B1, B2, M1, M2, HC, PI, ALPHA, E1, E2,
      *         FAK, GAMMA, RK, RL, X1, X2, XLU
 C
        PARAMETER (PI=3.141592653589793238, HC=197.32858, MAXDEG=5)
@@ -1890,14 +1902,14 @@ C
        RETURN
        END
        SUBROUTINE LAGER(P1,P2,B1,B2,L)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
 C      RECHNET GAMMA-QUER-KOEFFIZIENTEN GEM.
 C      AUFSCHRIEB AUS. DIE HEISSEN HIER ALLERDINGS GAMMA.
 C      LAGER RUFT KEINE UNTERPROGRAMME MEHR.
 C
        INTEGER P1, P2, L, J, K, N, MAXDEG
-       REAL*8  B1, B2, RP1, RP2, C1, C2, GAMMA, FAK,
+       double precision  B1, B2, RP1, RP2, C1, C2, GAMMA, FAK,
      *         ALPHA, RK, F
 C
        PARAMETER (MAXDEG=5)
@@ -1940,7 +1952,7 @@ C
        RETURN
        END
        FUNCTION XLU(L,X)
-      IMPLICIT REAL*8 (A-H,O-Z)
+      IMPLICIT double precision (A-H,O-Z)
 C
 C      RECHNET RATIONALE APPROXIMATION AN
 C                  X**(L+.5)*U(L+.5;.5;X)
@@ -1948,7 +1960,7 @@ C      ALGORITHMUS UND LITERATUR SIEHE AUFSCHRIEB.
 C      XLU RUFT KEINE UNTERPROGRAMME.
 C
        INTEGER K, L, SIZE
-       REAL*8  RL, P, PP, XX, Y, Q0, Q1, Q2, C1, D1,
+       double precision  RL, P, PP, XX, Y, Q0, Q1, Q2, C1, D1,
      *         G1, G2, G3, A, B, X
 C
        PARAMETER (SIZE=30)
@@ -2317,5 +2329,30 @@ C     CALCULATE DELTA FUNCTIONS
       P=EXP (PLOG)
       S6J=P*S
       IF(MOD(MINH,2).NE.0)  S6J=-S6J
+      RETURN
+      END
+
+      SUBROUTINE cmpvec( vunsrt, vsrt, dim, idx )
+C  returns the index of an element of <vunsrt> in <vsrt>
+      INTEGER            dim
+      INTEGER            idx( dim )
+      double precision             vunsrt( dim ), vsrt( dim )
+ 
+      do 551 n1=1,dim
+        
+        do 552 n2=1,dim
+C         where is the lowest, next-to-lowest, ... entry to be
+C         found in the *unsorted* vector?
+          IF (vsrt(n1).EQ.vunsrt(n2)) THEN
+            idx(n1) = n2
+          endif
+  552   continue
+      if(idx(n1).EQ.0) THEN
+        print *,'eigenvalue sorting failed!'
+        stop
+      endif
+  551 continue 
+
+
       RETURN
       END
