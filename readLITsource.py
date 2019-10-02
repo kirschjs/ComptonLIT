@@ -15,7 +15,6 @@ def read_uncoupled_source(basisSET=''):
 
     sourceRHS = {}
     basdim = len(basisSET)
-
     for streukanalweite in range(1, basdim + 1):
 
         for mM in mLmJl:
@@ -48,7 +47,8 @@ def read_uncoupled_source(basisSET=''):
                     sourceRHS[('%d' % (streukanalweite), '%d' % JLIT2,
                                '%d' % mJLIT2, '%d' % MUL2,
                                '%d' % mMUL2)] = opME
-                    #print('I read r,2*(Jlit,mJlit,L,mL):', streukanalweite, JLIT2, mJLIT2, MUL2, mMUL2)
+                    #print('I read r,2*(Jlit,mJlit,L,mL):', streukanalweite,
+                    #      JLIT2, mJLIT2, MUL2, mMUL2)
 
     return sourceRHS, photon_energy
 
@@ -61,7 +61,6 @@ def couple_source(sourceRHS, basisSET=''):
     basdim = len(basisSET)
 
     for streukanalweite in range(1, basdim + 1):
-
         # mM[0] = m(L) ; mM[1] = m(Jlit)
         for mM in mLmJl:
 
@@ -71,12 +70,14 @@ def couple_source(sourceRHS, basisSET=''):
                              '%d' % (2 * mM[0]))]
             cgtmp = CG(multipolarity, mM[0], 1, mM[1] - mM[0],
                        int(streukanal[0]), mM[1]).doit()
-            #print(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]),mM[1], cgtmp)
+
+            #print(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]), mM[1], cgtmp)
 
             try:
                 coupledSOURCE[('%d' % (streukanalweite), '%d' %
                                (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
                                '%d' % (2 * multipolarity))] += tmp * cgtmp
+
             except:
                 coupledSOURCE[('%d' % (streukanalweite), '%d' %
                                (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
@@ -97,6 +98,7 @@ def couple_source(sourceRHS, basisSET=''):
             outs += '\n'
         with open(av18path + '/LIT_SOURCE_%s%d%d' %
                   (streukanal, mJ, multipolarity), 'w') as outfile:
+
             outfile.seek(0)
             outfile.write(outs)
 

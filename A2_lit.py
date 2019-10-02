@@ -17,87 +17,93 @@ for nn in range(14):
 
 os.chdir(av18path)
 
-h2_inlu(nfrag=nzf0)
-os.system(BINBDGpath + 'LUDW_CN.exe')
-h2_inob(nfrag=nzf0)
-os.system(BINBDGpath + 'KOBER.exe')
-h2_inqua(rw0, pots)
-os.system(BINBDGpath + 'QUAFL_N.exe')
+if 'construe_new_bases' in cal:
 
-h2_inen_bs(
-    relw=rw0,
-    costr=costr,
-    j=int(boundstatekanal[-1]),
-    ch=rechtekanaele[boundstatekanal],
-    nfrag=nzf0)
-
-os.system(BINBDGpath + 'DR2END_AK.exe')
-
-os.system('cp %s/MATOUT %s/norm-ham-litME-%s' % (av18path, av18path,
-                                                 streukanal))
-
-purge_basis(
-    max_coeff=11000,
-    min_coeff=150,
-    nbr_cycles=20,
-    max_diff=0.1,
-    dr2executable=BINBDGpath + 'DR2END_AK.exe')
-
-clean_wrels, clean_inen_indices = purged_width_set(infil='INEN', w0=rw0)
-
-nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
-
-if (nzf0 != nzf0p):
-    print('NZF0 (after purge) != NZF0 (before purge)', nzf0, nzf0p)
-    h2_inlu(nfrag=nzf0p)
+    h2_inlu(nfrag=nzf0)
     os.system(BINBDGpath + 'LUDW_CN.exe')
-    h2_inob(nfrag=nzf0p)
+    h2_inob(nfrag=nzf0)
     os.system(BINBDGpath + 'KOBER.exe')
+    h2_inqua(rw0, pots)
+    os.system(BINBDGpath + 'QUAFL_N.exe')
 
-h2_inqua(clean_wrels, pots)
-for ind_set in range(len(clean_inen_indices)):
-    istr = ''
-    for i in clean_inen_indices[ind_set]:
-        istr += '%3s' % str(i)
-    istr += '\n'
-    repl_line('INEN', int(6 + 2 * ind_set), istr)
+    h2_inen_bs(
+        relw=rw0,
+        costr=costr,
+        j=int(boundstatekanal[-1]),
+        ch=rechtekanaele[boundstatekanal],
+        nfrag=nzf0)
 
-print('dim(B_0) = %d' % len(clean_wrels))
+    os.system(BINBDGpath + 'DR2END_AK.exe')
 
-os.system(BINBDGpath + 'QUAFL_N.exe')
-os.system(BINBDGpath + 'DR2END_AK.exe')
+    purge_basis(
+        max_coeff=11000,
+        min_coeff=150,
+        nbr_cycles=20,
+        max_diff=0.1,
+        dr2executable=BINBDGpath + 'DR2END_AK.exe',
+        dbg=True if ('dbg' in cal) else False)
 
-wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, 0.01)
-print('dim(B_LIT) = %d' % len(wLIT))
+    clean_wrels, clean_inen_indices = purged_width_set(infil='INEN', w0=rw0)
 
+    nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
+
+    if (nzf0 != nzf0p):
+        print('NZF0 (after purge) != NZF0 (before purge)', nzf0, nzf0p)
+        h2_inlu(nfrag=nzf0p)
+        os.system(BINBDGpath + 'LUDW_CN.exe')
+        h2_inob(nfrag=nzf0p)
+        os.system(BINBDGpath + 'KOBER.exe')
+
+    h2_inqua(clean_wrels, pots)
+    for ind_set in range(len(clean_inen_indices)):
+        istr = ''
+        for i in clean_inen_indices[ind_set]:
+            istr += '%3s' % str(i)
+        istr += '\n'
+        repl_line('INEN', int(6 + 2 * ind_set), istr)
+
+    os.system(BINBDGpath + 'QUAFL_N.exe')
+    os.system(BINBDGpath + 'DR2END_AK.exe')
+
+    wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, 0.0001)
+
+    nzfLIT = int(np.ceil(len(wLIT) / 20.0))
+    nzfTOT = nzf0p + nzfLIT
+
+    # consistency check if B0 is the same as in the smaller space
+    h2_inlu(nfrag=nzfTOT)
+    os.system(BINBDGpath + 'LUDW_CN.exe')
+    h2_inob(nfrag=nzfTOT)
+    os.system(BINBDGpath + 'KOBER.exe')
+    h2_inqua(wLIT, pots, withhead=False)
+    os.system(BINBDGpath + 'QUAFL_N.exe')
+    os.system(BINBDGpath + 'DR2END_AK.exe')
+
+    EBDG = get_h_ev()[0]
+
+    np.savetxt('w0.dat', np.array(clean_wrels), fmt='%12.4f')
+    np.savetxt('wLIT.dat', np.array(wLIT), fmt='%12.4f')
+    np.savetxt('E0.dat', np.array([EBDG]), fmt='%12.4f')
+
+    os.system('cp OUTPUT end_out_b && cp INEN inen_b')
+
+    rrgm_functions.parse_ev_coeffs(infil='end_out_b')
+
+wLIT = np.loadtxt('wLIT.dat')
+clean_wrels = np.loadtxt('w0.dat')
 nzfLIT = int(np.ceil(len(wLIT) / 20.0))
+nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
 nzfTOT = nzf0p + nzfLIT
-
-# consistency check if B0 is the same as in the smaller space
-h2_inlu(nfrag=nzfTOT)
-os.system(BINBDGpath + 'LUDW_CN.exe')
-h2_inob(nfrag=nzfTOT)
-os.system(BINBDGpath + 'KOBER.exe')
-h2_inqua(wLIT, pots, withhead=False)
-os.system(BINBDGpath + 'QUAFL_N.exe')
-os.system(BINBDGpath + 'DR2END_AK.exe')
-
-EBDG = get_h_ev()[0]
-
+BUECO = [cof.strip() for cof in open('COEFF')]
+BSRWIDX = get_bsv_rw_idx(chs=2, inen='inen_b')
+EBDG = get_h_ev(ifi='end_out_b')[0]
 print(
     '(iv)    LS-scheme: B(2,%s) = %4.4f MeV [' % (boundstatekanal, EBDG),
     get_h_ev(n=4),
     ']')
-
-np.savetxt('E0.dat', np.array([EBDG]), fmt='%12.4f')
-
-os.system('cp OUTPUT end_out_b && cp INEN inen_b')
-
-rrgm_functions.parse_ev_coeffs(infil='end_out_b')
-
-BUECO = [cof.strip() for cof in open('COEFF')]
-BSRWIDX = get_bsv_rw_idx(chs=2, inen='inen_b')
-EBDG = get_h_ev(ifi='end_out_b')[0]
+print('        dim(B_0)   = %d -> %d' % (len(rw0), len(clean_wrels)))
+print('        dim(B_LIT) = %d -> %d' % (len(winiLIT), len(wLIT)))
+print('        dim(B)     = %d' % (len(wLIT) + len(clean_wrels)))
 
 os.chdir(litpath)
 
@@ -113,8 +119,12 @@ os.system(BINLITpath + 'qual.exe')
 
 leftpar = 1 if streukanal[1] == '-' else 2
 
-#os.system('mv endlitout_* ./old')
-os.system('rm endlitout_*')
+for file in os.listdir(litpath):
+    if fnmatch.fnmatch(file, 'endlitout_*'):
+        if 'dbg' in cal:
+            print('removing old <endlitout_*> files.')
+        os.system('rm endlitout_*')
+        break
 
 for mM in mLmJl:
     for streukanalweite in range(1, len(wLIT) + 1):
@@ -175,21 +185,22 @@ RHSofmJ = couple_source(RHSofBV, basisSET=wLIT)
 fig = plt.figure()
 ax1 = fig.add_subplot(121)
 ax2 = fig.add_subplot(122)
-ax1.set_title(r'')
+ax1.set_title(r'$J^\pi=%d^%s$' % (int(streukanal[0]), streukanal[1]))
 ax1.set_xlabel('photon momentum [MeV]')
-mM = [0, 0]
+mM = mLmJl[0]
 [
-    ax1.plot(photEn, RHSofBV[('%d' % (streukanalweite),
-                              '%d' % int(streukanal[0]), '%d' % (2 * mM[1]),
+    ax1.plot(photEn, RHSofBV[('%d' % (streukanalweite), '%d' %
+                              (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
                               '%d' % (2 * multipolarity), '%d' % (2 * mM[0]))])
     for streukanalweite in range(1,
                                  len(wLIT) + 1)
 ]
 [
-    ax2.plot(photEn,
-             RHSofmJ[('%d' % (streukanalweite), '%d' % int(streukanal[0]),
-                      '%d' % (2 * mM[1]), '%d' % (2 * multipolarity))])
+    ax2.plot(photEn, RHSofmJ[('%d' % (streukanalweite),
+                              '%d' % (2 * int(streukanal[0])),
+                              '%d' % (2 * mM[1]), '%d' % (2 * multipolarity))])
     for streukanalweite in range(1,
                                  len(wLIT) + 1)
 ]
+
 plt.show()

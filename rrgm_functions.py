@@ -50,8 +50,8 @@ def overlap(bipa, chh, Lo=6.0, pair='singel', mpi='137'):
     os.system('cp inen_b INEN')
 
     repl_line('INEN', 0, ' 10  2 12  9  1  1 -1  0  0 -1\n')
-    repl_line('INEN', 2,
-              '%12.6f%12.6f%12.6f\n' % (float(1.), float(1.), float(0.)))
+    repl_line('INEN', 2, '%12.6f%12.6f%12.6f\n' % (float(1.), float(1.),
+                                                   float(0.)))
 
     with open('INEN', 'a') as outfile:
         outfile.write(s)
@@ -127,13 +127,13 @@ def sparsify(menge, mindist):
     return np.sort(lockereMenge)[::-1]
 
 
-def sparsifyOnlyOne(menge_to_add, menge_fix, mindist):
+def sparsifyOnlyOne(menge_to_reduce, menge_fix, mindist):
 
-    #print('Sorting\n', menge_to_add, '\n into\n', menge_fix, '...\n\n')
+    #print('Sorting\n', menge_to_reduce, '\n into\n', menge_fix, '...\n\n')
 
     lockereMenge = []
 
-    for test_w in menge_to_add:
+    for test_w in menge_to_reduce:
         dazu = True
         for ref_w in menge_fix:
             if (np.abs(float(test_w - ref_w)) < mindist):
@@ -208,20 +208,24 @@ def prep_pot_files_pdp(lam, wiC, baC, wir2, bar2, ls, ten, ps2):
                                            int(ls != 0), int(ten != 0))
     # central LO Cs and Ct and LOp p*p' C_1-4
     if int((wiC != 0) | (baC != 0)):
-        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (
-            1.0, float(lam)**2 / 4.0, wiC, 0.0, baC)
+        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (1.0,
+                                                        float(lam)**2 / 4.0,
+                                                        wiC, 0.0, baC)
     # r**2
     if int((wir2 != 0) | (bar2 != 0)):
-        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (
-            1.0, float(lam)**2 / 4.0, wir2, 0.0, bar2)
+        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (1.0,
+                                                        float(lam)**2 / 4.0,
+                                                        wir2, 0.0, bar2)
     # SPIN-BAHN
     if int(ls != 0):
-        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (
-            1.0, float(lam)**2 / 4.0, ls, 0.0, 0.0)
+        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (1.0,
+                                                        float(lam)**2 / 4.0,
+                                                        ls, 0.0, 0.0)
     # TENSOR
     if int(ten != 0):
-        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (
-            1.0, float(lam)**2 / 4.0, ten, 0.0, 0.0)
+        s += '%-20.4f%-20.6f%-20.4f%-20.4f%-20.4f\n' % (1.0,
+                                                        float(lam)**2 / 4.0,
+                                                        ten, 0.0, 0.0)
     with open(ps2, 'w') as outfile:
         outfile.write(s)
     return
@@ -231,11 +235,13 @@ def prep_pot_file_3N(lam3, ps3='', d10=0.0):
     s = ''
     s += '  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1\n  1  1\n'
     # pure central, no (iso)spin dependence
-    s += '%-20.4f%-20.4f%-20.4f%-20.4f\n' % (
-        d10, float(lam3)**2 / 4.0, float(lam3)**2 / 4.0, float(lam3)**2 / 4.0)
+    s += '%-20.4f%-20.4f%-20.4f%-20.4f\n' % (d10, float(lam3)**2 / 4.0,
+                                             float(lam3)**2 / 4.0,
+                                             float(lam3)**2 / 4.0)
     # central, (s_j s_k)(t_j t_k) to project, set INEN factors +/- 4
-    s += '%-20.4f%-20.4f%-20.4f%-20.4f' % (
-        d10, float(lam3)**2 / 4.0, float(lam3)**2 / 4.0, float(lam3)**2 / 4.0)
+    s += '%-20.4f%-20.4f%-20.4f%-20.4f' % (d10, float(lam3)**2 / 4.0,
+                                           float(lam3)**2 / 4.0,
+                                           float(lam3)**2 / 4.0)
 
     with open(ps3, 'w') as outfile:
         outfile.write(s)

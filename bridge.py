@@ -1,4 +1,4 @@
-import os
+import os, fnmatch
 import numpy as np
 import sympy as sy
 # CG(j1, m1, j2, m2, j3, m3)
@@ -42,7 +42,8 @@ streukanaele = {
     '4-': [[1, 1, 2, 8]],  #     3F4
 }
 
-cal = ['bdg', 'QUA', 'lit', 'lit-plot']
+cal = ['dbg', 'construe_new_bases']
+cal = []
 
 multipolarity = 1
 mLrange = np.arange(-multipolarity, multipolarity + 1)
@@ -52,14 +53,14 @@ phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 25
+basisdim0 = 15
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdim0)))
 wini0 = wLAPLACE[::-1]
 
-addw = 8
+addw = 6
 addwt = 'middle'
 scale = 1.
 min_spacing = 0.2
@@ -72,7 +73,7 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 20
+basisdimLIT = 14
 
 w0l, dw = 1.1, 2.0
 winiLITlin = np.linspace(

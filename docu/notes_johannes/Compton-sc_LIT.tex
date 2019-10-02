@@ -280,32 +280,6 @@ to obtain the LIT state
 \caption{Implemented numerical values.}
 \end{table}
 
-\section{code}
-
-\subsection*{luise.f~$\to$~qual.f}
-$P_{dc}$ and width-independent quantities of $\Gamma_{l_1m_1,\ldots,l_zm_z}$ with $z=n_{c_l}-1+n_{c_r}-1+n_{ww}$.
-
-\subsection*{obem.f~$\to$~qual.f}
-
-
-\subsection*{qual.f~$\to$~enemb.f}
-
-\begin{lstlisting}
- WRITE(NBAND1) NZF,MUL,(LREG(K),K=1,NZOPER),I,(NZRHO(K),K=1,NZF)
-
- WRITE(NBAND1) N3,MMASSE(1,N1,K),MMASSE(2,N1,K),MLAD(1,N1,K),
-1 MLAD(2,N1,K),MSS(1,N1,K),MSS(2,N1,K),MS(N1,K),
-2 (LZWERT(L,N2,K),L=1,5),(RPAR(L,K),L=1,N3),KP(MC1,N4,K)
-
- WRITE(NBAND1) NTE,NC,ND,ITV2
-
- WRITE(NBAND1) ((IND(MM,NN), NN=1, JRHO), MM=1, IRHO)
-
- WRITE(NBAND1) NUML, NUMR, IK1H, JK1H, LL1,
-*               ((F(K,L),(J-1,DM(K,L,J),J=1,LL1),L=1,JK1),
-*                                                K=1,IK1)
-\end{lstlisting}
-
 \section{``How to do an integral''}
 
 \paragraph{The multipole operators}
@@ -367,8 +341,35 @@ with
 \me{m;l_lm_{l_l}}{\Phi_{Lm_L}(\ve{\rho_\nu})~e^{-\beta\ve{r}_{ij}}\prod\limits_{N}^{N_{\text{op}}}\mathcal{Y}_{L_NM_N}(\ve{r}_{ij})}{l_rm_{l_r};n}
 \ee
 
-\paragraph{Notes on the \texttt{RRGM} implementation}
+
+\section{Notes on the \texttt{RRGM} implementation}
+
 \input{rrgm_flow.tex}
+
+\subsection*{luise.f~$\to$~qual.f}
+$P_{dc}$ and width-independent quantities of $\Gamma_{l_1m_1,\ldots,l_zm_z}$ with $z=n_{c_l}-1+n_{c_r}-1+n_{ww}$.
+
+\subsection*{obem.f~$\to$~qual.f}
+
+
+\subsection*{qual.f~$\to$~enemb.f}
+
+\begin{lstlisting}
+ WRITE(NBAND1) NZF,MUL,(LREG(K),K=1,NZOPER),I,(NZRHO(K),K=1,NZF)
+
+ WRITE(NBAND1) N3,MMASSE(1,N1,K),MMASSE(2,N1,K),MLAD(1,N1,K),
+1 MLAD(2,N1,K),MSS(1,N1,K),MSS(2,N1,K),MS(N1,K),
+2 (LZWERT(L,N2,K),L=1,5),(RPAR(L,K),L=1,N3),KP(MC1,N4,K)
+
+ WRITE(NBAND1) NTE,NC,ND,ITV2
+
+ WRITE(NBAND1) ((IND(MM,NN), NN=1, JRHO), MM=1, IRHO)
+
+ WRITE(NBAND1) NUML, NUMR, IK1H, JK1H, LL1,
+*               ((F(K,L),(J-1,DM(K,L,J),J=1,LL1),L=1,JK1),
+*                                                K=1,IK1)
+\end{lstlisting}
+
 
 \bibliography{refs}
 
