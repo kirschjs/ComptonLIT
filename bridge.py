@@ -43,8 +43,11 @@ streukanaele = {
 }
 
 cal = ['dbg', 'construe_new_bases']
+cal = ['construe_new_bases']
 cal = []
 
+boundstatekanal = 'np-3SD1'
+streukanal = '0-'
 multipolarity = 1
 mLrange = np.arange(-multipolarity, multipolarity + 1)
 
@@ -53,14 +56,14 @@ phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 15
+basisdim0 = 25
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdim0)))
 wini0 = wLAPLACE[::-1]
 
-addw = 6
+addw = 8
 addwt = 'middle'
 scale = 1.
 min_spacing = 0.2
@@ -73,7 +76,7 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 14
+basisdimLIT = 13
 
 w0l, dw = 1.1, 2.0
 winiLITlin = np.linspace(
@@ -97,23 +100,21 @@ winiLITlaplace = np.sort(
 
 winiLIT = winiLITlog
 
-boundstatekanal = 'np-3SD1'
-streukanal = '0-'
 mJlrange = np.arange(-int(streukanal[0]), int(streukanal[0]) + 1)
 
 # find mL, mJl s.t. (L,mL;Jr,mJl-mL|Jl,mJl) != 0
 # ecce: Jr = Jdeuteron = 1
+# mM[0] = m(L) ; mM[1] = m(Jlit)
 mLmJl = []
 for mM in np.array(np.meshgrid(mLrange, mJlrange)).T.reshape(-1, 2):
-    clg = CG(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]), mM[1])
-    if (clg.doit() == 0):
+    clg = CG(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]),
+             mM[1]).doit()
+    cg = 0 if ((clg == 0) | np.iscomplex(clg)) else float(clg.evalf())
+    if (cg == 0):
         continue
     mLmJl.append(mM)
 
 streukanalweiten = range(1, len(winiLIT) + 1)
-#wdim = 20
-#loc = 1e-4
-#wini = abs(np.random.laplace(loc, scale, wdim))
 
 maxCoef = 10000
 minCoef = 1200

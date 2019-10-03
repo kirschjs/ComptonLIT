@@ -97,6 +97,7 @@ nzfTOT = nzf0p + nzfLIT
 BUECO = [cof.strip() for cof in open('COEFF')]
 BSRWIDX = get_bsv_rw_idx(chs=2, inen='inen_b')
 EBDG = get_h_ev(ifi='end_out_b')[0]
+
 print(
     '(iv)    LS-scheme: B(2,%s) = %4.4f MeV [' % (boundstatekanal, EBDG),
     get_h_ev(n=4),
@@ -120,10 +121,10 @@ os.system(BINLITpath + 'qual.exe')
 leftpar = 1 if streukanal[1] == '-' else 2
 
 for file in os.listdir(litpath):
-    if fnmatch.fnmatch(file, 'endlitout_*'):
+    if fnmatch.fnmatch(file, 'endlit*'):
         if 'dbg' in cal:
-            print('removing old <endlitout_*> files.')
-        os.system('rm endlitout_*')
+            print('removing old <endlit*> files.')
+        os.system('rm endlit*')
         break
 
 for mM in mLmJl:
@@ -149,8 +150,9 @@ for mM in mLmJl:
             EKDIFF=phot_e_d)
 
         os.system(BINLITpath + 'enemb.exe')
-        os.system('cp OUTPUT endlitout_%d_%d-%d' % (streukanalweite, mM[1],
-                                                    mM[0]))
+        os.system('cp OUTPUT endlit%d_J%d_mJ%d-mL%d' % (streukanalweite,
+                                                        int(streukanal[0]),
+                                                        mM[1], mM[0]))
 
 print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
 
@@ -187,6 +189,10 @@ ax1 = fig.add_subplot(121)
 ax2 = fig.add_subplot(122)
 ax1.set_title(r'$J^\pi=%d^%s$' % (int(streukanal[0]), streukanal[1]))
 ax1.set_xlabel('photon momentum [MeV]')
+ax2.set_title(r'$J^\pi=%d^%s$' % (int(streukanal[0]), streukanal[1]))
+ax2.set_xlabel('photon momentum [MeV]')
+ax1.set_ylabel(r'$\left\langle\,Jm\,\vert\,Jm\,\right\rangle$ [-]')
+ax2.set_title(r'$J$-coupled RHS')
 mM = mLmJl[0]
 [
     ax1.plot(photEn, RHSofBV[('%d' % (streukanalweite), '%d' %

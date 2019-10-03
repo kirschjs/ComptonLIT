@@ -21,8 +21,8 @@ def read_uncoupled_source(basisSET=''):
             # mM[0] = m(L) ; mM[1] = m(Jlit)
 
             instream = [
-                line for line in open('endlitout_%d_%d-%d' % (streukanalweite,
-                                                              mM[1], mM[0]))
+                line for line in open('endlit%d_J%d_mJ%d-mL%d' % (
+                    streukanalweite, int(streukanal[0]), mM[1], mM[0]))
             ]
 
             for ln in range(len(instream)):
@@ -57,7 +57,6 @@ def read_uncoupled_source(basisSET=''):
 def couple_source(sourceRHS, basisSET=''):
 
     coupledSOURCE = {}
-
     basdim = len(basisSET)
 
     for streukanalweite in range(1, basdim + 1):
@@ -86,7 +85,6 @@ def couple_source(sourceRHS, basisSET=''):
     for mJ in mJlrange:
 
         outs = ''
-        outfil = 'src_JmL_%d%d%d' % (int(streukanal[0]), mJ, multipolarity)
 
         for nMom in range(anz_phot_e):
 
@@ -96,8 +94,13 @@ def couple_source(sourceRHS, basisSET=''):
                     '%d' % (2 * mJ), '%d' % (2 * multipolarity))][nMom])
 
             outs += '\n'
-        with open(av18path + '/LIT_SOURCE_%s%d%d' %
-                  (streukanal, mJ, multipolarity), 'w') as outfile:
+
+        outp = av18path + '/LIT_SOURCE_%s%d%d' % (streukanal, mJ,
+                                                  multipolarity)
+        if os.path.isfile(outp):
+            os.system('rm ' + outp)
+
+        with open(outp, 'w') as outfile:
 
             outfile.seek(0)
             outfile.write(outs)
