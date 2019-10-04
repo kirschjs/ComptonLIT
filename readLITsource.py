@@ -11,7 +11,13 @@ from bridge import *
 from sympy.physics.quantum.cg import CG
 
 
-def read_uncoupled_source(basisSET=''):
+def read_uncoupled_source(streukanal, basisSET=''):
+
+    # find mL, mJl s.t. (L,mL;Jr,mJl-mL|Jl,mJl) != 0 -------------------------
+    # ecce: Jr = Jdeuteron = 1
+    # mM[0] = m(L) ; mM[1] = m(Jlit)
+    mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0,
+                                                  int(streukanal[0]))
 
     sourceRHS = {}
     basdim = len(basisSET)
@@ -54,13 +60,17 @@ def read_uncoupled_source(basisSET=''):
 
 
 # return S[ r,Jlit,m(Jlit),L, [k1,k2,...,kn] ]
-def couple_source(sourceRHS, basisSET=''):
+def couple_source(streukanal, sourceRHS, basisSET=''):
 
     coupledSOURCE = {}
     basdim = len(basisSET)
 
     for streukanalweite in range(1, basdim + 1):
+
         # mM[0] = m(L) ; mM[1] = m(Jlit)
+        mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0,
+                                                      int(streukanal[0]))
+
         for mM in mLmJl:
 
             tmp = sourceRHS[('%d' % (streukanalweite),
@@ -98,11 +108,12 @@ def couple_source(sourceRHS, basisSET=''):
         outp = av18path + '/LIT_SOURCE_%s%d%d' % (streukanal, mJ,
                                                   multipolarity)
         if os.path.isfile(outp):
+            print('removing previous <LIT_SOURCE>')
             os.system('rm ' + outp)
 
         with open(outp, 'w') as outfile:
 
-            outfile.seek(0)
+            #outfile.seek(0)
             outfile.write(outs)
 
     return coupledSOURCE

@@ -136,7 +136,7 @@ def sparsifyOnlyOne(menge_to_reduce, menge_fix, mindist):
     for test_w in menge_to_reduce:
         dazu = True
         for ref_w in menge_fix:
-            if (np.abs(float(test_w - ref_w)) < mindist):
+            if (np.abs(float(test_w) - float(ref_w)) < mindist):
                 dazu = False
         if (dazu):
             lockereMenge = np.concatenate((lockereMenge, [test_w]))
