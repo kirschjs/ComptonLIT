@@ -12,6 +12,8 @@ from sympy.physics.quantum.cg import CG
 
 
 def read_uncoupled_source(streukanal, basisSET=''):
+    # collects end OUTPUT files and stores them
+    # *without* modifications
 
     # find mL, mJl s.t. (L,mL;Jr,mJl-mL|Jl,mJl) != 0 -------------------------
     # ecce: Jr = Jdeuteron = 1
@@ -21,40 +23,44 @@ def read_uncoupled_source(streukanal, basisSET=''):
 
     sourceRHS = {}
     basdim = len(basisSET)
-    for streukanalweite in range(1, basdim + 1):
+    for subchannel in range(len(streukanaele[streukanal])):
 
-        for mM in mLmJl:
-            # mM[0] = m(L) ; mM[1] = m(Jlit)
+        for streukanalweite in range(1, basdim + 1):
 
-            instream = [
-                line for line in open('endlit%d_J%d_mJ%d-mL%d' % (
-                    streukanalweite, int(streukanal[0]), mM[1], mM[0]))
-            ]
+            for mM in mLmJl:
+                # mM[0] = m(L) ; mM[1] = m(Jlit)
 
-            for ln in range(len(instream)):
+                instream = [
+                    line for line in open('endlit%d_J%d_mJ%d-mL%d' % (
+                        int(streukanalweite + subchannel * basdim),
+                        int(streukanal[0]), mM[1], mM[0]))
+                ]
 
-                if re.search('1AUSDRUCK', instream[ln]):
-                    JDEUT2 = int(instream[ln + 3].split()[4])
-                    JLIT2 = int(instream[ln + 3].split()[2])
-                    mJLIT2 = int(instream[ln + 3].split()[5])
-                    MUL2 = int(instream[ln + 3].split()[3])
-                    mMUL2 = int(instream[ln + 3].split()[6])
+                for ln in range(len(instream)):
 
-                    photon_energy = np.array([
-                        float(instream[ln + 3 + 2 * en].split()[1])
-                        for en in range(anz_phot_e)
-                    ])
+                    if re.search('1AUSDRUCK', instream[ln]):
+                        JDEUT2 = int(instream[ln + 3].split()[4])
+                        JLIT2 = int(instream[ln + 3].split()[2])
+                        mJLIT2 = int(instream[ln + 3].split()[5])
+                        MUL2 = int(instream[ln + 3].split()[3])
+                        mMUL2 = int(instream[ln + 3].split()[6])
 
-                    opME = np.array([
-                        float(instream[ln + 3 + 2 * en].split()[7])
-                        for en in range(anz_phot_e)
-                    ])
+                        photon_energy = np.array([
+                            float(instream[ln + 3 + 2 * en].split()[1])
+                            for en in range(anz_phot_e)
+                        ])
 
-                    sourceRHS[('%d' % (streukanalweite), '%d' % JLIT2,
-                               '%d' % mJLIT2, '%d' % MUL2,
-                               '%d' % mMUL2)] = opME
-                    #print('I read r,2*(Jlit,mJlit,L,mL):', streukanalweite,
-                    #      JLIT2, mJLIT2, MUL2, mMUL2)
+                        opME = np.array([
+                            float(instream[ln + 3 + 2 * en].split()[7])
+                            for en in range(anz_phot_e)
+                        ])
+
+                        sourceRHS[('%d' % (
+                            int(streukanalweite + subchannel * basdim)),
+                                   '%d' % JLIT2, '%d' % mJLIT2, '%d' % MUL2,
+                                   '%d' % mMUL2)] = opME
+                        #print('I read r,2*(Jlit,mJlit,L,mL):', streukanalweite,
+                        #      JLIT2, mJLIT2, MUL2, mMUL2)
 
     return sourceRHS, photon_energy
 
@@ -65,51 +71,61 @@ def couple_source(streukanal, sourceRHS, basisSET=''):
     coupledSOURCE = {}
     basdim = len(basisSET)
 
-    for streukanalweite in range(1, basdim + 1):
+    # mM[0] = m(L) ; mM[1] = m(Jlit)
+    mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0,
+                                                  int(streukanal[0]))
+    for subchannel in range(len(streukanaele[streukanal])):
+        for streukanalweite in range(1, basdim + 1):
+            for mJ in mJlrange:
+                coupledSOURCE[('%d' %
+                               (int(streukanalweite + subchannel * basdim)),
+                               '%d' % (2 * int(streukanal[0])), '%d' %
+                               (2 * mJ), '%d' % (2 * multipolarity))] = 0.0
 
-        # mM[0] = m(L) ; mM[1] = m(Jlit)
-        mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0,
-                                                      int(streukanal[0]))
+    for subchannel in range(len(streukanaele[streukanal])):
 
-        for mM in mLmJl:
+        for streukanalweite in range(1, basdim + 1):
 
-            tmp = sourceRHS[('%d' % (streukanalweite),
-                             '%d' % (2 * int(streukanal[0])),
-                             '%d' % (2 * mM[1]), '%d' % int(2 * multipolarity),
-                             '%d' % (2 * mM[0]))]
-            cgtmp = CG(multipolarity, mM[0], 1, mM[1] - mM[0],
-                       int(streukanal[0]), mM[1]).doit()
+            for mM in mLmJl:
 
-            #print(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]), mM[1], cgtmp)
+                tmp = sourceRHS[('%d' %
+                                 (int(streukanalweite + subchannel * basdim)),
+                                 '%d' % (2 * int(streukanal[0])), '%d' %
+                                 (2 * mM[1]), '%d' % int(2 * multipolarity),
+                                 '%d' % (2 * mM[0]))]
+                cgtmp = CG(multipolarity, mM[0], 1, mM[1] - mM[0],
+                           int(streukanal[0]), mM[1]).doit()
 
-            try:
-                coupledSOURCE[('%d' % (streukanalweite), '%d' %
-                               (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
+                #print(multipolarity, mM[0], 1, mM[1] - mM[0], int(streukanal[0]), mM[1], cgtmp)
+
+                coupledSOURCE[('%d' %
+                               (int(streukanalweite + subchannel * basdim)),
+                               '%d' % (2 * int(streukanal[0])),
+                               '%d' % (2 * mM[1]),
                                '%d' % (2 * multipolarity))] += tmp * cgtmp
-
-            except:
-                coupledSOURCE[('%d' % (streukanalweite), '%d' %
-                               (2 * int(streukanal[0])), '%d' % (2 * mM[1]),
-                               '%d' % (2 * multipolarity))] = tmp * cgtmp
 
     for mJ in mJlrange:
 
         outs = ''
-
         for nMom in range(anz_phot_e):
 
-            for streukanalweite in range(1, basdim + 1):
-                outs += '%12.4E' % float(coupledSOURCE[(
-                    '%d' % (streukanalweite), '%d' % (2 * int(streukanal[0])),
-                    '%d' % (2 * mJ), '%d' % (2 * multipolarity))][nMom])
+            for subchannel in range(len(streukanaele[streukanal])):
+
+                for streukanalweite in range(1, basdim + 1):
+
+                    outs += '%12.4E' % float(coupledSOURCE[(
+                        '%d' % (int(streukanalweite + subchannel * basdim)),
+                        '%d' % (2 * int(streukanal[0])), '%d' % (2 * mJ),
+                        '%d' % (2 * multipolarity))][nMom])
 
             outs += '\n'
 
         outp = av18path + '/LIT_SOURCE_%s%d%d' % (streukanal, mJ,
                                                   multipolarity)
-        if os.path.isfile(outp):
-            print('removing previous <LIT_SOURCE>')
-            os.system('rm ' + outp)
+        if 'purge' in cal:
+            if os.path.isfile(outp):
+                print('removing previous <LIT_SOURCE>')
+                os.system('rm ' + outp)
 
         with open(outp, 'w') as outfile:
 

@@ -36,18 +36,19 @@ streukanaele = {
     '1-': [[1, 1, 2, 4]],  # 3P1
     '2+': [[1, 1, 0, 5], [1, 1, 2, 6]],  # 1D2 3D2
     '2-': [[1, 1, 2, 4], [1, 1, 2, 8]],  # 3P2 3F2
-    #'2-': [[1, 1, 2, 4]],  # 3P2
+    '2b-': [[1, 1, 2, 4]],  # 3P2
+    #
     '3+': [[1, 1, 2, 6]],  #     3D3
     '3-': [[1, 1, 0, 7], [1, 1, 2, 8]],  # 1F3 3F3
     '4-': [[1, 1, 2, 8]],  #     3F4
 }
 
-cal = []
-cal = ['construe_new_bases']
+cal = ['purge']
+cal = ['purge', 'construe_new_bases']
 
 boundstatekanal = 'np-3SD1'
 J0 = int(boundstatekanal[-1])
-streukas = ['2-']
+streukas = ['0-', '1-', '2-']  #['2-']  #
 multipolarity = 1
 
 anz_phot_e = 100
@@ -55,7 +56,7 @@ phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 15
+basisdim0 = 20
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
@@ -66,6 +67,7 @@ addw = 8
 addwt = 'middle'
 scale = 1.
 min_spacing = 0.2
+min_spacing_to_LITWs = 0.001
 
 rw0 = wid_gen(
     add=addw, addtype=addwt, w0=wini0, ths=[1e-5, 2e2, 0.2], sca=scale)
@@ -75,7 +77,7 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 16
+basisdimLIT = 10
 
 w0l, dw = 0.1, 1.0
 winiLITlin = np.linspace(
@@ -85,7 +87,8 @@ winiLITlin = np.linspace(
     endpoint=True,
     dtype=None)
 
-exp0log, expmaxlog = -2, 2
+exp0log, expmaxlog = -1, 2
+
 winiLITlog = np.logspace(
     start=exp0log, stop=expmaxlog, num=basisdimLIT, endpoint=True, dtype=None)
 

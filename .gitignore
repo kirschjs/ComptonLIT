@@ -10,3 +10,5 @@ tmp*
 *out_*
 __pycache__*
 *.nfs*
+*endlit*
+*inenlit*

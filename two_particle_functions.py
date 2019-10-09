@@ -530,7 +530,7 @@ def lit_inen(BUECO,
              withhead=True):
     s = ''
     # NBAND1,ISTEU,IGAK,KEIND,IQUAK,IMETH
-    s += ' 10  2  1  1  0  1\n'
+    s += ' 10  2  3  1  3  1\n'
     # 1-11 Einteilchen, if any MREG>=12 # 0 => MODUS=1 => lese QUALMOUT
     # 10,11: el. siegert limes fuer p,n
     if MREG == '':
@@ -551,14 +551,17 @@ def lit_inen(BUECO,
                                    2 * MULM2)
     # NZKL,NZKR,NZKPL,NZKPR
     s += '%3d%3d  0  0\n' % (1, len(BUECO))
+
     # uecof
     s += '%3d\n' % (len(BUECO) + 1)
     for c in BUECO:
         s += '%s\n' % c
     s += '+1.0\n'
+
     #          [QBV nbr. relW]
+
     s += '%3d%3d\n%3d\n' % (1, KSTREU[0], len(BUECO) + 1)
-    s += '  1\n'.rjust(int(1 + 3 * (KSTREU[1] - 1)))
+    s += '%s  1\n' % (' ' * int(3 * (KSTREU[1] - 1)))
 
     nueco = 1
     for nbdgv in range(len(KBND)):
