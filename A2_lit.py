@@ -67,7 +67,7 @@ if 'construe_new_bases' in cal:
     os.system(BINBDGpath + 'QUAFL_N.exe')
     os.system(BINBDGpath + 'DR2END_AK.exe')
 
-    wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, 0.001)
+    wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, min_spacing_to_LITWs)
 
     nzfLIT = int(np.ceil(len(wLIT) / 20.0))
     nzfTOT = nzf0p + nzfLIT
@@ -91,6 +91,13 @@ if 'construe_new_bases' in cal:
 
     rrgm_functions.parse_ev_coeffs(infil='end_out_b')
 
+for file in os.listdir(litpath):
+    if fnmatch.fnmatch(file, 'endlit*'):
+        if 'dbg' in cal:
+            print('removing old <*en*lit*> files.')
+        os.system('rm ' + litpath + '/*en*lit*')
+        break
+
 for streukanal in streukas:
 
     os.chdir(av18path)
@@ -103,6 +110,7 @@ for streukanal in streukas:
     nzfLIT = int(np.ceil(len(wLIT) / 20.0))
     nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
     nzfTOT = nzf0p + nzfLIT
+
     BUECO = [cof.strip() for cof in open('COEFF')]
     BSRWIDX = get_bsv_rw_idx(chs=2, inen='inen_b')
     EBDG = get_h_ev(ifi='end_out_b')[0]
@@ -127,14 +135,7 @@ for streukanal in streukas:
 
     os.system(BINLITpath + 'qual.exe')
 
-    leftpar = 1 if streukanal[1] == '-' else 2
-
-    for file in os.listdir(litpath):
-        if fnmatch.fnmatch(file, 'endlit*'):
-            if 'dbg' in cal:
-                print('removing old <endlit*> files.')
-            os.system('rm endlit*')
-            break
+    leftpar = 1 if streukanal[-1] == '-' else 2
 
     for mM in mLmJl:
         for subchannel in range(len(streukanaele[streukanal])):
@@ -150,7 +151,7 @@ for streukanal in streukas:
                     JWSLM=mM[1],
                     MULM2=mM[0],
                     NPARL=leftpar,
-                    KBND=[[2, BSRWIDX[0]], [5, BSRWIDX[1]]],
+                    KBND=[[2, BSRWIDX[0]], [6, BSRWIDX[1]]],
                     JWSR=1,
                     NPARR=2,
                     EB=EBDG,
@@ -161,7 +162,10 @@ for streukanal in streukas:
 
                 os.system(BINLITpath + 'enemb.exe')
                 os.system('cp OUTPUT endlit%d_J%d_mJ%d-mL%d' %
-                          (int(streukanalweite * (1 + subchannel)),
+                          (int(streukanalweite + subchannel * len(wLIT)),
+                           int(streukanal[0]), mM[1], mM[0]))
+                os.system('cp INEN inenlit%d_J%d_mJ%d-mL%d' %
+                          (int(streukanalweite + subchannel * len(wLIT)),
                            int(streukanal[0]), mM[1], mM[0]))
 
     print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
