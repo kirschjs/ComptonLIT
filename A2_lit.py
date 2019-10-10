@@ -161,14 +161,15 @@ for streukanal in streukas:
                     EKDIFF=phot_e_d)
 
                 os.system(BINLITpath + 'enemb.exe')
-                os.system('cp OUTPUT endlit%d_J%d_mJ%d-mL%d' %
+                os.system('cp OUTPUT endlit%d_J%d_mJ%d-mL%d.log' %
                           (int(streukanalweite + subchannel * len(wLIT)),
                            int(streukanal[0]), mM[1], mM[0]))
-                os.system('cp INEN inenlit%d_J%d_mJ%d-mL%d' %
+                os.system('cp INEN inenlit%d_J%d_mJ%d-mL%d.log' %
                           (int(streukanalweite + subchannel * len(wLIT)),
                            int(streukanal[0]), mM[1], mM[0]))
 
-    print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
+    if 'dbg' in cal:
+        print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
 
     print('(ii)    calculating norm/ham in scattering-channel basis')
     os.chdir(av18path)

@@ -31,7 +31,7 @@ def read_uncoupled_source(streukanal, basisSET=''):
                 # mM[0] = m(L) ; mM[1] = m(Jlit)
 
                 instream = [
-                    line for line in open('endlit%d_J%d_mJ%d-mL%d' % (
+                    line for line in open('endlit%d_J%d_mJ%d-mL%d.log' % (
                         int(streukanalweite + subchannel * basdim),
                         int(streukanal[0]), mM[1], mM[0]))
                 ]

@@ -56,7 +56,7 @@ phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
 phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 20
+basisdim0 = 10
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
@@ -77,8 +77,7 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 10
-
+basisdimLIT = 18
 w0l, dw = 0.1, 1.0
 winiLITlin = np.linspace(
     start=w0l,
