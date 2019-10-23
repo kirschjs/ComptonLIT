@@ -50,6 +50,9 @@
   {\left\downarrow\vbox to #1{}\right.\kern-\nulldelimiterspace}
 }
 
+\newcommand*{\mprime}{^{\prime}\mkern-1.2mu}
+\newcommand*{\mdprime}{^{\prime\prime}\mkern-1.2mu}
+\newcommand*{\mtprime}{^{\prime\prime\prime}\mkern-1.2mu}
 \newcommand{\black}[1]{\textcolor{black}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
@@ -262,11 +265,35 @@ to obtain the LIT state
 
 \begin{alignat}{2}
 \text{(Wigner) 3-$j$ symbol:} &\hspace{1cm}& \threej{L}{S}{J}{m_l}{m_s}{-m_j}=&~(-1)^{L-S+m_j}~(2J+1)^{-\frac{1}{2}}~\clg{L}{S}{m_l}{m_s}{J}{m_j}\\
-\text{Matrix for single-axis rotation:} &\hspace{1cm}&   \mathcal{D}_{m^\prime,m}^{(j)}(0~\beta~0)\equiv&~d_{m^\prime,m}^{(j)}(\beta)\nonumber\\
-&\hspace{1cm}& =&\left[\frac{(j+m^\prime)!(j-m^\prime)!}{(j+m)!(j-m)!}\right]^\frac{1}{2}\nonumber\\
-&\hspace{1cm}&&~\cdot\sum_\sigma\left(j+m\atop j-m^\prime-\sigma\right)\left(j-m\atop \sigma\right)(-1)^{j-m^\prime-\sigma}\nonumber\\
-&\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m^\prime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m^\prime}\\
+\text{Matrix for single-axis rotation:} &\hspace{1cm}&   \mathcal{D}_{m\mprime,m}^{(j)}(0~\beta~0)\equiv&~d_{m\mprime,m}^{(j)}(\beta)\nonumber\\
+&\hspace{1cm}& =&\left[\frac{(j+m\mprime)!(j-m\mprime)!}{(j+m)!(j-m)!}\right]^\frac{1}{2}\nonumber\\
+&\hspace{1cm}&&~\cdot\sum_\sigma\left(j+m\atop j-m\mprime-\sigma\right)\left(j-m\atop \sigma\right)(-1)^{j-m\mprime-\sigma}\nonumber\\
+&\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m\mprime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m\mprime}\\
 \end{alignat}
+
+\paragraph{The Lorentz transformation of a Lorentzian\\}
+
+The generalized sum rule of a 1-dimensional function
+
+\begin{eqnarray*}
+L(\alpha)&:=&\int^\infty_{e_0}\,\frac{r(e)}{(\alpha-e)^2+\beta^2}~de
+=\int_{e_0}^\infty\,\frac{1}{(\alpha-e)^2+\beta^2}\cdot
+\frac{1}{(\gamma-e)^2+\delta^2}~de\\
+&\vdots&\\
+&=&\left[(\alpha-\gamma)^2+(\beta-\delta)^2\right]^{-1}\cdot
+\left[(\alpha-\gamma)^2+(\beta+\delta)^2\right]^{-1}\\
+&&\cdot
+\Bigg\lbrace
+\beta^{-1}\left((\alpha-\gamma)^2+\delta^2-\beta^2\right)
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\alpha\mprime}{\beta}\right)\right)\\
+&&+~
+\delta^{-1}\left((\alpha-\gamma)^2-\delta^2+\beta^2\right)
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\gamma\mprime}{\delta}\right)\right)\\&&+~
+(\alpha-\gamma)~\ln\left(\frac{\alpha\mprime^2+\beta^2}{\gamma\mprime^2+\delta^2}
+\right)
+\Bigg\rbrace\;\;,
+\end{eqnarray*}
+with $x\mprime:=x-e_0$.
 \begin{table}
 \be\la{tab.constants}
 \renewcommand{\arraystretch}{2.4}
