@@ -273,27 +273,61 @@ to obtain the LIT state
 
 \paragraph{The Lorentz transformation of a Lorentzian\\}
 
-The generalized sum rule of a 1-dimensional function
+The strength functions which constitute
+the Compton amplitudes are themselves composed of scalar functions of an energy parameter.
+I assume that these functions can be expanded to any desired accuracy in a Lorentzian/Cauchy
+basis as follows:
+
+\be\la{eq.responseexp}
+r(e)=\sum_nc_n\frac{\theta(e-e_\text{th})}{(a_n-e)^2+b_n^2}:=\sum_nc_n\theta(e-e_\text{th})f_n~.
+\ee
+
+As the process is non-trivial only if the photon's energy exceeds a minimum threshold
+energy $e_\text{th}$, it is in order to include a system-characteristic step function.
+
+In practice, we obtain an integral transformation of this quantity with a Lorentzian kernel,
+
+\be
+L(\sigma):=\int\limits^\infty_{-\infty}\,\frac{r(e)}{(\sigma_r-e)^2+\sigma_i^2}~de
+=\sum_nc_n\int\limits^\infty_{e_\text{th}}\,\frac{f_n(e)}{(\sigma_r-e)^2+\sigma_i^2}~de~.
+\ee
+
+If basis basis functions\footnote{$x\mprime:=x-e_\text{th}$} which we define through the integral
 
 \begin{eqnarray*}
-L(\alpha)&:=&\int^\infty_{e_0}\,\frac{r(e)}{(\alpha-e)^2+\beta^2}~de
-=\int_{e_0}^\infty\,\frac{1}{(\alpha-e)^2+\beta^2}\cdot
-\frac{1}{(\gamma-e)^2+\delta^2}~de\\
+\int^\infty_{e_\text{th}}\,\frac{f_n(e)}{(\sigma_r-e)^2+\sigma_i^2}~de
+&=&\int_{e_\text{th}}^\infty\,\frac{1}{(\sigma_r-e)^2+\sigma_i^2}\cdot
+\frac{1}{(a_n-e)^2+b_n^2}~de\\
 &\vdots&\\
-&=&\left[(\alpha-\gamma)^2+(\beta-\delta)^2\right]^{-1}\cdot
-\left[(\alpha-\gamma)^2+(\beta+\delta)^2\right]^{-1}\\
+&=&\left[(\sigma_r-a_n)^2+(\sigma_i-b_n)^2\right]^{-1}\cdot
+\left[(\sigma_r-a_n)^2+(\sigma_i+b_n)^2\right]^{-1}\\
 &&\cdot
 \Bigg\lbrace
-\beta^{-1}\left((\alpha-\gamma)^2+\delta^2-\beta^2\right)
-\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\alpha\mprime}{\beta}\right)\right)\\
+\sigma_i^{-1}\left((\sigma_r-a_n)^2+b_n^2-\sigma_i^2\right)
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\sigma_r\mprime}{\sigma_i}\right)\right)\\
 &&+~
-\delta^{-1}\left((\alpha-\gamma)^2-\delta^2+\beta^2\right)
-\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\gamma\mprime}{\delta}\right)\right)\\&&+~
-(\alpha-\gamma)~\ln\left(\frac{\alpha\mprime^2+\beta^2}{\gamma\mprime^2+\delta^2}
+b_n^{-1}\left((\sigma_r-a_n)^2-b_n^2+\sigma_i^2\right)
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{a_n\mprime}{b_n}\right)\right)\\&&+~
+(\sigma_r-a_n)~\ln\left(\frac{\sigma_r\mprime^2+\sigma_i^2}{a_n\mprime^2+b_n^2}
 \right)
-\Bigg\rbrace\;\;,
+\Bigg\rbrace\\
+&:=&L_n(\sigma,e_\text{th})
 \end{eqnarray*}
-with $x\mprime:=x-e_0$.
+
+allow for an accurate expansion of a given, physical function $L(\sigma)$,
+namely for a set $\mathfrak{B}=\left\lbrace (a_n,b_n)\in\mathbb{R}_{0^+}\right\rbrace_{n=1,\ldots,d}$,
+we seek
+
+\be
+\min_{\ve{c}}\left\vert L(\sigma)-\sum_nc_nL_n(\sigma,e_\text{th})\right\vert:=\ve{c}^*.
+\ee
+
+The set of optimal parameters $\ve{c}^*$ represents via Eq.\eqref{eq.responseexp} an expansion
+of the response function in Lorentzians.
+If $\mathfrak{B}$ is ``numerically'' complete, the dependence of $r(e)$ on changes
+in this basis should be negligible, \ie, the problem is {\bf not} ill-posed.
+This shall now be demonstrated.
+
 \begin{table}
 \be\la{tab.constants}
 \renewcommand{\arraystretch}{2.4}
