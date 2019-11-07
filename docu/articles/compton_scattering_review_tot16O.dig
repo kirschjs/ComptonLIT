@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE engauge>
+<Document VersionNumber="10.4" AxesPointsRequired="0">
+    <Image Width="603" Height="441"><![CDATA[AAAAAYlQTkcNChoKAAAADUlIRFIAAAJbAAABuQgCAAAANsNmMgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAIABJREFUeJzt3WuOpDoShuGo0SykW+r9r6il7p3k/PA0cvkShI0xDvM+OjqqriTBSYE/fIH8+nw+AgDA6/3n6QIAALAEEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQEAECERAQAICARAQAQIREBAAhIRAAAREhEAAACEhEAABESEQCAgEQs+/Xj59NFAABM9d+nC7CckIW///45fshfDZKXAACukYgpJed+/fhJCgLArug1BQBAROTr8/k8XYYV5V2m9JcCwN5IxNSRfLXYK44vAgC8o9c09fvvn5B2temmZCEAbImZNeN9fX09XQQAWIKvbkgSsey4+6KPr4Mg+Pry2oXutOROiy2UfDqnxRaHzQN6Tcu4Qx8A3oZErFJm1jCUCAD7odf0/5JGYe2+C2FmDQBsymv39Mr8dvoDwEDuKkN6TQEAECERAQAISEQAAERIRAAAAuaawiq52dbXgDkAnCIRYRUi0N3kMQAwotcUAAAREhEAgIBEBABAhEQEACAgEQEAECERAQAISEQAAERIRAAAAhIRAAARnlkDu+MpbuEHnlwDYDO0EWF1RODn8yEOAeyHRAQAQIREBAAgIBEBABAhEQEACEhEAABESER0OG7DAICdkIgAAIiQiAAABCQirOLOUjpOAeyHRIRV/JwanlkDYD8kIgAAIiQiAAABiQgAgAiJWPPrx8+Ol96AEUQAu+L7EVMh8H7//XP8YHnpbb6+vohGAJuhjZj6/fdPMeriFHxzFgLArkjEBgQhAGyMRCxL+kWLY4fvHFA87s3/+vriPn0AO2EcMXXk3GmL8J1Nxs/nE4KQcUQA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]]></Image>
+    <CoordSystem>
+        <General CursorSize="3" ExtraPrecision="1"/>
+        <Coords Type="0" TypeString="Cartesian" Coords="0" ScaleXTheta="0" ScaleXThetaString="Linear" ScaleYRadius="0" ScaleYRadiusString="Linear" UnitsX="0" UnitsXString="Number" UnitsY="0" UnitsYString="Number" UnitsTheta="0" UnitsThetaString="Degrees (DDD.DDDDD)" UnitsRadius="0" UnitsRadiusString="Number" UnitsDate="3" UnitsDateString="YYYY/MM/DD" UnitsTime="2" UnitsTimeString="HH:MM:SS"/>
+        <DigitizeCurve CursorInnerRadius="5" CursorLineWidth="2" CursorSize="1" CursorStandardCross="True"/>
+        <Export PointsSelectionFunctions="0" PointsSelectionFunctionsString="InterpolateAllCurves" PointsIntervalFunctions="10" PointsIntervalUnitsFunctions="1" PointsSelectionRelations="0" PointsSelectionRelationsString="Interpolate" PointsIntervalUnitsRelations="1" PointsIntervalRelations="10" LayoutFunctions="0" LayoutFunctionsString="AllPerLine" Delimiter="0" OverrideCsvTsv="False" DelimiterString="Commas" Header="1" HeaderString="Simple" XLabel="x">
+            <CurveNamesNotExported/>
+        </Export>
+        <AxesChecker Mode="1" Seconds="3" LineColor="6"/>
+        <GridDisplay Stable="True" DisableX="0" CountX="6" StartX="0" StepX="10" StopX="50" DisableY="0" CountY="5" StartY="0" StepY="5" StopY="20" Color="0" ColorString="Black"/>
+        <GridRemoval Stable="False" DefinedGridLines="False" CloseDistance="10" CoordDisableX="0" CoordDisableXString="Count" CountX="17" StartX="-14.141" StepX="4.52012" StopX="58.1809" CoordDisableY="0" CoordDisableYString="Count" CountY="4" StartY="0.169868" StepY="11.5993" StopY="34.9677"/>
+        <PointMatch PointSize="48" ColorAccepted="4" ColorAcceptedString="Green" ColorCandidate="7" ColorCandidateString="Yellow" ColorRejected="6" ColorRejectedString="Red"/>
+        <Segments PointSeparation="25" MinLength="2" FillCorners="False" LineWidth="4" LineColor="4" LineColorString="Green"/>
+        <Curve CurveName="Axes">
+            <ColorFilter CurveName="Axes" Mode="2" ModeString="Intensity" IntensityLow="0" IntensityHigh="50" ForegroundLow="0" ForegroundHigh="10" HueLow="180" HueHigh="360" SaturationLow="50" SaturationHigh="100" ValueLow="0" ValueHigh="50"/>
+            <CurveStyle CurveName="Axes">
+                <LineStyle Width="0" Color="8" ColorString="Transparent" ConnectAs="4" ConnectAsString="ConnectSkipForAxisCurve"/>
+                <PointStyle Radius="10" LineWidth="1" Color="6" ColorString="Red" Shape="1" ShapeString="Cross"/>
+            </CurveStyle>
+            <CurvePoints>
+                <Point Identifier="Axes&#9;point&#9;1" Ordinal="1" IsAxisPoint="True" IsXOnly="False" Index="87">
+                    <PositionScreen X="113.499" Y="197.235"/>
+                    <PositionGraph X="0" Y="20"/>
+                </Point>
+                <Point Identifier="Axes&#9;point&#9;3" Ordinal="2" IsAxisPoint="True" IsXOnly="False" Index="87">
+                    <PositionScreen X="174.217" Y="370.658"/>
+                    <PositionGraph X="20" Y="0"/>
+                </Point>
+                <Point Identifier="Axes&#9;point&#9;5" Ordinal="3" IsAxisPoint="True" IsXOnly="False" Index="87">
+                    <PositionScreen X="359.149" Y="370.261"/>
+                    <PositionGraph X="50" Y="0"/>
+                </Point>
+            </CurvePoints>
+        </Curve>
+        <CurvesGraphs>
+            <Curve CurveName="Curve1">
+                <ColorFilter CurveName="Curve1" Mode="2" ModeString="Intensity" IntensityLow="0" IntensityHigh="50" ForegroundLow="0" ForegroundHigh="10" HueLow="180" HueHigh="360" SaturationLow="50" SaturationHigh="100" ValueLow="0" ValueHigh="50"/>
+                <CurveStyle CurveName="Curve1">
+                    <LineStyle Width="1" Color="1" ColorString="Blue" ConnectAs="0" ConnectAsString="FunctionSmooth"/>
+                    <PointStyle Radius="10" LineWidth="1" Color="1" ColorString="Blue" Shape="1" ShapeString="Cross"/>
+                </CurveStyle>
+                <CurvePoints>
+                    <Point Identifier="Curve1&#9;point&#9;29" Ordinal="0" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="187.71" Y="99.6094"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;28" Ordinal="1" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="185.329" Y="128.183"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;30" Ordinal="2" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="194.853" Y="123.42"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;85" Ordinal="3" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="191.282" Y="146.041"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;27" Ordinal="4" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="186.123" Y="161.915"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;6" Ordinal="5" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="112.705" Y="369.864"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;31" Ordinal="6" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="198.822" Y="142.072"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;7" Ordinal="7" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="119.452" Y="365.102"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;84" Ordinal="8" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="193.663" Y="159.137"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;26" Ordinal="9" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="184.932" Y="188.504"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;11" Ordinal="10" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="133.739" Y="332.164"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;10" Ordinal="11" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="131.357" Y="342.482"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;9" Ordinal="12" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="127.786" Y="352.403"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;8" Ordinal="13" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="126.992" Y="357.165"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;83" Ordinal="14" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="194.853" Y="171.042"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;86" Ordinal="15" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="200.013" Y="169.455"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;12" Ordinal="16" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="136.913" Y="345.26"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;25" Ordinal="17" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="183.345" Y="216.68"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;13" Ordinal="18" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="137.31" Y="353.197"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;32" Ordinal="19" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="205.568" Y="167.868"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;24" Ordinal="20" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="179.376" Y="244.063"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;17" Ordinal="21" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="156.756" Y="316.687"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;33" Ordinal="22" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="203.981" Y="187.313"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;14" Ordinal="23" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="144.85" Y="352.006"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;16" Ordinal="24" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="154.772" Y="330.179"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;15" Ordinal="25" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="152.391" Y="337.323"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;18" Ordinal="26" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="158.343" Y="323.433"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;23" Ordinal="27" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="177.789" Y="269.858"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;19" Ordinal="28" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="161.915" Y="329.386"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;34" Ordinal="29" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="208.743" Y="203.981"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;20" Ordinal="30" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="164.296" Y="330.179"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;22" Ordinal="31" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="177.392" Y="303.59"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;21" Ordinal="32" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="172.233" Y="319.068"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;35" Ordinal="33" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="211.521" Y="217.474"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;36" Ordinal="34" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="215.887" Y="239.301"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;37" Ordinal="35" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="221.046" Y="264.302"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;38" Ordinal="36" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="226.602" Y="274.224"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;39" Ordinal="37" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="236.523" Y="287.32"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;40" Ordinal="38" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="248.031" Y="298.035"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;41" Ordinal="39" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="257.159" Y="308.75"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;42" Ordinal="40" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="263.905" Y="314.702"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;43" Ordinal="41" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="271.842" Y="327.005"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;44" Ordinal="42" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="276.208" Y="329.386"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;45" Ordinal="43" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="280.573" Y="325.814"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;47" Ordinal="44" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="288.907" Y="314.702"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;46" Ordinal="45" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="288.51" Y="319.464"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;48" Ordinal="46" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="293.272" Y="321.846"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;49" Ordinal="47" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="300.019" Y="326.608"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;50" Ordinal="48" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="303.59" Y="329.386"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;51" Ordinal="49" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="311.131" Y="336.529"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;52" Ordinal="50" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="313.512" Y="339.307"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;53" Ordinal="51" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="320.655" Y="343.672"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;54" Ordinal="52" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="324.624" Y="346.45"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;55" Ordinal="53" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="332.164" Y="350.419"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;56" Ordinal="54" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="344.069" Y="348.831"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;57" Ordinal="55" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="350.419" Y="338.513"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;58" Ordinal="56" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="353.197" Y="332.561"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;59" Ordinal="57" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="353.99" Y="332.164"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;60" Ordinal="58" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="360.737" Y="332.164"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;61" Ordinal="59" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="368.277" Y="335.735"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;62" Ordinal="60" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="382.961" Y="345.657"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;63" Ordinal="61" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="390.104" Y="352.403"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;64" Ordinal="62" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="395.263" Y="354.784"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;65" Ordinal="63" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="405.581" Y="358.356"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;66" Ordinal="64" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="431.773" Y="360.34"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;67" Ordinal="65" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="432.567" Y="359.943"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;68" Ordinal="66" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="439.313" Y="357.165"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;69" Ordinal="67" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="445.266" Y="355.975"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;70" Ordinal="68" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="456.378" Y="351.212"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;71" Ordinal="69" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="463.918" Y="346.45"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;72" Ordinal="70" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="467.49" Y="343.275"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;73" Ordinal="71" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="468.283" Y="344.069"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;74" Ordinal="72" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="476.22" Y="349.625"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;75" Ordinal="73" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="489.713" Y="358.356"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;76" Ordinal="74" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="491.697" Y="358.753"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;77" Ordinal="75" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="492.888" Y="356.768"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;78" Ordinal="76" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="505.19" Y="361.134"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;79" Ordinal="77" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="523.842" Y="357.959"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;80" Ordinal="78" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="532.97" Y="359.943"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;81" Ordinal="79" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="534.16" Y="360.34"/>
+                    </Point>
+                    <Point Identifier="Curve1&#9;point&#9;82" Ordinal="80" IsAxisPoint="False" IsXOnly="False" Index="87">
+                        <PositionScreen X="536.145" Y="359.943"/>
+                    </Point>
+                </CurvePoints>
+            </Curve>
+        </CurvesGraphs>
+    </CoordSystem>
+</Document>
