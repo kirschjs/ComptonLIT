@@ -44,11 +44,12 @@ streukanaele = {
 }
 
 cal = ['purge']
-cal = ['purge', 'construe_new_bases']
+cal = ['purge', 'construe_fresh_LIT_basis', 'construe_fresh_deuteron']
+cal = ['purge', 'construe_fresh_LIT_basis']
 
 boundstatekanal = 'np-3SD1'
 J0 = int(boundstatekanal[-1])
-streukas = ['0-', '1-', '2-']  #['2-']  #
+streukas = ['0-']  #['0-', '1-', '2-']  #['2-']  #
 multipolarity = 1
 
 anz_phot_e = 100
@@ -61,13 +62,13 @@ basisdim0 = 15
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
     np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdim0)))
-wini0 = wLAPLACE[::-1]
+wini0 = w120  #wLAPLACE[::-1]
 
-addw = 8
+addw = 1
 addwt = 'middle'
 scale = 1.
-min_spacing = 0.2
-min_spacing_to_LITWs = 0.01
+min_spacing = 0.02
+min_spacing_to_LITWs = 0.001
 
 rw0 = wid_gen(
     add=addw, addtype=addwt, w0=wini0, ths=[1e-5, 2e2, 0.2], sca=scale)
@@ -77,36 +78,50 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLIT = 13
-w0l, dw = 0.1, 1.0
-winiLITlin = np.linspace(
-    start=w0l,
-    stop=w0l + basisdimLIT * dw,
-    num=basisdimLIT,
-    endpoint=True,
-    dtype=None)
+basisdimLIT = 20
+wli = 'wd'
 
-exp0log, expmaxlog = -1, 1
+if wli == 'wd':
+    #scale deuteron
+    winiLIT = [ww for ww in 1.1 * rw0 if ((ww < 10) & (ww > 0.01))] + [10.01]
 
-winiLITlog = np.logspace(
-    start=exp0log, stop=expmaxlog, num=basisdimLIT, endpoint=True, dtype=None)
+if wli == 'lin':
+    #linspace
+    w0l, dw = 0.035, 1.4
+    winiLIT = np.linspace(
+        start=w0l,
+        stop=w0l + basisdimLIT * dw,
+        num=basisdimLIT,
+        endpoint=True,
+        dtype=None)
+if wli == 'log':
+    #logspace
+    exp0log, expmaxlog = -1, 1
+    winiLIT = np.logspace(
+        start=exp0log,
+        stop=expmaxlog,
+        num=basisdimLIT,
+        endpoint=True,
+        dtype=None)
+if wli == 'geom':
+    #geomspace
+    wminl, wmaxl = 0.01, 20
+    winiLIT = np.geomspace(
+        start=wminl, stop=wmaxl, num=basisdimLIT, endpoint=True, dtype=None)
+if wli == 'lap':
+    #laplace space
+    laplace_loc, laplace_scale = .9, .4
+    winiLITlaplace = np.sort(
+        np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdimLIT)))
+    winiLITlaplace = wid_gen(
+        add=addw,
+        addtype=addwt,
+        w0=winiLITlaplace[::-1],
+        ths=[1e-5, 2e2, 0.2],
+        sca=scale)
+    winiLIT = sparsify(winiLITlaplace, min_spacing)
 
-wminl, wmaxl = 0.01, 20
-winiLITgeom = np.geomspace(
-    start=wminl, stop=wmaxl, num=basisdimLIT, endpoint=True, dtype=None)
-
-laplace_loc, laplace_scale = .9, .4
-winiLITlaplace = np.sort(
-    np.abs(np.random.laplace(laplace_loc, laplace_scale, basisdimLIT)))
-winiLITlaplace = wid_gen(
-    add=addw,
-    addtype=addwt,
-    w0=winiLITlaplace[::-1],
-    ths=[1e-5, 2e2, 0.2],
-    sca=scale)
-winiLITlaplace = sparsify(winiLITlaplace, min_spacing)
-
-winiLIT = winiLITlog
+# for the cleaner --------------------------------------------------------
 
 streukanalweiten = range(1, len(winiLIT) + 1)
 

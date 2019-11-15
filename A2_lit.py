@@ -9,7 +9,7 @@ from two_particle_functions import *
 from lit_plots import *
 from readLITsource import *
 
-os.chdir(av18path)
+from plot_basis import main
 
 costr = ''
 for nn in range(14):
@@ -19,7 +19,7 @@ os.chdir(av18path)
 RHSofBV = {}
 RHSofmJ = {}
 
-if 'construe_new_bases' in cal:
+if 'construe_fresh_deuteron' in cal:
 
     h2_inlu(nfrag=nzf0)
     os.system(BINBDGpath + 'LUDW_CN.exe')
@@ -46,6 +46,7 @@ if 'construe_new_bases' in cal:
         dbg=True if ('dbg' in cal) else False)
 
     clean_wrels, clean_inen_indices = purged_width_set(infil='INEN', w0=rw0)
+    np.savetxt('w0.dat', np.array(clean_wrels), fmt='%12.4f')
 
     nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
 
@@ -66,8 +67,20 @@ if 'construe_new_bases' in cal:
 
     os.system(BINBDGpath + 'QUAFL_N.exe')
     os.system(BINBDGpath + 'DR2END_AK.exe')
+    EBDG = get_h_ev()[0]
+    np.savetxt('E0.dat', np.array([EBDG]), fmt='%12.4f')
+
+    os.system('cp OUTPUT end_out_b && cp INEN inen_b')
+    rrgm_functions.parse_ev_coeffs(infil='end_out_b')
+
+if 'construe_fresh_LIT_basis' in cal:
+
+    clean_wrels = [float(line) for line in open('w0.dat')]
+    h2_inqua(clean_wrels, pots)
+    nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
 
     wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, min_spacing_to_LITWs)
+    np.savetxt('wLIT.dat', np.array(wLIT), fmt='%12.4f')
 
     nzfLIT = int(np.ceil(len(wLIT) / 20.0))
     nzfTOT = nzf0p + nzfLIT
@@ -79,17 +92,14 @@ if 'construe_new_bases' in cal:
     os.system(BINBDGpath + 'KOBER.exe')
     h2_inqua(wLIT, pots, withhead=False)
     os.system(BINBDGpath + 'QUAFL_N.exe')
+    os.system('cp inen_b INEN')
     os.system(BINBDGpath + 'DR2END_AK.exe')
 
     EBDG = get_h_ev()[0]
+    E0small = [float(line) for line in open('E0.dat')][0]
+    print('%8.4f == %8.4f ?' % (EBDG, E0small))
 
-    np.savetxt('w0.dat', np.array(clean_wrels), fmt='%12.4f')
-    np.savetxt('wLIT.dat', np.array(wLIT), fmt='%12.4f')
-    np.savetxt('E0.dat', np.array([EBDG]), fmt='%12.4f')
-
-    os.system('cp OUTPUT end_out_b && cp INEN inen_b')
-
-    rrgm_functions.parse_ev_coeffs(infil='end_out_b')
+    main()
 
 for file in os.listdir(litpath):
     if fnmatch.fnmatch(file, 'endlit*'):
@@ -238,4 +248,5 @@ for i in range(len(streukas)):
                                      len(wLIT) + 1)
     ]
 
-plt.show()
+#plt.show()
+fig.savefig(av18path + '/LITrhs.pdf')

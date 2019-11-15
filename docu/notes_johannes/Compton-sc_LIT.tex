@@ -53,6 +53,7 @@
 \newcommand*{\mprime}{^{\prime}\mkern-1.2mu}
 \newcommand*{\mdprime}{^{\prime\prime}\mkern-1.2mu}
 \newcommand*{\mtprime}{^{\prime\prime\prime}\mkern-1.2mu}
+\newcommand*{\ethr}{e_\text{th}}
 \newcommand{\black}[1]{\textcolor{black}{#1}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\blue}[1]{\textcolor{blue}{#1}}
@@ -113,7 +114,7 @@
 \newcommand{\bet}[1] {\left|#1\right|}
 \newcommand{\overlap}[2] {\left\langle\,#1\,\left|\,#2\,\right.\right\rangle}
 \newcommand{\me}[3] {\left\langle\,#1\,\left|\left.\,#2\,\right|\,#3\,\right.\right\rangle}
-\newcommand{\redme}[3] {\left\langle\,#1\,\left|\left|\,#2\,\left|\left|\,#3\,\right.\right.\right.\right.\right\rangle}
+\newcommand{\redme}[3] {\left\langle\,#1\,\middle|\right|\,#2\,\left|\middle|\,#3\,\right\rangle}
 \newcommand{\lam}[1]{$\Lambda=#1~$fm$^{-1}$}\newcommand{\tx}{\tilde{x}}
 \newcommand{\eftnopi}{\mbox{EFT($\slashed{\pi}$)}}
 \newcommand{\threej}[6]{\ensuremath{\begin{pmatrix}#1 & #2 & #3\\#4&#5&#6 \end{pmatrix}}}
@@ -121,6 +122,7 @@
 \newcommand{\re}[1] {\mathcal{R}\left[#1\right]}
 \newcommand{\im}[1] {\mathcal{I}\left[#1\right]}
 \newcommand{\E}{\mathcal{E}}
+\newcommand{\eqr}[1] {Eq.~\eqref{#1}}
 
 \usepackage{pifont}
 \renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
@@ -254,8 +256,44 @@ to obtain the LIT state
 \begin{align}\la{eq.litME}
 \mathcal{L}_{v'L',vL}^{J_f,J_i;J}(k',k,\sigma)=&(-1)^{J-J_i+L-L'+v'}N_{J,\sigma}\sum_{m_j}
 \underbrace{\overlap{\psi^{v',L'}_{J_f;Jm_j}(k',\sigma)}{\psi^{v,L}_{J_i;Jm_j}(k,\sigma)}}_{=\sum_{r,s}(u^{Jm_j}_r)^*u^{Jm_j}_s~\mathbb{N}_{rs}}\\
-\intertext{with $N_{J,\sigma}$ being the multiplicity of Lorentz states for given $J$ and $\sigma$.}
+=&\int_{\ethr}^\infty~\frac{\mathcal{F}_{v'L',vL}^{J_f,J_i;J}(k',k,\red{E})}{(E-\sigma)(E-\sigma^*)}~dE\la{eq.litMEb}
+\intertext{with $N_{J,\sigma}$ being the multiplicity of Lorentz states
+ for given $J$ and $\sigma$.}
 \end{align}
+
+\item The recovery of the (partial) strength functions --
+ The inverse Lorentz-integral transformation
+
+At this stage, the problem is to recover $\mathcal{F}$, given $\mathcal{L}$ by inverting
+the integral transformation \eqr{eq.litMEb}.
+The {\it discrete essence} of that can be written as
+\be
+\ve{L}_s=\sum_eA_{se}\ve{F}^e=\sum_nc_n\sum_eA_{se}f_n^e\;\;.
+\ee
+If the energy sum/integral can be evaluated efficiently for a set of basis vectors $f_n$
+which is suitable for a proper representation of the vector $\ve{L}$, it remains to solve
+a linear optimization problem. This is detailed below from \eqr{eq.responseexp} onwards.
+
+The choice for the basis $f_n$ is based on two ideas. Firstly, from the definition
+\be\la{eq.partstrength}
+\mathcal{F}_{v'L',vL}^{J_f,J_i;J}(k',k,\red{E})=\underbrace{N_{J,E}}_{\#J,E-\text{states}}
+\redme{J_f~E_f}{M^{\nu\mprime,L\mprime}(k\mprime)}{J~E}\,\redme{J~E}{M^{\nu,L}(k)}{J_i~E_i}\;\;,
+\ee
+the joint probability to, first, induce via $M^{\nu,L}(k)$ the transition from one eigenstate of
+a system to another, which, second is perturbed via $M^{\nu\mprime,L\mprime}(k\mprime)$ into
+some final eigenstate. Let me imagine a system with one localized bound state. Its wave
+function is folded with the perturbation, which is a polynomial in $k$ of order $L$ -- the
+multipolarity -- and the wave function of another eigenstate of the system, constrained
+by energy conservation. I think of $k$ large enough such that the latter state contains a
+free wave on some coordinate. Hence the matrix element retains a Fourier-transform character
+of a localized wave packet multiplied by a polynomial. The latter can be expanded well
+in symmetrical, peaked functions -- \eg, Gaussians -- and the polynomial skews those.
+A Fourier transform of such a skewed Gaussian will retain its shape but become
+broader/narrower. A skewed Gaussian is expected to be amenable to an expansion in
+Lorentz functions.
+
+The second, related idea for choosing a Lorentz basis is the ability to calculate
+the integral transform with a Lorentz kernel analytically (viz. \eqr{eq.ltofl}).
 
 \end{enumerate}
 
@@ -271,7 +309,7 @@ to obtain the LIT state
 &\hspace{1cm}&&~\cdot\left(\cos\frac{\beta}{2}\right)^{2\sigma+m+m\mprime}\left(\sin\frac{\beta}{2}\right)^{2j-2\sigma-m-m\mprime}\\
 \end{alignat}
 
-\paragraph{The Lorentz transformation of a Lorentzian\\}
+\paragraph{The Lorentz transformation of a Lorentzian\\}\la{sec.LoOfLo}
 
 The strength functions which constitute
 the Compton amplitudes are themselves composed of scalar functions of an energy parameter.
@@ -279,11 +317,11 @@ I assume that these functions can be expanded to any desired accuracy in a Loren
 basis as follows:
 
 \be\la{eq.responseexp}
-r(e)=\sum_nc_n\frac{\theta(e-e_\text{th})}{(a_n-e)^2+b_n^2}:=\sum_nc_n\theta(e-e_\text{th})f_n~.
+r(e)=\sum_nc_n\frac{\theta(e-\ethr)}{(a_n-e)^2+b_n^2}:=\sum_nc_n\theta(e-\ethr)f_n~.
 \ee
 
 As the process is non-trivial only if the photon's energy exceeds a minimum threshold
-energy $e_\text{th}$, it is in order to include a system-characteristic step function.
+energy $\ethr$, it is in order to include a system-characteristic step function.
 
 In practice, we obtain an integral transformation of this quantity with a Lorentzian kernel,
 
@@ -292,37 +330,37 @@ L(\sigma):=\int\limits^\infty_{-\infty}\,\frac{r(e)}{(\sigma_r-e)^2+\sigma_i^2}~
 =\sum_nc_n\int\limits^\infty_{e_\text{th}}\,\frac{f_n(e)}{(\sigma_r-e)^2+\sigma_i^2}~de~.
 \ee
 
-If basis basis functions\footnote{$x\mprime:=x-e_\text{th}$} which we define through the integral
+If basis basis functions\footnote{$x\mprime:=x-\ethr$} which we define through the integral
 
-\begin{eqnarray*}
-\int^\infty_{e_\text{th}}\,\frac{f_n(e)}{(\sigma_r-e)^2+\sigma_i^2}~de
-&=&\int_{e_\text{th}}^\infty\,\frac{1}{(\sigma_r-e)^2+\sigma_i^2}\cdot
-\frac{1}{(a_n-e)^2+b_n^2}~de\\
-&\vdots&\\
+\begin{eqnarray}\la{eq.ltofl}
+\int^\infty_{\ethr}\,\frac{f_n(e)}{(\sigma_r-e)^2+\sigma_i^2}~de
+&=&\int_{\ethr}^\infty\,\frac{1}{(\sigma_r-e)^2+\sigma_i^2}\cdot
+\frac{1}{(a_n-e)^2+b_n^2}~de\nonumber\\
+&\vdots&\nonumber\\
 &=&\left[(\sigma_r-a_n)^2+(\sigma_i-b_n)^2\right]^{-1}\cdot
-\left[(\sigma_r-a_n)^2+(\sigma_i+b_n)^2\right]^{-1}\\
+\left[(\sigma_r-a_n)^2+(\sigma_i+b_n)^2\right]^{-1}\nonumber\\
 &&\cdot
 \Bigg\lbrace
 \sigma_i^{-1}\left((\sigma_r-a_n)^2+b_n^2-\sigma_i^2\right)
-\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\sigma_r\mprime}{\sigma_i}\right)\right)\\
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{\sigma_r\mprime}{\sigma_i}\right)\right)\nonumber\\
 &&+~
 b_n^{-1}\left((\sigma_r-a_n)^2-b_n^2+\sigma_i^2\right)
-\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{a_n\mprime}{b_n}\right)\right)\\&&+~
+\left(\frac{\pi}{2}+\tan^{-1}\left(\frac{a_n\mprime}{b_n}\right)\right)\nonumber\\&&+~
 (\sigma_r-a_n)~\ln\left(\frac{\sigma_r\mprime^2+\sigma_i^2}{a_n\mprime^2+b_n^2}
 \right)
-\Bigg\rbrace\\
-&:=&L_n(\sigma,e_\text{th})
-\end{eqnarray*}
+\Bigg\rbrace\nonumber\\
+&:=&L_n(\sigma,\ethr)
+\end{eqnarray}
 
 allow for an accurate expansion of a given, physical function $L(\sigma)$,
 namely for a set $\mathfrak{B}=\left\lbrace (a_n,b_n)\in\mathbb{R}_{0^+}\right\rbrace_{n=1,\ldots,d}$,
 we seek
 
 \be
-\min_{\ve{c}}\left\vert L(\sigma)-\sum_nc_nL_n(\sigma,e_\text{th})\right\vert:=\ve{c}^*.
+\min_{\ve{c}}\left\vert L(\sigma)-\sum_nc_nL_n(\sigma,\ethr)\right\vert:=\ve{c}^*.
 \ee
 
-The set of optimal parameters $\ve{c}^*$ represents via Eq.\eqref{eq.responseexp} an expansion
+The set of optimal parameters $\ve{c}^*$ represents via Eq.~\eqref{eq.responseexp} an expansion
 of the response function in Lorentzians.
 If $\mathfrak{B}$ is ``numerically'' complete, the dependence of $r(e)$ on changes
 in this basis should be negligible, \ie, the problem is {\bf not} ill-posed.

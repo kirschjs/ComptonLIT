@@ -946,7 +946,7 @@ C     alles, was nichts mit kopplungen und basis spezifika
 C     zu tun hat
 C     ========================
 c ----- old
-C DF=!! from long-wave-length limit of j_l (see Walicka Eq.(7.46))      
+C DF=!! from long-wave-length limit of j_l (see Walecka Eq.(7.46))      
 C      VF1=1.
 C      IF (MUL.GT.0) VF1=(AK+1.)/AK
 C      (see Eq.(7.44) in Walecka)      
