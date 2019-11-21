@@ -1,8 +1,8 @@
-#F77     =       gfortran
-#FFLAGS  =       -g -O2 -Wall -ffpe-summary='none' -fcray-pointer -mcmodel=medium #-ffpe-trap=denormal 
+F77     =       gfortran
+FFLAGS  =       -g -O2 -Wall -ffpe-summary='none' -fcray-pointer -mcmodel=large #-ffpe-trap=denormal 
 ## orig settings
-F77     =        ifort
-FFLAGS  =       -O1 -g -traceback -i8 -mcmodel=medium
+#F77     =        ifort
+#FFLAGS  =       -O1 -g -traceback -i8 -mcmodel=medium
 #FFLAGS  =       -g -O2 -mcmodel=medium #-ffpe-trap=denormal 
 LIBS    = -L. -llapack -lblas
 #LIBS    = -L${MKLROOT} -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5# -lpthread -lm -ldl

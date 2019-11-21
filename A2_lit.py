@@ -25,7 +25,7 @@ if 'construe_fresh_deuteron' in cal:
     os.system(BINBDGpath + 'LUDW_CN.exe')
     h2_inob(nfrag=nzf0)
     os.system(BINBDGpath + 'KOBER.exe')
-    h2_inqua(rw0, pots)
+    h2_inqua(rw0, potnn)
     os.system(BINBDGpath + 'QUAFL_N.exe')
 
     h2_inen_bs(
@@ -57,7 +57,7 @@ if 'construe_fresh_deuteron' in cal:
         h2_inob(nfrag=nzf0p)
         os.system(BINBDGpath + 'KOBER.exe')
 
-    h2_inqua(clean_wrels, pots)
+    h2_inqua(clean_wrels, potnn)
     for ind_set in range(len(clean_inen_indices)):
         istr = ''
         for i in clean_inen_indices[ind_set]:
@@ -76,7 +76,7 @@ if 'construe_fresh_deuteron' in cal:
 if 'construe_fresh_LIT_basis' in cal:
 
     clean_wrels = [float(line) for line in open('w0.dat')]
-    h2_inqua(clean_wrels, pots)
+    h2_inqua(clean_wrels, potnn)
     nzf0p = int(np.ceil(len(clean_wrels) / 20.0))
 
     wLIT = sparsifyOnlyOne(winiLIT, clean_wrels, min_spacing_to_LITWs)
@@ -90,7 +90,7 @@ if 'construe_fresh_LIT_basis' in cal:
     os.system(BINBDGpath + 'LUDW_CN.exe')
     h2_inob(nfrag=nzfTOT)
     os.system(BINBDGpath + 'KOBER.exe')
-    h2_inqua(wLIT, pots, withhead=False)
+    h2_inqua(wLIT, potnn, withhead=False)
     os.system(BINBDGpath + 'QUAFL_N.exe')
     os.system('cp inen_b INEN')
     os.system(BINBDGpath + 'DR2END_AK.exe')
@@ -101,19 +101,19 @@ if 'construe_fresh_LIT_basis' in cal:
 
     main()
 
-for file in os.listdir(litpath):
+for file in os.listdir(litpathD):
     if fnmatch.fnmatch(file, 'endlit*'):
         if 'dbg' in cal:
             print('removing old <*en*lit*> files.')
-        os.system('rm ' + litpath + '/*en*lit*')
+        os.system('rm ' + litpathD + '/*en*lit*')
         break
 
 for streukanal in streukas:
 
     os.chdir(av18path)
 
-    mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0,
-                                                  int(streukanal[0]))
+    Jstreu = float(streukanal.split('^')[0])
+    mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0, Jstreu)
 
     wLIT = np.loadtxt('wLIT.dat')
     clean_wrels = np.loadtxt('w0.dat')
@@ -133,7 +133,7 @@ for streukanal in streukas:
     print('        dim(B_LIT) = %d -> %d' % (len(winiLIT), len(wLIT)))
     print('        dim(B)     = %d' % (len(wLIT) + len(clean_wrels)))
 
-    os.chdir(litpath)
+    os.chdir(litpathD)
 
     lit_inlu(mul=multipolarity, nfrag=nzfTOT)
     os.system(BINLITpath + 'luise.exe > dump')
@@ -148,16 +148,16 @@ for streukanal in streukas:
     leftpar = 1 if streukanal[-1] == '-' else 2
 
     for mM in mLmJl:
-        for subchannel in range(len(streukanaele[streukanal])):
+        for subchannel in range(len(streukanaeleD[streukanal])):
             for streukanalweite in range(1, len(wLIT) + 1):
                 lit_inen(
                     MREG='  1  0  0  0  0  0  0  0  0  1  1',
                     #                   (shifted) QBV                     nr.rw
                     KSTREU=[
-                        int(streukanaele[streukanal][subchannel][-1] +
+                        int(streukanaeleD[streukanal][subchannel][-1] +
                             8 * nzf0p), streukanalweite
                     ],
-                    JWSL=int(streukanal[0]),
+                    JWSL=Jstreu,
                     JWSLM=mM[1],
                     MULM2=mM[0],
                     NPARL=leftpar,
@@ -173,10 +173,10 @@ for streukanal in streukas:
                 os.system(BINLITpath + 'enemb.exe')
                 os.system('cp OUTPUT endlit%d_J%d_mJ%d-mL%d.log' %
                           (int(streukanalweite + subchannel * len(wLIT)),
-                           int(streukanal[0]), mM[1], mM[0]))
+                           Jstreu, mM[1], mM[0]))
                 os.system('cp INEN inenlit%d_J%d_mJ%d-mL%d.log' %
                           (int(streukanalweite + subchannel * len(wLIT)),
-                           int(streukanal[0]), mM[1], mM[0]))
+                           Jstreu, mM[1], mM[0]))
 
     if 'dbg' in cal:
         print('(iiib)  calculated S_bv^(Jlit,m) for mL,m in:', mLmJl)
@@ -188,14 +188,14 @@ for streukanal in streukas:
     os.system(BINBDGpath + 'LUDW_CN.exe')
     h2_inob(nfrag=nzfLIT)
     os.system(BINBDGpath + 'KOBER.exe')
-    h2_inqua(wLIT, pots)
+    h2_inqua(wLIT, potnn)
     os.system(BINBDGpath + 'QUAFL_N.exe')
 
     h2_inen_bs(
         relw=wLIT,
         costr=costr,
-        j=int(streukanal[0]),
-        ch=streukanaele[streukanal],
+        j=Jstreu,
+        ch=streukanaeleD[streukanal],
         nfrag=nzfLIT)
 
     os.system(BINBDGpath + 'DR2END_AK.exe')
@@ -205,7 +205,7 @@ for streukanal in streukas:
                                                      streukanal))
 
     # read uncoupled source ME's
-    os.chdir(litpath)
+    os.chdir(litpathD)
     RHSofBV[streukanal], photEn = read_uncoupled_source(
         streukanal, basisSET=wLIT)
     # couple incoming state with photon multipole to Jlit
