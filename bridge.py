@@ -13,43 +13,74 @@ home = os.getenv("HOME")
 pathbase = home + '/kette_repo/ComptonLIT'
 
 av18path = pathbase + '/av18_deuteron'
-litpath = pathbase + '/test/'
+litpathD = pathbase + '/mul_deuteron/'
+
+v18uixpath = pathbase + '/v18uix_helium3'
+litpath3He = pathbase + '/mul_helion/'
+
 BINBDGpath = pathbase + '/src_nucl/'
 BINLITpath = pathbase + '/src_elma/'
 
 mpii = '137'
-pots = 'AV18'
+potnn = 'AV18'
+potnnn = 'urbana9_AK_neu'
 
 # convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
-    # DEUTERON
-    'np-3SD1': [[1, 1, 2, 2], [1, 1, 2, 6]],
+    # deuteron
+    'np-3SD-J=1': [[1, 1, 2, 2], [1, 1, 2, 6]],
+    # helion
+    'npp-J=0.5':
+    [[
+        '000',
+        ['he_no1', 'he_no1', 'he_no1', 'he_no1', 'he_no6', 'he_no6', 'he_no6']
+    ], ['202', ['he_no2', 'he_no2', 'he_no2', 'he_no2', 'he_no2']],
+     ['022', ['he_no2', 'he_no2']], ['222', ['he_no2']], ['221', ['he_no1']],
+     ['220', ['he_no1']], ['221', ['he_no2']], ['220', ['he_no6']],
+     ['111', ['he_no3']], ['112', ['he_no5']], ['111', ['he_no5']]],
 }
 
 # ECCE! bvnr for LIT basis states must be shifted after purge! (A2_lit)
-streukanaele = {
+streukanaeleD = {
     #       s1 s2 S  bvnr
-    '0+': [[1, 1, 0, 1]],  #     1S0
-    '0-': [[1, 1, 2, 4]],  #     3P0
-    '1+': [[1, 1, 2, 2], [1, 1, 2, 6]],  # 3S1 3D1
+    '0^+': [[1, 1, 0, 1]],  #     1S0
+    '0^-': [[1, 1, 2, 4]],  #     3P0
+    '1^+': [[1, 1, 2, 2], [1, 1, 2, 6]],  # 3S1 3D1
     #'1-': [[1, 1, 0, 3], [1, 1, 2, 4]],  # 1P1 3P1
-    '1-': [[1, 1, 2, 4]],  # 3P1
-    '2+': [[1, 1, 0, 5], [1, 1, 2, 6]],  # 1D2 3D2
-    '2-': [[1, 1, 2, 4], [1, 1, 2, 8]],  # 3P2 3F2
-    '2b-': [[1, 1, 2, 4]],  # 3P2
+    '1^-': [[1, 1, 2, 4]],  # 3P1
+    '2^+': [[1, 1, 0, 5], [1, 1, 2, 6]],  # 1D2 3D2
+    '2^-': [[1, 1, 2, 4], [1, 1, 2, 8]],  # 3P2 3F2
+    '2^b-': [[1, 1, 2, 4]],  # 3P2
     #
-    '3+': [[1, 1, 2, 6]],  #     3D3
-    '3-': [[1, 1, 0, 7], [1, 1, 2, 8]],  # 1F3 3F3
-    '4-': [[1, 1, 2, 8]],  #     3F4
+    '3^+': [[1, 1, 2, 6]],  #     3D3
+    '3^-': [[1, 1, 0, 7], [1, 1, 2, 8]],  # 1F3 3F3
+    '4^-': [[1, 1, 2, 8]],  #     3F4
 }
+
+streukanaele3He = {
+    #          [l1l2L,[compatible (iso)spin configurations]]
+    '0.5^-': [['101', ['he_no3',
+                       'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
+              ['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
+              ['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]],
+    '1.5^-': [['101', ['he_no3',
+                       'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
+              ['121', ['he_no3', 'he_no5']], ['122', ['he_no3', 'he_no5']],
+              ['123', ['he_no5']], ['211', ['he_no1', 'he_no2', 'he_no6']], [
+                  '212', ['he_no1', 'he_no2', 'he_no6']
+              ], ['213', ['he_no2']], ['303', ['he_no5']], ['033', ['he_no2']]]
+}
+
+streukas = ['0.5^-']  #['0^-', '1^-', '2^-']  #
 
 cal = ['purge']
 cal = ['purge', 'construe_fresh_LIT_basis', 'construe_fresh_deuteron']
-cal = ['purge', 'construe_fresh_LIT_basis']
+cal = ['purge', 'construe_fresh_helion', 'construe_fresh_LIT_basis']
+cal = []
 
-boundstatekanal = 'np-3SD1'
-J0 = int(boundstatekanal[-1])
-streukas = ['0-']  #['0-', '1-', '2-']  #['2-']  #
+boundstatekanal = 'npp-J=0.5'  # 'np-3SD-J=1'
+J0 = float(boundstatekanal.split('J=')[1])
+
 multipolarity = 1
 
 anz_phot_e = 100

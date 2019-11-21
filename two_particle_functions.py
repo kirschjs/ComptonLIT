@@ -8,6 +8,7 @@ from bridge import *
 def non_zero_couplings(j1, j2, j3):
     # we are interested in viable m1,m3 combinations
     # (L ml,J_deut mJd|J_lit mlit)
+    # ECCE: CG takes J *NOT* 2J, i.e., also fractional angular momenta
     m1m3 = []
     m1 = np.arange(-j1, j1 + 1)
     m3 = np.arange(-j3, j3 + 1)
