@@ -407,7 +407,7 @@ def n3_inlu(anzO, fn='INLU', fr=[]):
         out += '  1  3\n'
 
     for n in fr:
-        out += '%3d%3d\n%3d\n' % (n[0], n[1], n[2])
+        out += '%3d%3d\n%3d\n' % (int(n[0]), int(n[1]), int(n[2]))
 
     with open(fn, 'w') as outfile:
         outfile.write(out)
@@ -464,28 +464,26 @@ def n3_inob(fr, anzO, fn='INOB'):
         outfile.write(out)
 
 
-def n3_inen_bdg(anzbasv, jay, co, rw, fn='INEN', pari=0, nzop=31, tni=11):
+def n3_inen_rhs(bas, jay, co, rw, fn='INEN', pari=0, nzop=31, tni=11):
     head = '%3d  2 12%3d  1  1 +2  0  0 -1\n' % (tni, nzop)
     head += '  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1\n'
-    for e in range(len(co)):
-        if ((e % 7 == 0) & (e > 0) & (e != len(co))):
-            head += '\n'
-        head += '%-12.4f' % co[e]
-    head += '\n'
+
+    head += co + '\n'
 
     relstr = ''
     for rwi in rw:
         relstr += '%3d' % int(rwi)
 
     out = ''
-    bv = 0
-    out += '%4d%4d   1   0%4d\n' % (int(2 * jay), anzbasv, pari)
+    out += '%4d%4d   1   0%4d\n' % (int(2 * jay), len(bas), pari)
 
-    for i in range(anzbasv):
-        bv += 1
-        out += '%4d%4d\n' % (1, bv)
-        tmp = relstr[0:]
-        out += tmp + '\n'
+    for bv in bas:
+        out += '%4d%4d\n' % (1, bv[0])
+        tmp = ''
+        for i in range(bv[1] - 1):
+            tmp += '%3d' % (0)
+        tmp += '  1\n'
+        out += tmp
 
     with open(fn, 'w') as outfile:
         outfile.write(head + out)
@@ -515,7 +513,7 @@ def lit_3inob(anzo=13, fr=[]):
     for n in range(anzo):
         s += '  1'
     s += '\n  4\n'
-    s += '%3d  2\n' % len(fr)
+    s += '%3d  3\n' % len(fr)
 
     elem_prods = {
         'n3_no6':
@@ -616,7 +614,6 @@ def lit_3inqua(intwi=[], relwi=[], LREG='', anzo=13, withhead=True, bnd=''):
 
 def lit_3inen(BUECO,
               KSTREU,
-              KBND,
               JWSL,
               JWSLM,
               MULM2,
@@ -631,10 +628,11 @@ def lit_3inen(BUECO,
               NZE=100,
               EK0=1e3,
               EKDIFF=20.0,
-              withhead=True):
+              withhead=True,
+              bnd=''):
     s = ''
     # NBAND1,ISTEU,IGAK,KEIND,IQUAK,IMETH
-    s += ' 10  2  3  1  3  1\n'
+    s += ' 10  2  0  1  0  1\n'
     # 1-11 Einteilchen, if any MREG>=12 # 0 => MODUS=1 => lese QUALMOUT
     # 10,11: el. siegert limes fuer p,n
     if MREG == '':
@@ -668,16 +666,50 @@ def lit_3inen(BUECO,
     s += '%s  1\n' % (' ' * int(3 * (KSTREU[1] - 1)))
 
     nueco = 1
-    for nbdgv in range(len(KBND)):
-        for bdgrw in KBND[nbdgv][1][0]:
-            s += '  1%3d\n%3d\n' % (KBND[nbdgv][0], nueco)
-            rwstr = ''
-            for n in range(bdgrw):
-                rwstr += '  0'
-            rwstr += '  1\n'
-            s += rwstr
-            nueco += 1
+    bdginen = [line for line in open(bnd)][8:]
+    for ln in range(int(len(bdginen) / 2)):
+        s += bdginen[2 * ln]
+        s += '%3d\n' % nueco
+        s += bdginen[2 * ln + 1]
+        nueco += 1
 
     with open('INEN', 'w') as outfile:
+        outfile.write(s)
+    outfile.close()
+    return
+
+
+def he3inqua(intwi=[], relwi=[], potf=''):
+    s = ''
+    # NBAND1,NBAND2,NBAND3,NBAND4,NBAND5,NAUS,MOBAUS,LUPAUS,NBAUS
+    s += ' 10  8  9  3 00  0  0  0  0\n%s\n' % potf
+
+    zerl_counter = 0
+    for n in range(len(relwi)):
+        zerl_counter += 1
+        s += '%3d%60s%s\n%3d%3d\n' % (len(intwi[n]), '', 'Z%d' % zerl_counter,
+                                      len(intwi[n]), len(relwi[n]))
+        for bv in intwi[n]:
+            s += '%36s%-12.6f\n' % ('', float(bv))
+        for rw in range(0, len(relwi[n])):
+            s += '%12.6f' % float(relwi[n][rw])
+            if ((rw != (len(relwi[n]) - 1)) & ((rw + 1) % 6 == 0)):
+                s += '\n'
+        s += '\n'
+        for bb in range(0, len(intwi[n])):
+            s += '  1  1\n'
+            if len(intwi[n]) < 7:
+                s += '1.'.rjust(12 * (bb + 1))
+                s += '\n'
+            else:
+                if bb < 6:
+                    s += '1.'.rjust(12 * (bb + 1))
+                    s += '\n\n'
+                else:
+                    s += '\n'
+                    s += '1.'.rjust(12 * (bb % 6 + 1))
+                    s += '\n'
+
+    with open('INQUA_N', 'w') as outfile:
         outfile.write(s)
     return

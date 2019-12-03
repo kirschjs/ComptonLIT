@@ -8,6 +8,11 @@ from parameters_and_constants import *
 from rrgm_functions import *
 from two_particle_functions import *
 
+import multiprocessing
+
+print("%d/%d cpus can/are goint to be used" % (len(os.sched_getaffinity(0)),
+                                               multiprocessing.cpu_count()))
+
 home = os.getenv("HOME")
 
 pathbase = home + '/kette_repo/ComptonLIT'
@@ -15,7 +20,7 @@ pathbase = home + '/kette_repo/ComptonLIT'
 av18path = pathbase + '/av18_deuteron'
 litpathD = pathbase + '/mul_deuteron/'
 
-v18uixpath = pathbase + '/v18uix_helium3'
+v18uixpath = pathbase + '/v18uix_helium3/'  #the_odd_one/'
 litpath3He = pathbase + '/mul_helion/'
 
 BINBDGpath = pathbase + '/src_nucl/'
@@ -24,6 +29,17 @@ BINLITpath = pathbase + '/src_elma/'
 mpii = '137'
 potnn = 'AV18'
 potnnn = 'urbana9_AK_neu'
+
+anzproc = len(os.sched_getaffinity(0))
+
+cal = ['purge']
+cal = ['purge', 'construe_fresh_LIT_basis', 'construe_fresh_deuteron']
+cal = [
+    'purge', 'construe_fresh_helion', 'lit_lu-ob-qua',
+    'construe_fresh_LIT_basis'
+]
+cal = ['construe_fresh_helion', 'lhs', 'rhs']
+cal = ['plt']
 
 # convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
@@ -38,6 +54,11 @@ rechtekanaele = {
      ['022', ['he_no2', 'he_no2']], ['222', ['he_no2']], ['221', ['he_no1']],
      ['220', ['he_no1']], ['221', ['he_no2']], ['220', ['he_no6']],
      ['111', ['he_no3']], ['112', ['he_no5']], ['111', ['he_no5']]],
+    # helion
+    'nppODD-J=0.5': [['222', ['he_no2']], ['221', ['he_no1']], [
+        '220', ['he_no1']
+    ], ['221', ['he_no2']], ['220', ['he_no6']], ['111', ['he_no3']],
+                     ['112', ['he_no5']], ['111', ['he_no5']]],
 }
 
 # ECCE! bvnr for LIT basis states must be shifted after purge! (A2_lit)
@@ -59,10 +80,11 @@ streukanaeleD = {
 
 streukanaele3He = {
     #          [l1l2L,[compatible (iso)spin configurations]]
-    '0.5^-': [['101', ['he_no3',
-                       'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
-              ['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
-              ['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]],
+    '0.5^-':
+    [['101', ['he_no3', 'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']]
+     #['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
+     #['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]
+     ],
     '1.5^-': [['101', ['he_no3',
                        'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
               ['121', ['he_no3', 'he_no5']], ['122', ['he_no3', 'he_no5']],
@@ -73,12 +95,8 @@ streukanaele3He = {
 
 streukas = ['0.5^-']  #['0^-', '1^-', '2^-']  #
 
-cal = ['purge']
-cal = ['purge', 'construe_fresh_LIT_basis', 'construe_fresh_deuteron']
-cal = ['purge', 'construe_fresh_helion', 'construe_fresh_LIT_basis']
-cal = []
-
-boundstatekanal = 'npp-J=0.5'  # 'np-3SD-J=1'
+#                  realistic    L>0 (only)         deuteron
+boundstatekanal = 'npp-J=0.5'  #'nppODD-J=0.5'  # 'np-3SD-J=1'
 J0 = float(boundstatekanal.split('J=')[1])
 
 multipolarity = 1
@@ -108,6 +126,10 @@ rw0 = sparsify(rw0, min_spacing)
 nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
+
+basisdimLITint = 8
+basisdimLITrel = 10
+LD = 4
 
 basisdimLIT = 20
 wli = 'wd'
