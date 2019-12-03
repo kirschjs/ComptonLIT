@@ -1,7 +1,10 @@
 F77     =      gfortran
-FFLAGS  =       -g -O2 -Wall -ffpe-summary='none' -fcray-pointer -mcmodel=medium -finteger-4-integer-8 #-fdefault-integer-8 -ffpe-trap=denormal 
+FFLAGS  =       -Ofast -finteger-4-integer-8 -funroll-loops -funroll-all-loops  
+# -g -pg  -ffpe-summary='none' -fcray-pointer  -mcmodel=medium
+#-fno-align-commons#-fdefault-integer-8 -ffpe-trap=denormal  -fno-align-commons 
+
 LIBS    = -L. -llapack -lblas
-#F77     =      ifort
+
 #FFLAGS  =       -Ofast -g -traceback -i8 -mcmodel=medium
 #FFLAGS =  -ipo -O3 -no-prec-div -fp-model fast=2 -xHost # = fast w/o -static
 #FFLAGS  =      -O2 -g -traceback -i8 

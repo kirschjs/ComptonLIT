@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+import multiprocessing
 
 
 def threebodywidths(zerl, nPERz=5):
