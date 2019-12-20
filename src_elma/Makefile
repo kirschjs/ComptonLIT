@@ -30,3 +30,6 @@ obelma: obelma.o
 
 enemb: enemb.o
 	$(F77) $(FFLAGS) -o enemb.exe enemb.o $(LIBS)
+
+enem_joki: enem_joki.o
+	$(F77) $(FFLAGS) -o enem_joki.exe enem_joki.o $(LIBS)

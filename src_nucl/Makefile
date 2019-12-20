@@ -1,5 +1,5 @@
 F77     =       gfortran
-FFLAGS  =       -Ofast -funroll-loops -ffpe-summary='none' -fcray-pointer -mcmodel=large 
+FFLAGS  =       -O2 -ffpe-summary='none' -fcray-pointer -mcmodel=large 
 #-ffpe-trap=denormal -pg -funroll-loops -g 
 
 ## orig settings

@@ -1,3 +1,4 @@
+  DM-MATRIZEN WERDEN AUF MATOUT      KOPIERT
   0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01
   0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01
   0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01  0.1000E+01
@@ -29,100 +30,523 @@
      2  1     1  1     0  1  1     1  0  1  0  1     0
 
      9
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     10
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     11
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     12
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     13
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     14
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     15
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     16
-     2  1     1  1     2  1  3     1  0  1  0  1     0
+     2  1     1  1     0  1  1     1  0  1  0  1     0
 
     17
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     18
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     19
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     20
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     21
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     22
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     23
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     24
-     2  1     1  1     2  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     25
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     26
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     27
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     28
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     29
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     30
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     31
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  3     1  0  1  0  1     0
 
     32
-     2  1     1  1     2  1  3     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     33
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     34
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     35
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     36
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     37
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     38
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     39
-     2  1     1  1     0  1  1     0  0  0  1  1     0
+     2  1     1  1     2  1  1     0  0  0  1  1     0
 
     40
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    41
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    42
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    43
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    44
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    45
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    46
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    47
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    48
+     2  1     1  1     2  1  1     0  0  0  1  1     0
+
+    49
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    50
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    51
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    52
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    53
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    54
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    55
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    56
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    57
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    58
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    59
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    60
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    61
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    62
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    63
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    64
+     2  1     1  1     2  1  3     0  0  0  1  1     0
+
+    65
      2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    66
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    67
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    68
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    69
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    70
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    71
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    72
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    73
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    74
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    75
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    76
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    77
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    78
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    79
+     2  1     1  1     0  1  1     0  0  0  1  1     0
+
+    80
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    81
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    82
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    83
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    84
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    85
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    86
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    87
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    88
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    89
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    90
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    91
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    92
+     2  1     1  1     0  1  1     1  0  1  2  1     0
+
+    93
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    94
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    95
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    96
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    97
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    98
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+    99
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   100
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   101
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   102
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   103
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   104
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   105
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   106
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   107
+     2  1     1  1     2  1  3     1  0  1  2  1     0
+
+   108
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   109
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   110
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   111
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   112
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   113
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   114
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   115
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   116
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   117
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   118
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   119
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   120
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   121
+     2  1     1  1     2  1  3     1  0  1  2  2     0
+
+   122
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   123
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   124
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   125
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   126
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   127
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   128
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   129
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   130
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   131
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   132
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   133
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   134
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   135
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   136
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   137
+     2  1     1  1     2  1  1     2  0  2  1  1     0
+
+   138
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   139
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   140
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   141
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   142
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   143
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   144
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   145
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   146
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   147
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   148
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   149
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   150
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   151
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   152
+     2  1     1  1     2  1  3     2  0  2  1  1     0
+
+   153
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   154
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   155
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   156
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   157
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   158
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   159
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   160
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   161
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   162
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   163
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   164
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   165
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   166
+     2  1     1  1     0  1  1     2  0  2  1  1     0
+
+   167
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   168
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   169
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   170
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   171
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   172
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   173
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   174
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   175
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   176
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   177
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   178
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   179
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   180
+     2  1     1  1     2  1  3     2  0  2  1  2     0
+
+   181
+     2  1     1  1     2  1  3     2  0  2  1  2     0
  GESAMTDREHIMPULS =   1 /2  PARITAET = +
 
 
@@ -131,486 +555,2250 @@
   1  1  1  1  0  1  1  1  1  1
   1  1  1  1  1  1  1  1  1  0
   0
-0/  1 ) =    1.0000 / 11 )
+0/  1 ) =    1.0000 /  8 )
  BENUTZTE RADIALFUNKTIONEN    
-  0  0  0  0  0  1  0  0  0  0
-0/  2 ) =    1.0000 / 13 )
+  0  0  0  0  0  1  0  0  0  0  1  0  0  0  0  0
+0/  2 ) =    1.0000 / 12 )
  BENUTZTE RADIALFUNKTIONEN    
-  0  0  0  1  0  0  0  0  0  0
-0/  3 ) =    1.0000 / 32 )
+  0  0  1  0  0  0  0  0  0  0  0  0  0  0  0  0
+0/  3 ) =    1.0000 / 16 )
  BENUTZTE RADIALFUNKTIONEN    
-  0  0  0  1  0  0  0  0  0  0
-0/  4 ) =    1.0000 / 33 )
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1
+0/  4 ) =    1.0000 / 31 )
  BENUTZTE RADIALFUNKTIONEN    
-  0  0  1  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  0  0  0  1  0
+0/  5 ) =    1.0000 / 36 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/  6 ) =    1.0000 / 37 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/  7 ) =    1.0000 / 38 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/  8 ) =    1.0000 / 39 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/  9 ) =    1.0000 / 40 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 10 ) =    1.0000 / 41 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 11 ) =    1.0000 / 43 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 12 ) =    1.0000 / 44 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 13 ) =    1.0000 / 46 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 14 ) =    1.0000 / 47 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 15 ) =    1.0000 / 50 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 16 ) =    1.0000 / 52 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 17 ) =    1.0000 / 55 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 18 ) =    1.0000 / 58 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 19 ) =    1.0000 / 60 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 20 ) =    1.0000 / 62 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 21 ) =    1.0000 / 63 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0  0
+0/ 22 ) =    1.0000 / 66 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1
+0/ 23 ) =    1.0000 / 72 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  1  0  0  0  0  1  0  0
+0/ 24 ) =    1.0000 / 73 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  1  0  0  0  0
+0/ 25 ) =    1.0000 /122 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 26 ) =    1.0000 /123 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 27 ) =    1.0000 /124 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 28 ) =    1.0000 /125 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 29 ) =    1.0000 /126 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 30 ) =    1.0000 /127 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 31 ) =    1.0000 /128 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 32 ) =    1.0000 /129 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 33 ) =    1.0000 /131 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 34 ) =    1.0000 /132 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 35 ) =    1.0000 /133 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 36 ) =    1.0000 /135 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 37 ) =    1.0000 /136 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 38 ) =    1.0000 /137 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 39 ) =    1.0000 /138 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 40 ) =    1.0000 /139 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 41 ) =    1.0000 /140 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 42 ) =    1.0000 /141 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 43 ) =    1.0000 /142 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 44 ) =    1.0000 /143 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 45 ) =    1.0000 /144 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1
+0/ 46 ) =    1.0000 /145 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 47 ) =    1.0000 /147 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0  0
+0/ 48 ) =    1.0000 /149 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  0  1  1  0
+0/ 49 ) =    1.0000 /166 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  1  0
+0/ 50 ) =    1.0000 /170 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  1
+0/ 51 ) =    1.0000 /178 )
+ BENUTZTE RADIALFUNKTIONEN    
+  0  0  0  0  0  0  0  0  0  0  0  0  0  1
 
 
  DER  1 TE PARAMETERSATZ DER   1 TEN STRUKTUR = /   1 ) LIEFERT
- KINETISCHE ENERGIE =       674.8748236
- COULOMB ENERGIE=             2.3003931
- ZENTRAL ENERGIE=           731.4283413
- L-QUADRAT    =             315.1360012
- LS**2 SKALAR  =             92.5375585
- SPINBAHN ENERGIE =         539.2368041
- LS**2 VEKTOR   =            58.3611269
- TENSOR ENERGIE =          -216.9026705
- LS**2 TENSOR   =            58.1510608
- ISO-TENSOR SKA =             0.0000000
- ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.7261213
- ZENTRAL  3TEIL =            92.2814295
- S-S-POTENTIAL 3N AK =        0.1806487
- S-S-POTENTIAL 3N KO =        0.0000000
- S-T-POTENTIAL IK 3N A       -4.1284795
- S-T-POTENTIAL IJ 3N A       -4.1284795
- S-T-POTENTIAL IK 3N K        0.0000000
- S-T-POTENTIAL IJ 3N K        0.0000000
- TENSOR-T RANG=0  3N A       14.0525521
- TENSOR-T RANG=0  3N K        0.0000000
- TENSOR-T RANG=1  3N A        0.0000000
- TENSOR-T RANG=1  3N K       -7.7128847
- TENSOR-T RANG=2  3N A      -29.4833786
- TENSOR-T RANG=2  3N K        0.0000000
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    2316.9109682
-
-
-
- DER  1 TE PARAMETERSATZ DER   2 TEN STRUKTUR = /   2 ) LIEFERT
- KINETISCHE ENERGIE =       500.3709240
- COULOMB ENERGIE=             1.7880927
- ZENTRAL ENERGIE=           658.3210196
- L-QUADRAT    =             182.1207266
- LS**2 SKALAR  =             57.2033204
- SPINBAHN ENERGIE =         316.7237056
- LS**2 VEKTOR   =            36.5446101
- TENSOR ENERGIE =           -79.0343282
- LS**2 TENSOR   =            36.2275931
- ISO-TENSOR SKA =             0.0000000
- ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.4465439
- ZENTRAL  3TEIL =            69.1866354
- S-S-POTENTIAL 3N AK =        0.1427548
- S-S-POTENTIAL 3N KO =        0.0000000
- S-T-POTENTIAL IK 3N A       -3.1555178
- S-T-POTENTIAL IJ 3N A       -3.1555178
- S-T-POTENTIAL IK 3N K        0.0000000
- S-T-POTENTIAL IJ 3N K        0.0000000
- TENSOR-T RANG=0  3N A       23.3425082
- TENSOR-T RANG=0  3N K        0.0000000
- TENSOR-T RANG=1  3N A        0.0000000
- TENSOR-T RANG=1  3N K       -3.3753394
- TENSOR-T RANG=2  3N A      -29.8207354
- TENSOR-T RANG=2  3N K        0.0000000
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    1763.8769957
-
-
-
- DER  1 TE PARAMETERSATZ DER   3 TEN STRUKTUR = /   3 ) LIEFERT
- KINETISCHE ENERGIE =       473.4871385
- COULOMB ENERGIE=             1.7842136
- ZENTRAL ENERGIE=           298.8846597
- L-QUADRAT    =             216.4259022
- LS**2 SKALAR  =             56.4675406
- SPINBAHN ENERGIE =         229.9760796
- LS**2 VEKTOR   =            24.2497831
- TENSOR ENERGIE =          -131.5817905
- LS**2 TENSOR   =            28.6667525
- ISO-TENSOR SKA =             0.0000000
- ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.4449793
- ZENTRAL  3TEIL =            45.3437440
- S-S-POTENTIAL 3N AK =        0.1429061
- S-S-POTENTIAL 3N KO =        0.0000000
- S-T-POTENTIAL IK 3N A       -2.1863029
- S-T-POTENTIAL IJ 3N A       -2.1863029
- S-T-POTENTIAL IK 3N K        0.0000000
- S-T-POTENTIAL IJ 3N K        0.0000000
- TENSOR-T RANG=0  3N A        3.4778281
- TENSOR-T RANG=0  3N K        0.0000000
- TENSOR-T RANG=1  3N A        0.0000000
- TENSOR-T RANG=1  3N K       -4.0373298
- TENSOR-T RANG=2  3N A       -8.2336319
- TENSOR-T RANG=2  3N K        0.0000000
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    1231.1261692
-
-
-
- DER  1 TE PARAMETERSATZ DER   4 TEN STRUKTUR = /   4 ) LIEFERT
- KINETISCHE ENERGIE =      1328.4279309
- COULOMB ENERGIE=             4.3682678
- ZENTRAL ENERGIE=          2183.3009298
- L-QUADRAT    =             362.3430006
- LS**2 SKALAR  =             28.7537119
- SPINBAHN ENERGIE =         276.8113797
- LS**2 VEKTOR   =            21.1793598
+ KINETISCHE ENERGIE =       772.1788023
+ COULOMB ENERGIE=             2.9999796
+ ZENTRAL ENERGIE=          1242.2629509
+ L-QUADRAT    =             248.9358866
+ LS**2 SKALAR  =             57.1525440
+ SPINBAHN ENERGIE =         240.1126179
+ LS**2 VEKTOR   =            25.8748108
  TENSOR ENERGIE =             0.0000000
  LS**2 TENSOR   =             0.0000000
  ISO-TENSOR SKA =             0.0000000
  ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             1.2731266
- ZENTRAL  3TEIL =           108.7999146
- S-S-POTENTIAL 3N AK =       -0.0750544
- S-S-POTENTIAL 3N KO =        0.4358375
+ CHARGE ASYMMET =             0.9627529
+ ZENTRAL  3TEIL =            97.9895436
+ S-S-POTENTIAL 3N AK =       -0.2195867
+ S-S-POTENTIAL 3N KO =        0.4851394
  S-T-POTENTIAL IK 3N A        0.0000000
  S-T-POTENTIAL IJ 3N A        0.0000000
  S-T-POTENTIAL IK 3N K        0.0000000
  S-T-POTENTIAL IJ 3N K        0.0000000
- TENSOR-T RANG=0  3N A       43.2398031
- TENSOR-T RANG=0  3N K      -16.0209079
- TENSOR-T RANG=1  3N A       13.1071382
- TENSOR-T RANG=1  3N K      -14.1432118
+ TENSOR-T RANG=0  3N A       39.6684313
+ TENSOR-T RANG=0  3N K      -12.1032156
+ TENSOR-T RANG=1  3N A       16.4177771
+ TENSOR-T RANG=1  3N K       -8.2088886
  TENSOR-T RANG=2  3N A        0.0000000
  TENSOR-T RANG=2  3N K        0.0000000
  TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    4341.8012264
+ GESAMTE     ENERGIE =    2724.5095456
+
+
+
+ DER  2 TE PARAMETERSATZ DER   1 TEN STRUKTUR = /   2 ) LIEFERT
+ KINETISCHE ENERGIE =       615.4650079
+ COULOMB ENERGIE=             2.5637699
+ ZENTRAL ENERGIE=           965.8591642
+ L-QUADRAT    =             185.8710490
+ LS**2 SKALAR  =             42.4581258
+ SPINBAHN ENERGIE =         179.2611857
+ LS**2 VEKTOR   =            21.0669018
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.7749866
+ ZENTRAL  3TEIL =            89.0725722
+ S-S-POTENTIAL 3N AK =       -0.1774719
+ S-S-POTENTIAL 3N KO =        0.5227996
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       23.5111277
+ TENSOR-T RANG=0  3N K       -8.8677430
+ TENSOR-T RANG=1  3N A       27.1092026
+ TENSOR-T RANG=1  3N K      -13.5546013
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2130.9360769
+
+
+
+ DER  1 TE PARAMETERSATZ DER   2 TEN STRUKTUR = /   3 ) LIEFERT
+ KINETISCHE ENERGIE =       818.7162199
+ COULOMB ENERGIE=             2.9308543
+ ZENTRAL ENERGIE=          1015.7376185
+ L-QUADRAT    =             309.4329661
+ LS**2 SKALAR  =             63.5083390
+ SPINBAHN ENERGIE =         196.7599666
+ LS**2 VEKTOR   =            19.1261843
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.9564321
+ ZENTRAL  3TEIL =            84.7079043
+ S-S-POTENTIAL 3N AK =       -0.3639860
+ S-S-POTENTIAL 3N KO =        0.2844594
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       19.1757457
+ TENSOR-T RANG=0  3N K       -8.3425629
+ TENSOR-T RANG=1  3N A        5.0759440
+ TENSOR-T RANG=1  3N K       -2.5379720
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2525.1681134
+
+
+
+ DER  1 TE PARAMETERSATZ DER   3 TEN STRUKTUR = /   4 ) LIEFERT
+ KINETISCHE ENERGIE =         5.8534717
+ COULOMB ENERGIE=             0.2548461
+ ZENTRAL ENERGIE=            -0.1927974
+ L-QUADRAT    =               0.0098314
+ LS**2 SKALAR  =              0.0052387
+ SPINBAHN ENERGIE =           0.0161366
+ LS**2 VEKTOR   =             0.0026189
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0020397
+ ZENTRAL  3TEIL =             0.0002303
+ S-S-POTENTIAL 3N AK =       -0.0002060
+ S-S-POTENTIAL 3N KO =        0.0002311
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0002646
+ TENSOR-T RANG=0  3N K        0.0000256
+ TENSOR-T RANG=1  3N A        0.0001556
+ TENSOR-T RANG=1  3N K       -0.0000778
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =       5.9520092
+
+
+
+ DER  1 TE PARAMETERSATZ DER   4 TEN STRUKTUR = /   5 ) LIEFERT
+ KINETISCHE ENERGIE =        14.3488742
+ COULOMB ENERGIE=             0.2567508
+ ZENTRAL ENERGIE=             0.2619238
+ L-QUADRAT    =               0.0658756
+ LS**2 SKALAR  =              0.0444817
+ SPINBAHN ENERGIE =           0.1390703
+ LS**2 VEKTOR   =             0.0201161
+ TENSOR ENERGIE =             0.9634316
+ LS**2 TENSOR   =             0.0231901
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0003565
+ ZENTRAL  3TEIL =             0.0031398
+ S-S-POTENTIAL 3N AK =        0.0000401
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.0005394
+ S-T-POTENTIAL IJ 3N A       -0.0005394
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0019023
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.0004502
+ TENSOR-T RANG=2  3N A       -0.0026308
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =      16.1249931
+
+
+
+ DER  1 TE PARAMETERSATZ DER   5 TEN STRUKTUR = /   6 ) LIEFERT
+ KINETISCHE ENERGIE =       462.9839395
+ COULOMB ENERGIE=             1.0413882
+ ZENTRAL ENERGIE=           781.7859631
+ L-QUADRAT    =              25.3191105
+ LS**2 SKALAR  =              3.7925538
+ SPINBAHN ENERGIE =          14.5718491
+ LS**2 VEKTOR   =             1.5927577
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0953999
+ ZENTRAL  3TEIL =            14.4876879
+ S-S-POTENTIAL 3N AK =        0.0184679
+ S-S-POTENTIAL 3N KO =        0.0466646
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        6.7012275
+ TENSOR-T RANG=0  3N K       -1.2826920
+ TENSOR-T RANG=1  3N A        2.2082500
+ TENSOR-T RANG=1  3N K        0.1489198
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1313.5114874
+
+
+
+ DER  1 TE PARAMETERSATZ DER   6 TEN STRUKTUR = /   7 ) LIEFERT
+ KINETISCHE ENERGIE =       432.8959839
+ COULOMB ENERGIE=             1.0410783
+ ZENTRAL ENERGIE=           728.7662436
+ L-QUADRAT    =              24.4841353
+ LS**2 SKALAR  =              3.8380724
+ SPINBAHN ENERGIE =          14.8901144
+ LS**2 VEKTOR   =             1.6553265
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0956597
+ ZENTRAL  3TEIL =            14.3951276
+ S-S-POTENTIAL 3N AK =        0.0131184
+ S-S-POTENTIAL 3N KO =        0.0526534
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        6.5193262
+ TENSOR-T RANG=0  3N K       -1.3474807
+ TENSOR-T RANG=1  3N A        2.4079898
+ TENSOR-T RANG=1  3N K        0.1413382
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1229.8486869
+
+
+
+ DER  1 TE PARAMETERSATZ DER   7 TEN STRUKTUR = /   8 ) LIEFERT
+ KINETISCHE ENERGIE =       392.8089558
+ COULOMB ENERGIE=             1.0409836
+ ZENTRAL ENERGIE=           653.6707064
+ L-QUADRAT    =              23.3757691
+ LS**2 SKALAR  =              3.9254219
+ SPINBAHN ENERGIE =          15.3624759
+ LS**2 VEKTOR   =             1.7485681
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0962671
+ ZENTRAL  3TEIL =            14.1905452
+ S-S-POTENTIAL 3N AK =        0.0044968
+ S-S-POTENTIAL 3N KO =        0.0622456
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        6.2636669
+ TENSOR-T RANG=0  3N K       -1.4276032
+ TENSOR-T RANG=1  3N A        2.7001848
+ TENSOR-T RANG=1  3N K        0.1204398
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1113.9431239
+
+
+
+ DER  1 TE PARAMETERSATZ DER   8 TEN STRUKTUR = /   9 ) LIEFERT
+ KINETISCHE ENERGIE =       353.1319279
+ COULOMB ENERGIE=             1.0415547
+ ZENTRAL ENERGIE=           574.3322425
+ L-QUADRAT    =              22.2816402
+ LS**2 SKALAR  =              4.0464814
+ SPINBAHN ENERGIE =          15.8909628
+ LS**2 VEKTOR   =             1.8534117
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0973237
+ ZENTRAL  3TEIL =            13.8708731
+ S-S-POTENTIAL 3N AK =       -0.0061318
+ S-S-POTENTIAL 3N KO =        0.0739846
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.9972779
+ TENSOR-T RANG=0  3N K       -1.4913953
+ TENSOR-T RANG=1  3N A        3.0142434
+ TENSOR-T RANG=1  3N K        0.0811927
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     994.2155896
+
+
+
+ DER  1 TE PARAMETERSATZ DER   9 TEN STRUKTUR = /  10 ) LIEFERT
+ KINETISCHE ENERGIE =       334.5293417
+ COULOMB ENERGIE=             1.0422032
+ ZENTRAL ENERGIE=           535.4971115
+ L-QUADRAT    =              21.7686055
+ LS**2 SKALAR  =              4.1164140
+ SPINBAHN ENERGIE =          16.1612583
+ LS**2 VEKTOR   =             1.9072661
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0980493
+ ZENTRAL  3TEIL =            13.6710223
+ S-S-POTENTIAL 3N AK =       -0.0119765
+ S-S-POTENTIAL 3N KO =        0.0804045
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.8684114
+ TENSOR-T RANG=0  3N K       -1.5121950
+ TENSOR-T RANG=1  3N A        3.1666525
+ TENSOR-T RANG=1  3N K        0.0536866
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     936.4362553
+
+
+
+ DER  1 TE PARAMETERSATZ DER  10 TEN STRUKTUR = /  11 ) LIEFERT
+ KINETISCHE ENERGIE =       315.8033802
+ COULOMB ENERGIE=             1.0432214
+ ZENTRAL ENERGIE=           495.4433180
+ L-QUADRAT    =              21.2511409
+ LS**2 SKALAR  =              4.1957894
+ SPINBAHN ENERGIE =          16.4481433
+ LS**2 VEKTOR   =             1.9646314
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0989826
+ ZENTRAL  3TEIL =            13.4315493
+ S-S-POTENTIAL 3N AK =       -0.0184898
+ S-S-POTENTIAL 3N KO =        0.0875323
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.7363381
+ TENSOR-T RANG=0  3N K       -1.5246353
+ TENSOR-T RANG=1  3N A        3.3202231
+ TENSOR-T RANG=1  3N K        0.0182875
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     877.2994124
+
+
+
+ DER  1 TE PARAMETERSATZ DER  11 TEN STRUKTUR = /  12 ) LIEFERT
+ KINETISCHE ENERGIE =       274.1729975
+ COULOMB ENERGIE=             1.0475037
+ ZENTRAL ENERGIE=           403.5929079
+ L-QUADRAT    =              20.0895179
+ LS**2 SKALAR  =              4.4043132
+ SPINBAHN ENERGIE =          17.1346036
+ LS**2 VEKTOR   =             2.1031484
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1020867
+ ZENTRAL  3TEIL =            12.7334553
+ S-S-POTENTIAL 3N AK =       -0.0354532
+ S-S-POTENTIAL 3N KO =        0.1059723
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.4330585
+ TENSOR-T RANG=0  3N K       -1.5087322
+ TENSOR-T RANG=1  3N A        3.6411704
+ TENSOR-T RANG=1  3N K       -0.0968778
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     742.9196723
+
+
+
+ DER  1 TE PARAMETERSATZ DER  12 TEN STRUKTUR = /  13 ) LIEFERT
+ KINETISCHE ENERGIE =       253.8579690
+ COULOMB ENERGIE=             1.0511373
+ ZENTRAL ENERGIE=           357.8693022
+ L-QUADRAT    =              19.5096813
+ LS**2 SKALAR  =              4.5200917
+ SPINBAHN ENERGIE =          17.4862710
+ LS**2 VEKTOR   =             2.1752786
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1043326
+ ZENTRAL  3TEIL =            12.2919611
+ S-S-POTENTIAL 3N AK =       -0.0450097
+ S-S-POTENTIAL 3N KO =        0.1162808
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.2773665
+ TENSOR-T RANG=0  3N K       -1.4708764
+ TENSOR-T RANG=1  3N A        3.7706748
+ TENSOR-T RANG=1  3N K       -0.1765919
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     676.3378689
+
+
+
+ DER  1 TE PARAMETERSATZ DER  13 TEN STRUKTUR = /  14 ) LIEFERT
+ KINETISCHE ENERGIE =       115.2645311
+ COULOMB ENERGIE=             1.1428675
+ ZENTRAL ENERGIE=            70.5601082
+ L-QUADRAT    =              12.2286124
+ LS**2 SKALAR  =              4.1099542
+ SPINBAHN ENERGIE =          15.2571274
+ LS**2 VEKTOR   =             2.0545390
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1494119
+ ZENTRAL  3TEIL =             5.1182673
+ S-S-POTENTIAL 3N AK =       -0.0813156
+ S-S-POTENTIAL 3N KO =        0.1427106
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        2.5862163
+ TENSOR-T RANG=0  3N K       -0.2315812
+ TENSOR-T RANG=1  3N A        1.9683343
+ TENSOR-T RANG=1  3N K       -1.0541138
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     229.2156697
+
+
+
+ DER  1 TE PARAMETERSATZ DER  14 TEN STRUKTUR = /  15 ) LIEFERT
+ KINETISCHE ENERGIE =        91.9537048
+ COULOMB ENERGIE=             1.0389052
+ ZENTRAL ENERGIE=            32.6800170
+ L-QUADRAT    =               6.0383137
+ LS**2 SKALAR  =              1.8205379
+ SPINBAHN ENERGIE =           5.9306383
+ LS**2 VEKTOR   =             0.7880224
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1270627
+ ZENTRAL  3TEIL =             1.4470798
+ S-S-POTENTIAL 3N AK =       -0.0213855
+ S-S-POTENTIAL 3N KO =        0.0513690
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.6368172
+ TENSOR-T RANG=0  3N K        0.0375191
+ TENSOR-T RANG=1  3N A        0.3547618
+ TENSOR-T RANG=1  3N K       -0.5270765
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     142.3562869
+
+
+
+ DER  1 TE PARAMETERSATZ DER  15 TEN STRUKTUR = /  16 ) LIEFERT
+ KINETISCHE ENERGIE =       879.7918894
+ COULOMB ENERGIE=             2.1167560
+ ZENTRAL ENERGIE=          1347.7374422
+ L-QUADRAT    =             301.0200153
+ LS**2 SKALAR  =             77.7765823
+ SPINBAHN ENERGIE =         438.6301957
+ LS**2 VEKTOR   =            45.2700562
+ TENSOR ENERGIE =          -110.2041850
+ LS**2 TENSOR   =            46.6061753
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.6293269
+ ZENTRAL  3TEIL =            85.0618075
+ S-S-POTENTIAL 3N AK =        0.1749162
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -4.0521723
+ S-T-POTENTIAL IJ 3N A       -4.0521723
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       36.9471183
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -2.5728510
+ TENSOR-T RANG=2  3N A      -42.4568077
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    3098.4240930
+
+
+
+ DER  1 TE PARAMETERSATZ DER  16 TEN STRUKTUR = /  17 ) LIEFERT
+ KINETISCHE ENERGIE =       678.6981426
+ COULOMB ENERGIE=             2.0326054
+ ZENTRAL ENERGIE=          1026.4574311
+ L-QUADRAT    =             244.7594660
+ LS**2 SKALAR  =             77.9136369
+ SPINBAHN ENERGIE =         426.9502061
+ LS**2 VEKTOR   =            48.0908351
+ TENSOR ENERGIE =          -118.3351122
+ LS**2 TENSOR   =            48.3329062
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.5834039
+ ZENTRAL  3TEIL =            86.1529276
+ S-S-POTENTIAL 3N AK =        0.1691067
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -3.9169903
+ S-T-POTENTIAL IJ 3N A       -3.9169903
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       31.0612606
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -3.8487834
+ TENSOR-T RANG=2  3N A      -38.8022529
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2502.3817992
+
+
+
+ DER  1 TE PARAMETERSATZ DER  17 TEN STRUKTUR = /  18 ) LIEFERT
+ KINETISCHE ENERGIE =       589.5935527
+ COULOMB ENERGIE=             1.9634356
+ ZENTRAL ENERGIE=           834.4019537
+ L-QUADRAT    =             216.6819128
+ LS**2 SKALAR  =             76.5410163
+ SPINBAHN ENERGIE =         407.1128127
+ LS**2 VEKTOR   =            47.6743193
+ TENSOR ENERGIE =          -124.5678719
+ LS**2 TENSOR   =            47.7398416
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.5445809
+ ZENTRAL  3TEIL =            82.4102675
+ S-S-POTENTIAL 3N AK =        0.1633226
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -3.7663425
+ S-T-POTENTIAL IJ 3N A       -3.7663425
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       26.4174835
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -4.5158300
+ TENSOR-T RANG=2  3N A      -35.4235811
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2159.2045312
+
+
+
+ DER  1 TE PARAMETERSATZ DER  18 TEN STRUKTUR = /  19 ) LIEFERT
+ KINETISCHE ENERGIE =       519.4390317
+ COULOMB ENERGIE=             1.8905111
+ ZENTRAL ENERGIE=           669.5195461
+ L-QUADRAT    =             193.5300047
+ LS**2 SKALAR  =             73.1008292
+ SPINBAHN ENERGIE =         380.3067139
+ LS**2 VEKTOR   =            45.6591722
+ TENSOR ENERGIE =          -130.8383230
+ LS**2 TENSOR   =            45.6707067
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.5033711
+ ZENTRAL  3TEIL =            75.9331808
+ S-S-POTENTIAL 3N AK =        0.1566097
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -3.5678976
+ S-T-POTENTIAL IJ 3N A       -3.5678976
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       21.5554935
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -4.9198416
+ TENSOR-T RANG=2  3N A      -31.3834539
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1852.9877568
+
+
+
+ DER  1 TE PARAMETERSATZ DER  19 TEN STRUKTUR = /  20 ) LIEFERT
+ KINETISCHE ENERGIE =       474.8411535
+ COULOMB ENERGIE=             1.8358822
+ ZENTRAL ENERGIE=           564.9608524
+ L-QUADRAT    =             178.8003805
+ LS**2 SKALAR  =             69.2436208
+ SPINBAHN ENERGIE =         356.7390936
+ LS**2 VEKTOR   =            43.2765055
+ TENSOR ENERGIE =          -134.8588744
+ LS**2 TENSOR   =            43.2768048
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.4725044
+ ZENTRAL  3TEIL =            69.9062447
+ S-S-POTENTIAL 3N AK =        0.1512637
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -3.3881739
+ S-T-POTENTIAL IJ 3N A       -3.3881739
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       17.9698513
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -5.0239314
+ TENSOR-T RANG=2  3N A      -28.0173715
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1646.7976320
+
+
+
+ DER  1 TE PARAMETERSATZ DER  20 TEN STRUKTUR = /  21 ) LIEFERT
+ KINETISCHE ENERGIE =       324.4614120
+ COULOMB ENERGIE=             1.5286330
+ ZENTRAL ENERGIE=           200.1474523
+ L-QUADRAT    =             123.9272449
+ LS**2 SKALAR  =             40.0513599
+ SPINBAHN ENERGIE =         172.5344606
+ LS**2 VEKTOR   =            19.8969023
+ TENSOR ENERGIE =          -108.8279439
+ LS**2 TENSOR   =            21.9509794
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.3062495
+ ZENTRAL  3TEIL =            31.2410201
+ S-S-POTENTIAL 3N AK =        0.1143446
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -1.8226216
+ S-T-POTENTIAL IJ 3N A       -1.8226216
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        3.3340653
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -2.9962380
+ TENSOR-T RANG=2  3N A       -7.9080457
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     816.1166530
+
+
+
+ DER  1 TE PARAMETERSATZ DER  21 TEN STRUKTUR = /  22 ) LIEFERT
+ KINETISCHE ENERGIE =       306.9460688
+ COULOMB ENERGIE=             1.1333423
+ ZENTRAL ENERGIE=            45.9345168
+ L-QUADRAT    =              65.6115372
+ LS**2 SKALAR  =             18.7420519
+ SPINBAHN ENERGIE =          31.9905635
+ LS**2 VEKTOR   =             3.2743942
+ TENSOR ENERGIE =           -34.2841635
+ LS**2 TENSOR   =             6.6501488
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1429112
+ ZENTRAL  3TEIL =             7.8747343
+ S-S-POTENTIAL 3N AK =        0.0580687
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.4818571
+ S-T-POTENTIAL IJ 3N A       -0.4818571
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.5242382
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.7617823
+ TENSOR-T RANG=2  3N A       -0.2129910
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     452.6599248
+
+
+
+ DER  1 TE PARAMETERSATZ DER  22 TEN STRUKTUR = /  23 ) LIEFERT
+ KINETISCHE ENERGIE =       685.2044539
+ COULOMB ENERGIE=             3.6618181
+ ZENTRAL ENERGIE=          1454.1919356
+ L-QUADRAT    =               0.0879123
+ LS**2 SKALAR  =             -0.0203239
+ SPINBAHN ENERGIE =           0.0150850
+ LS**2 VEKTOR   =            -0.0034891
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.9803928
+ ZENTRAL  3TEIL =             0.0215170
+ S-S-POTENTIAL 3N AK =        0.0002073
+ S-S-POTENTIAL 3N KO =        0.0000123
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0145604
+ TENSOR-T RANG=0  3N K       -0.0005374
+ TENSOR-T RANG=1  3N A       -0.0002237
+ TENSOR-T RANG=1  3N K       -0.0003409
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2144.1529796
+
+
+
+ DER  1 TE PARAMETERSATZ DER  23 TEN STRUKTUR = /  24 ) LIEFERT
+ KINETISCHE ENERGIE =       626.8596448
+ COULOMB ENERGIE=             2.6022555
+ ZENTRAL ENERGIE=           996.0054711
+ L-QUADRAT    =             191.2776099
+ LS**2 SKALAR  =             44.6805024
+ SPINBAHN ENERGIE =         192.3740545
+ LS**2 VEKTOR   =            22.3582232
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.7956552
+ ZENTRAL  3TEIL =            90.3959070
+ S-S-POTENTIAL 3N AK =       -0.1792750
+ S-S-POTENTIAL 3N KO =        0.5277485
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       27.6515547
+ TENSOR-T RANG=0  3N K       -9.4467936
+ TENSOR-T RANG=1  3N A       25.8389308
+ TENSOR-T RANG=1  3N K      -12.3694249
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2199.3720642
+
+
+
+ DER  2 TE PARAMETERSATZ DER  23 TEN STRUKTUR = /  25 ) LIEFERT
+ KINETISCHE ENERGIE =       310.6112819
+ COULOMB ENERGIE=             2.4119687
+ ZENTRAL ENERGIE=           581.2998909
+ L-QUADRAT    =              26.0294979
+ LS**2 SKALAR  =             -2.8057774
+ SPINBAHN ENERGIE =          14.3889884
+ LS**2 VEKTOR   =             0.2349842
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.6743357
+ ZENTRAL  3TEIL =            11.8389326
+ S-S-POTENTIAL 3N AK =       -0.0141407
+ S-S-POTENTIAL 3N KO =        0.0759328
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.0754410
+ TENSOR-T RANG=0  3N K       -1.3320910
+ TENSOR-T RANG=1  3N A       -0.0992162
+ TENSOR-T RANG=1  3N K       -1.4329103
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     946.9571183
+
+
+
+ DER  1 TE PARAMETERSATZ DER  24 TEN STRUKTUR = /  26 ) LIEFERT
+ KINETISCHE ENERGIE =       495.6543426
+ COULOMB ENERGIE=             2.5067449
+ ZENTRAL ENERGIE=           793.9763000
+ L-QUADRAT    =             136.9474062
+ LS**2 SKALAR  =             31.3467060
+ SPINBAHN ENERGIE =         137.9006676
+ LS**2 VEKTOR   =            16.1791190
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.7337422
+ ZENTRAL  3TEIL =            70.5984642
+ S-S-POTENTIAL 3N AK =       -0.1736142
+ S-S-POTENTIAL 3N KO =        0.4689262
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       24.8751083
+ TENSOR-T RANG=0  3N K       -7.7949821
+ TENSOR-T RANG=1  3N A       15.2206411
+ TENSOR-T RANG=1  3N K      -10.2609116
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1708.1786603
+
+
+
+ DER  1 TE PARAMETERSATZ DER  25 TEN STRUKTUR = /  27 ) LIEFERT
+ KINETISCHE ENERGIE =      1734.1770290
+ COULOMB ENERGIE=             1.0521581
+ ZENTRAL ENERGIE=           459.4362975
+ L-QUADRAT    =             797.5718118
+ LS**2 SKALAR  =           -434.6648222
+ SPINBAHN ENERGIE =         -83.2708218
+ LS**2 VEKTOR   =          -110.3673619
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1028367
+ ZENTRAL  3TEIL =            17.3261001
+ S-S-POTENTIAL 3N AK =        0.0556782
+ S-S-POTENTIAL 3N KO =       -0.0041869
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        2.9512337
+ TENSOR-T RANG=0  3N K       -1.0538775
+ TENSOR-T RANG=1  3N A       -4.5626068
+ TENSOR-T RANG=1  3N K       -2.6311129
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2376.1183551
+
+
+
+ DER  1 TE PARAMETERSATZ DER  26 TEN STRUKTUR = /  28 ) LIEFERT
+ KINETISCHE ENERGIE =      1692.5798165
+ COULOMB ENERGIE=             1.0525400
+ ZENTRAL ENERGIE=           442.6078489
+ L-QUADRAT    =             784.9361973
+ LS**2 SKALAR  =           -427.9635867
+ SPINBAHN ENERGIE =         -81.6452834
+ LS**2 VEKTOR   =          -108.6673493
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1030247
+ ZENTRAL  3TEIL =            17.2791764
+ S-S-POTENTIAL 3N AK =        0.0557396
+ S-S-POTENTIAL 3N KO =       -0.0043864
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        2.7675798
+ TENSOR-T RANG=0  3N K       -1.0841137
+ TENSOR-T RANG=1  3N A       -4.6864831
+ TENSOR-T RANG=1  3N K       -2.7160794
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2314.6146413
+
+
+
+ DER  1 TE PARAMETERSATZ DER  27 TEN STRUKTUR = /  29 ) LIEFERT
+ KINETISCHE ENERGIE =      1170.3007685
+ COULOMB ENERGIE=             1.0590600
+ ZENTRAL ENERGIE=           225.2520969
+ L-QUADRAT    =             589.4713470
+ LS**2 SKALAR  =           -322.3702648
+ SPINBAHN ENERGIE =         -56.7438441
+ LS**2 VEKTOR   =           -82.0055467
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1061855
+ ZENTRAL  3TEIL =            15.6397505
+ S-S-POTENTIAL 3N AK =        0.0570436
+ S-S-POTENTIAL 3N KO =       -0.0079097
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.1168610
+ TENSOR-T RANG=0  3N K       -1.5145268
+ TENSOR-T RANG=1  3N A       -6.3788771
+ TENSOR-T RANG=1  3N K       -3.9705341
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1528.7778879
+
+
+
+ DER  1 TE PARAMETERSATZ DER  28 TEN STRUKTUR = /  30 ) LIEFERT
+ KINETISCHE ENERGIE =      1026.9566311
+ COULOMB ENERGIE=             1.0616118
+ ZENTRAL ENERGIE=           167.9007728
+ L-QUADRAT    =             521.0523303
+ LS**2 SKALAR  =           -284.6299077
+ SPINBAHN ENERGIE =         -48.3167400
+ LS**2 VEKTOR   =           -72.5278898
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1075197
+ ZENTRAL  3TEIL =            14.6641749
+ S-S-POTENTIAL 3N AK =        0.0575690
+ S-S-POTENTIAL 3N KO =       -0.0092059
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -1.0770330
+ TENSOR-T RANG=0  3N K       -1.6268568
+ TENSOR-T RANG=1  3N A       -6.7879930
+ TENSOR-T RANG=1  3N K       -4.3230788
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1312.5019046
+
+
+
+ DER  1 TE PARAMETERSATZ DER  29 TEN STRUKTUR = /  31 ) LIEFERT
+ KINETISCHE ENERGIE =       885.7909317
+ COULOMB ENERGIE=             1.0645758
+ ZENTRAL ENERGIE=           116.1103389
+ L-QUADRAT    =             446.0799286
+ LS**2 SKALAR  =           -242.8507133
+ SPINBAHN ENERGIE =         -39.3905146
+ LS**2 VEKTOR   =           -62.0646076
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1092764
+ ZENTRAL  3TEIL =            13.3571091
+ S-S-POTENTIAL 3N AK =        0.0580555
+ S-S-POTENTIAL 3N KO =       -0.0105027
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -2.0363531
+ TENSOR-T RANG=0  3N K       -1.7072640
+ TENSOR-T RANG=1  3N A       -7.0550933
+ TENSOR-T RANG=1  3N K       -4.6037141
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1102.8514531
+
+
+
+ DER  1 TE PARAMETERSATZ DER  30 TEN STRUKTUR = /  32 ) LIEFERT
+ KINETISCHE ENERGIE =       850.7993835
+ COULOMB ENERGIE=             1.0653916
+ ZENTRAL ENERGIE=           104.3721833
+ L-QUADRAT    =             426.2738840
+ LS**2 SKALAR  =           -231.7434793
+ SPINBAHN ENERGIE =         -37.0987720
+ LS**2 VEKTOR   =           -59.2876714
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1098163
+ ZENTRAL  3TEIL =            12.9701627
+ S-S-POTENTIAL 3N AK =        0.0581483
+ S-S-POTENTIAL 3N KO =       -0.0108020
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -2.2667391
+ TENSOR-T RANG=0  3N K       -1.7189358
+ TENSOR-T RANG=1  3N A       -7.0866610
+ TENSOR-T RANG=1  3N K       -4.6536739
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1051.7822353
+
+
+
+ DER  1 TE PARAMETERSATZ DER  31 TEN STRUKTUR = /  33 ) LIEFERT
+ KINETISCHE ENERGIE =       728.0830250
+ COULOMB ENERGIE=             1.0685683
+ ZENTRAL ENERGIE=            68.1319458
+ L-QUADRAT    =             352.9678212
+ LS**2 SKALAR  =           -190.4013808
+ SPINBAHN ENERGIE =         -28.9105364
+ LS**2 VEKTOR   =           -48.9677240
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1122358
+ ZENTRAL  3TEIL =            11.3856940
+ S-S-POTENTIAL 3N AK =        0.0582465
+ S-S-POTENTIAL 3N KO =       -0.0116380
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -3.0045703
+ TENSOR-T RANG=0  3N K       -1.7178549
+ TENSOR-T RANG=1  3N A       -7.0294281
+ TENSOR-T RANG=1  3N K       -4.7250650
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     877.0393390
+
+
+
+ DER  1 TE PARAMETERSATZ DER  32 TEN STRUKTUR = /  34 ) LIEFERT
+ KINETISCHE ENERGIE =       671.4355767
+ COULOMB ENERGIE=             1.0702462
+ ZENTRAL ENERGIE=            54.6738613
+ L-QUADRAT    =             317.1995606
+ LS**2 SKALAR  =           -170.1123155
+ SPINBAHN ENERGIE =         -25.1091916
+ LS**2 VEKTOR   =           -43.9111845
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1137560
+ ZENTRAL  3TEIL =            10.5248991
+ S-S-POTENTIAL 3N AK =        0.0580800
+ S-S-POTENTIAL 3N KO =       -0.0118238
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -3.2825259
+ TENSOR-T RANG=0  3N K       -1.6871103
+ TENSOR-T RANG=1  3N A       -6.8854861
+ TENSOR-T RANG=1  3N K       -4.6817211
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     799.3946210
+
+
+
+ DER  1 TE PARAMETERSATZ DER  33 TEN STRUKTUR = /  35 ) LIEFERT
+ KINETISCHE ENERGIE =       609.8220118
+ COULOMB ENERGIE=             1.0722966
+ ZENTRAL ENERGIE=            43.0221011
+ L-QUADRAT    =             277.0841686
+ LS**2 SKALAR  =           -147.2872385
+ SPINBAHN ENERGIE =         -21.0232630
+ LS**2 VEKTOR   =           -38.2272226
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1158601
+ ZENTRAL  3TEIL =             9.4902613
+ S-S-POTENTIAL 3N AK =        0.0576322
+ S-S-POTENTIAL 3N KO =       -0.0117816
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -3.5126224
+ TENSOR-T RANG=0  3N K       -1.6239042
+ TENSOR-T RANG=1  3N A       -6.6162730
+ TENSOR-T RANG=1  3N K       -4.5580658
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     717.8039606
+
+
+
+ DER  1 TE PARAMETERSATZ DER  34 TEN STRUKTUR = /  36 ) LIEFERT
+ KINETISCHE ENERGIE =       562.6853405
+ COULOMB ENERGIE=             1.0740989
+ ZENTRAL ENERGIE=            36.5607032
+ L-QUADRAT    =             245.7021511
+ LS**2 SKALAR  =           -129.3969731
+ SPINBAHN ENERGIE =         -17.9731278
+ LS**2 VEKTOR   =           -33.7739333
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1179131
+ ZENTRAL  3TEIL =             8.6292380
+ S-S-POTENTIAL 3N AK =        0.0570175
+ S-S-POTENTIAL 3N KO =       -0.0115110
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -3.6210065
+ TENSOR-T RANG=0  3N K       -1.5500594
+ TENSOR-T RANG=1  3N A       -6.3154043
+ TENSOR-T RANG=1  3N K       -4.3970925
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     657.7873544
+
+
+
+ DER  1 TE PARAMETERSATZ DER  35 TEN STRUKTUR = /  37 ) LIEFERT
+ KINETISCHE ENERGIE =       501.8079550
+ COULOMB ENERGIE=             1.0769161
+ ZENTRAL ENERGIE=            31.8547419
+ L-QUADRAT    =             204.6193068
+ LS**2 SKALAR  =           -105.9669579
+ SPINBAHN ENERGIE =         -14.1973870
+ LS**2 VEKTOR   =           -27.9401966
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1213839
+ ZENTRAL  3TEIL =             7.4323790
+ S-S-POTENTIAL 3N AK =        0.0557218
+ S-S-POTENTIAL 3N KO =       -0.0107517
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -3.6485094
+ TENSOR-T RANG=0  3N K       -1.4158043
+ TENSOR-T RANG=1  3N A       -5.7841370
+ TENSOR-T RANG=1  3N K       -4.0864043
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     583.9182565
+
+
+
+ DER  1 TE PARAMETERSATZ DER  36 TEN STRUKTUR = /  38 ) LIEFERT
+ KINETISCHE ENERGIE =       172.0817639
+ COULOMB ENERGIE=             1.1264214
+ ZENTRAL ENERGIE=            76.1060496
+ L-QUADRAT    =              15.6556321
+ LS**2 SKALAR  =             -3.3309303
+ SPINBAHN ENERGIE =           1.0588075
+ LS**2 VEKTOR   =            -1.3110721
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1778592
+ ZENTRAL  3TEIL =             0.7079561
+ S-S-POTENTIAL 3N AK =        0.0271346
+ S-S-POTENTIAL 3N KO =       -0.0021878
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.7843458
+ TENSOR-T RANG=0  3N K       -0.0567840
+ TENSOR-T RANG=1  3N A       -0.4897506
+ TENSOR-T RANG=1  3N K       -0.4209374
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     260.5456165
+
+
+
+ DER  1 TE PARAMETERSATZ DER  37 TEN STRUKTUR = /  39 ) LIEFERT
+ KINETISCHE ENERGIE =        97.9670052
+ COULOMB ENERGIE=             0.8173012
+ ZENTRAL ENERGIE=            21.5846941
+ L-QUADRAT    =               2.6796642
+ LS**2 SKALAR  =              0.5859154
+ SPINBAHN ENERGIE =           2.1663677
+ LS**2 VEKTOR   =             0.2570176
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0842854
+ ZENTRAL  3TEIL =             0.0294952
+ S-S-POTENTIAL 3N AK =        0.0077315
+ S-S-POTENTIAL 3N KO =       -0.0020471
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.0223696
+ TENSOR-T RANG=0  3N K        0.0074588
+ TENSOR-T RANG=1  3N A        0.0012426
+ TENSOR-T RANG=1  3N K       -0.0067409
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     126.1570213
+
+
+
+ DER  1 TE PARAMETERSATZ DER  38 TEN STRUKTUR = /  40 ) LIEFERT
+ KINETISCHE ENERGIE =        75.9175918
+ COULOMB ENERGIE=             0.3284285
+ ZENTRAL ENERGIE=            -0.1438377
+ L-QUADRAT    =               0.1533754
+ LS**2 SKALAR  =              0.0380212
+ SPINBAHN ENERGIE =           0.0755378
+ LS**2 VEKTOR   =             0.0094760
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0025193
+ ZENTRAL  3TEIL =             0.0001614
+ S-S-POTENTIAL 3N AK =        0.0002805
+ S-S-POTENTIAL 3N KO =       -0.0000352
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0017790
+ TENSOR-T RANG=0  3N K        0.0000766
+ TENSOR-T RANG=1  3N A        0.0001014
+ TENSOR-T RANG=1  3N K        0.0000014
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =      76.3834773
+
+
+
+ DER  1 TE PARAMETERSATZ DER  39 TEN STRUKTUR = /  41 ) LIEFERT
+ KINETISCHE ENERGIE =      1687.0744438
+ COULOMB ENERGIE=             1.0667542
+ ZENTRAL ENERGIE=           435.3185313
+ L-QUADRAT    =             821.0491169
+ LS**2 SKALAR  =           -407.4429965
+ SPINBAHN ENERGIE =        -124.6675680
+ LS**2 VEKTOR   =          -136.2364397
+ TENSOR ENERGIE =            95.2562555
+ LS**2 TENSOR   =          -183.6025964
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1092718
+ ZENTRAL  3TEIL =            17.9004107
+ S-S-POTENTIAL 3N AK =        0.0543649
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1870095
+ S-T-POTENTIAL IJ 3N A       -0.1870095
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        5.2020837
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.2082229
+ TENSOR-T RANG=2  3N A        0.1331798
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2210.6325702
+
+
+
+ DER  1 TE PARAMETERSATZ DER  40 TEN STRUKTUR = /  42 ) LIEFERT
+ KINETISCHE ENERGIE =      1565.7519042
+ COULOMB ENERGIE=             1.0671862
+ ZENTRAL ENERGIE=           384.8555994
+ L-QUADRAT    =             779.4832646
+ LS**2 SKALAR  =           -387.0557137
+ SPINBAHN ENERGIE =        -118.2343589
+ LS**2 VEKTOR   =          -129.5043090
+ TENSOR ENERGIE =            93.6860069
+ LS**2 TENSOR   =          -174.4664982
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1102731
+ ZENTRAL  3TEIL =            17.6916386
+ S-S-POTENTIAL 3N AK =        0.0539795
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1882682
+ S-T-POTENTIAL IJ 3N A       -0.1882682
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        4.7800236
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.2499644
+ TENSOR-T RANG=2  3N A        0.3128662
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    2037.9053617
+
+
+
+ DER  1 TE PARAMETERSATZ DER  41 TEN STRUKTUR = /  43 ) LIEFERT
+ KINETISCHE ENERGIE =      1182.2565447
+ COULOMB ENERGIE=             1.0695804
+ ZENTRAL ENERGIE=           221.3984827
+ L-QUADRAT    =             622.3421117
+ LS**2 SKALAR  =           -307.0339185
+ SPINBAHN ENERGIE =         -94.4048026
+ LS**2 VEKTOR   =          -103.5869890
+ TENSOR ENERGIE =            87.8824655
+ LS**2 TENSOR   =          -138.9106606
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1150942
+ ZENTRAL  3TEIL =            16.3502596
+ S-S-POTENTIAL 3N AK =        0.0526198
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1862561
+ S-T-POTENTIAL IJ 3N A       -0.1862561
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        3.0887870
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.4276488
+ TENSOR-T RANG=2  3N A        1.1498187
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1490.9692326
+
+
+
+ DER  1 TE PARAMETERSATZ DER  42 TEN STRUKTUR = /  44 ) LIEFERT
+ KINETISCHE ENERGIE =      1124.3612345
+ COULOMB ENERGIE=             1.0701867
+ ZENTRAL ENERGIE=           197.0542130
+ L-QUADRAT    =             594.6384902
+ LS**2 SKALAR  =           -292.4755706
+ SPINBAHN ENERGIE =         -90.3386115
+ LS**2 VEKTOR   =           -98.9513043
+ TENSOR ENERGIE =            86.8294729
+ LS**2 TENSOR   =          -132.4896634
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1161212
+ ZENTRAL  3TEIL =            16.0228892
+ S-S-POTENTIAL 3N AK =        0.0524126
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1848807
+ S-T-POTENTIAL IJ 3N A       -0.1848807
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        2.7801368
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.4603046
+ TENSOR-T RANG=2  3N A        1.3192451
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1409.1591861
+
+
+
+ DER  1 TE PARAMETERSATZ DER  43 TEN STRUKTUR = /  45 ) LIEFERT
+ KINETISCHE ENERGIE =       889.1692135
+ COULOMB ENERGIE=             1.0739979
+ ZENTRAL ENERGIE=           103.9399473
+ L-QUADRAT    =             469.7071372
+ LS**2 SKALAR  =           -225.2607894
+ SPINBAHN ENERGIE =         -72.7471778
+ LS**2 VEKTOR   =           -77.8387095
+ TENSOR ENERGIE =            81.5166118
+ LS**2 TENSOR   =          -103.0184138
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1213553
+ ZENTRAL  3TEIL =            14.1907339
+ S-S-POTENTIAL 3N AK =        0.0516891
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1759713
+ S-T-POTENTIAL IJ 3N A       -0.1759713
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        1.3836976
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.5983889
+ TENSOR-T RANG=2  3N A        2.1303665
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1083.4693279
+
+
+
+ DER  1 TE PARAMETERSATZ DER  44 TEN STRUKTUR = /  46 ) LIEFERT
+ KINETISCHE ENERGIE =       841.5793945
+ COULOMB ENERGIE=             1.0751393
+ ZENTRAL ENERGIE=            86.9789725
+ L-QUADRAT    =             441.9409355
+ LS**2 SKALAR  =           -209.9920762
+ SPINBAHN ENERGIE =         -69.0279755
+ LS**2 VEKTOR   =           -73.1054553
+ TENSOR ENERGIE =            80.1171098
+ LS**2 TENSOR   =           -96.3612836
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1226208
+ ZENTRAL  3TEIL =            13.6994388
+ S-S-POTENTIAL 3N AK =        0.0515847
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1736143
+ S-T-POTENTIAL IJ 3N A       -0.1736143
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        1.0782807
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.6245020
+ TENSOR-T RANG=2  3N A        2.3142824
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =    1019.4992379
+
+
+
+ DER  1 TE PARAMETERSATZ DER  45 TEN STRUKTUR = /  47 ) LIEFERT
+ KINETISCHE ENERGIE =       651.2495023
+ COULOMB ENERGIE=             0.2239444
+ ZENTRAL ENERGIE=            46.3814407
+ L-QUADRAT    =             316.3379377
+ LS**2 SKALAR  =           -188.8425325
+ SPINBAHN ENERGIE =         -28.0008888
+ LS**2 VEKTOR   =           -59.0321655
+ TENSOR ENERGIE =            63.5731237
+ LS**2 TENSOR   =           -82.6299250
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0001651
+ ZENTRAL  3TEIL =             0.0189400
+ S-S-POTENTIAL 3N AK =        0.0001822
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.0001206
+ S-T-POTENTIAL IJ 3N A       -0.0001206
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0041815
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.0010739
+ TENSOR-T RANG=2  3N A        0.0040169
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     719.2866077
+
+
+
+ DER  1 TE PARAMETERSATZ DER  46 TEN STRUKTUR = /  48 ) LIEFERT
+ KINETISCHE ENERGIE =       664.7986673
+ COULOMB ENERGIE=             1.0808211
+ ZENTRAL ENERGIE=            33.5047011
+ L-QUADRAT    =             331.9374737
+ LS**2 SKALAR  =           -148.5052284
+ SPINBAHN ENERGIE =         -55.0244778
+ LS**2 VEKTOR   =           -54.2432198
+ TENSOR ENERGIE =            73.0247016
+ LS**2 TENSOR   =           -69.6722328
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1275473
+ ZENTRAL  3TEIL =            11.4081022
+ S-S-POTENTIAL 3N AK =        0.0513628
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1644272
+ S-T-POTENTIAL IJ 3N A       -0.1644272
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.0710900
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.6936289
+ TENSOR-T RANG=2  3N A        3.0023379
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     790.3969832
+
+
+
+ DER  1 TE PARAMETERSATZ DER  47 TEN STRUKTUR = /  49 ) LIEFERT
+ KINETISCHE ENERGIE =       544.7528589
+ COULOMB ENERGIE=             1.0853049
+ ZENTRAL ENERGIE=             9.1507802
+ L-QUADRAT    =             252.3917367
+ LS**2 SKALAR  =           -103.4589712
+ SPINBAHN ENERGIE =         -45.4567647
+ LS**2 VEKTOR   =           -40.5427855
+ TENSOR ENERGIE =            65.2247112
+ LS**2 TENSOR   =           -50.1904097
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.1299600
+ ZENTRAL  3TEIL =             9.3452058
+ S-S-POTENTIAL 3N AK =        0.0511907
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1591652
+ S-T-POTENTIAL IJ 3N A       -0.1591652
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.7853446
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.6876809
+ TENSOR-T RANG=2  3N A        3.3830450
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     644.0745064
+
+
+
+ DER  1 TE PARAMETERSATZ DER  48 TEN STRUKTUR = /  50 ) LIEFERT
+ KINETISCHE ENERGIE =       196.0980817
+ COULOMB ENERGIE=             0.9417769
+ ZENTRAL ENERGIE=            16.9244054
+ L-QUADRAT    =              34.0827800
+ LS**2 SKALAR  =              2.1355521
+ SPINBAHN ENERGIE =          -1.0547638
+ LS**2 VEKTOR   =            -2.8982139
+ TENSOR ENERGIE =             6.7588019
+ LS**2 TENSOR   =            -1.2050402
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0729451
+ ZENTRAL  3TEIL =             1.1207495
+ S-S-POTENTIAL 3N AK =        0.0303264
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.1082660
+ S-T-POTENTIAL IJ 3N A       -0.1082660
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.8773483
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.1297602
+ TENSOR-T RANG=2  3N A        1.7525030
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     253.5362634
+
+
+
+ DER  2 TE PARAMETERSATZ DER  48 TEN STRUKTUR = /  51 ) LIEFERT
+ KINETISCHE ENERGIE =       142.6701689
+ COULOMB ENERGIE=             0.5590099
+ ZENTRAL ENERGIE=            -8.0933521
+ L-QUADRAT    =              17.6716509
+ LS**2 SKALAR  =             -7.0945010
+ SPINBAHN ENERGIE =          -2.1512227
+ LS**2 VEKTOR   =            -3.1050506
+ TENSOR ENERGIE =            20.8903613
+ LS**2 TENSOR   =            -3.6366553
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0126191
+ ZENTRAL  3TEIL =             0.1132330
+ S-S-POTENTIAL 3N AK =        0.0055533
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A       -0.0016928
+ S-T-POTENTIAL IJ 3N A       -0.0016928
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.1197855
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.0437583
+ TENSOR-T RANG=2  3N A        0.2900142
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =     157.9648995
+
+
+
+ DER  1 TE PARAMETERSATZ DER  49 TEN STRUKTUR = /  52 ) LIEFERT
+ KINETISCHE ENERGIE =        28.4697809
+ COULOMB ENERGIE=             0.2215568
+ ZENTRAL ENERGIE=             1.0092341
+ L-QUADRAT    =               0.1213323
+ LS**2 SKALAR  =              0.0207479
+ SPINBAHN ENERGIE =           0.0999851
+ LS**2 VEKTOR   =             0.0102104
+ TENSOR ENERGIE =             0.0000000
+ LS**2 TENSOR   =             0.0000000
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0012363
+ ZENTRAL  3TEIL =             0.0000415
+ S-S-POTENTIAL 3N AK =        0.0001819
+ S-S-POTENTIAL 3N KO =       -0.0000685
+ S-T-POTENTIAL IK 3N A        0.0000000
+ S-T-POTENTIAL IJ 3N A        0.0000000
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.0000209
+ TENSOR-T RANG=0  3N K        0.0000452
+ TENSOR-T RANG=1  3N A        0.0001164
+ TENSOR-T RANG=1  3N K       -0.0000398
+ TENSOR-T RANG=2  3N A        0.0000000
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K        0.0000000
+ GESAMTE     ENERGIE =      29.9543395
+
+
+
+ DER  1 TE PARAMETERSATZ DER  50 TEN STRUKTUR = /  53 ) LIEFERT
+ KINETISCHE ENERGIE =       974.7076555
+ COULOMB ENERGIE=             0.2268523
+ ZENTRAL ENERGIE=           166.6502508
+ L-QUADRAT    =             490.2665935
+ LS**2 SKALAR  =           -291.2179319
+ SPINBAHN ENERGIE =         -54.1984383
+ LS**2 VEKTOR   =           -91.0270231
+ TENSOR ENERGIE =            76.7134990
+ LS**2 TENSOR   =          -127.4629992
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0001335
+ ZENTRAL  3TEIL =             0.0231884
+ S-S-POTENTIAL 3N AK =        0.0002079
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A        0.0017427
+ S-T-POTENTIAL IJ 3N A        0.0017427
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A        0.0080684
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.0006785
+ TENSOR-T RANG=2  3N A        0.0078424
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K       -0.0027139
+ GESAMTE     ENERGIE =    1144.6979923
+
+
+
+ DER  1 TE PARAMETERSATZ DER  51 TEN STRUKTUR = /  54 ) LIEFERT
+ KINETISCHE ENERGIE =       145.6428025
+ COULOMB ENERGIE=             0.2266651
+ ZENTRAL ENERGIE=           -10.2241440
+ L-QUADRAT    =              21.1657507
+ LS**2 SKALAR  =            -12.6037828
+ SPINBAHN ENERGIE =           0.9959227
+ LS**2 VEKTOR   =            -3.9429825
+ TENSOR ENERGIE =            16.2858338
+ LS**2 TENSOR   =            -5.5387570
+ ISO-TENSOR SKA =             0.0000000
+ ISO-TENSOR TEN =             0.0000000
+ CHARGE ASYMMET =             0.0001906
+ ZENTRAL  3TEIL =             0.0024681
+ S-S-POTENTIAL 3N AK =        0.0002144
+ S-S-POTENTIAL 3N KO =        0.0000000
+ S-T-POTENTIAL IK 3N A        0.0014025
+ S-T-POTENTIAL IJ 3N A        0.0014025
+ S-T-POTENTIAL IK 3N K        0.0000000
+ S-T-POTENTIAL IJ 3N K        0.0000000
+ TENSOR-T RANG=0  3N A       -0.0013337
+ TENSOR-T RANG=0  3N K        0.0000000
+ TENSOR-T RANG=1  3N A        0.0000000
+ TENSOR-T RANG=1  3N K       -0.0007754
+ TENSOR-T RANG=2  3N A       -0.0005691
+ TENSOR-T RANG=2  3N K        0.0000000
+ TENSOR-T RANG=3  3N K       -0.0031016
+ GESAMTE     ENERGIE =     152.0072067
 
 
         EIGENWERTE DES HAMILTONOPERATORS
 
 
-  8.49893E+02  1.31556E+03  2.72805E+03  4.34245E+03
+  4.85431E+00  1.41924E+01  2.79705E+01  7.60349E+01  9.33928E+01  1.08145E+02  1.29671E+02  1.48719E+02  1.60144E+02  1.87783E+02
+  2.44995E+02  2.48289E+02  3.25354E+02  3.58456E+02  4.23388E+02  4.59787E+02  5.16909E+02  6.30759E+02  7.24229E+02  7.37987E+02
+  7.95324E+02  8.10994E+02  8.92108E+02  1.11573E+03  1.19581E+03  1.22665E+03  1.23640E+03  1.29679E+03  1.31800E+03  1.44307E+03
+  1.68088E+03  1.80984E+03  1.84016E+03  1.93417E+03  2.02740E+03  2.15805E+03  2.37698E+03  2.44416E+03  2.60610E+03  2.74600E+03
+  2.96943E+03  3.18134E+03  3.57481E+03  3.62921E+03  3.83066E+03  4.12429E+03  4.27860E+03  5.40856E+03  5.48299E+03  5.92276E+03
+  6.00597E+03  7.15177E+03  8.77270E+03  1.01785E+04
 
 
  ENTWICKLUNG DES  1 TEN EIGENVEKTORS
 
-  8.5846770518E-01 /   1)  3.6529585742E-01 /   2)  1.0000000000E+00 /   3)  2.5592349910E-03 /   4)
+ -5.8330895144E-02 /   1)  4.5492291130E-01 /   2)  7.3887344095E-02 /   3) -7.4461116005E-03 /   4)
+ -1.9098028122E-03 /   5) -1.5906312933E+02 /   6)  6.8856316353E+02 /   7) -1.9008774079E+03 /   8)
+  6.0397970634E+03 /   9) -7.9216622063E+03 /  10)  3.5971276490E+03 /  11) -4.5603190943E+02 /  12)
+  1.1215235049E+02 /  13) -2.5803733701E-02 /  14)  5.7342085257E-03 /  15) -1.9317170097E-02 /  16)
+  1.2125735777E-01 /  17) -2.1920310783E-01 /  18)  1.0558081943E-01 /  19)  3.7410248463E-02 /  20)
+ -3.4780183545E-02 /  21)  8.9331929704E-03 /  22) -5.8391212551E-03 /  23)  4.4563839699E-01 /  24)
+ -3.5386671885E-02 /  25)  7.2529981813E-02 /  26) -2.5901687460E+02 /  27)  3.2941336127E+02 /  28)
+ -1.8270599565E+03 /  29)  8.7199408716E+03 /  30) -6.1775165056E+04 /  31)  7.1163024153E+04 /  32)
+ -4.1507036540E+04 /  33)  3.7759709121E+04 /  34) -1.7245458029E+04 /  35)  4.9930979481E+03 /  36)
+ -3.5150175022E+02 /  37)  2.3075736274E-03 /  38) -1.5144170488E-03 /  39) -9.5457319996E-06 /  40)
+  3.6055564209E+01 /  41) -7.1129740957E+01 /  42)  4.6147105375E+02 /  43) -5.3841700743E+02 /  44)
+  4.0511539291E+02 /  45) -3.1257808134E+02 /  46) -1.3867973007E-02 /  47)  2.2502318607E+01 /  48)
+ -2.9471575886E+00 /  49)  1.6453561053E-02 /  50) -7.4153444078E-03 /  51) -9.1964020458E-05 /  52)
+ -1.5617836067E-02 /  53) -3.9349984178E-03 /  54)
 
 
  ENTWICKLUNG DES  2 TEN EIGENVEKTORS
 
- -1.0000000000E+00 /   1)  8.5820343567E-01 /   2)  3.3145885006E-02 /   3) -5.7940489395E-02 /   4)
-
-
- ENTWICKLUNG DES  3 TEN EIGENVEKTORS
-
-  1.0000000000E+00 /   1) -1.7654576032E-01 /   2)  1.2129904549E-01 /   3) -2.7855832831E-03 /   4)
-
-
- ENTWICKLUNG DES  4 TEN EIGENVEKTORS
-
- -3.3020310772E-03 /   1)  3.0604555780E-03 /   2)  1.3454288390E-04 /   3)  1.0000000000E+00 /   4)
+  2.8530750468E-01 /   1)  9.4756516960E-01 /   2)  6.8778908563E-02 /   3)  7.2527905430E-04 /   4)
+ -2.1463370327E-02 /   5) -5.9356803185E+02 /   6)  2.5166566346E+03 /   7) -6.7909762275E+03 /   8)
+  2.1214016341E+04 /   9) -2.7655018025E+04 /  10)  1.2496380288E+04 /  11) -1.5741817433E+03 /  12)
+  3.8682908824E+02 /  13) -1.7036112246E-01 /  14)  5.8584303973E-02 /  15)  3.4186824118E-01 /  16)
+ -2.0094785060E+00 /  17)  3.7374679982E+00 /  18) -3.7439121568E+00 /  19)  1.7565233666E+00 /  20)
+ -1.3132421140E-01 /  21)  3.5600967129E-04 /  22)  1.0860514537E-03 /  23)  1.1097811158E+00 /  24)
+ -1.0019350430E-01 /  25)  2.0596270479E-01 /  26)  7.8738050046E+02 /  27) -1.0100915260E+03 /  28)
+  6.0170945434E+03 /  29) -2.8943576036E+04 /  30)  2.0542283775E+05 /  31) -2.3648866690E+05 /  32)
+  1.3699421166E+05 /  33) -1.2383211914E+05 /  34)  5.5968143081E+04 /  35) -1.6017969280E+04 /  36)
+  1.1024811505E+03 /  37) -5.0489504253E-02 /  38)  3.1962776336E-03 /  39)  1.0570867008E-04 /  40)
+  2.5794442553E+02 /  41) -5.0643131075E+02 /  42)  3.2541922799E+03 /  43) -3.7953777293E+03 /  44)
+  2.8617669771E+03 /  45) -2.2107738543E+03 /  46)  1.3164187879E-02 /  47)  1.5970322893E+02 /  48)
+ -2.0753061554E+01 /  49) -2.1394379679E-02 /  50)  3.7413926630E-02 /  51) -3.2966005674E-04 /  52)
+ -1.6149593183E-02 /  53) -4.9353194792E-03 /  54)
  KOPPLUNGSMATRIX FUER OPERATOR    2
-  0.36311     0.33923E-01 0.13242E-01 0.14709E-03
-  0.33923E-01 0.84803E-01-0.14743E-01-0.37671E-03
-  0.13242E-01-0.14743E-01 0.58543E-01-0.64456E-04
-  0.14709E-03-0.37671E-03-0.64456E-04 0.11739E-01
+   6.7466      1.2132    
+   1.2132      15.880    
   NORMMATRIX
-  0.67085E-03-0.12889E-17 0.25469E-18-0.48628E-19
- -0.13025E-17 0.13991E-03-0.80316E-19 0.33881E-20
-  0.25469E-18-0.96409E-19 0.63615E-04 0.13123E-18
- -0.48761E-19 0.33881E-20 0.13125E-18 0.88379E-05
+   1.0000    -0.12392E-09
+ -0.69438E-09  1.0000    
  KOPPLUNGSMATRIX FUER OPERATOR    3
-  0.10794E-02 0.57051E-04-0.37483E-04 0.25671E-06
-  0.57051E-04 0.21237E-03-0.56523E-05-0.14637E-05
- -0.37483E-04-0.56523E-05 0.15872E-03-0.65543E-07
-  0.25671E-06-0.14637E-05-0.65543E-07 0.38601E-04
+  0.25189    -0.33478E-02
+ -0.33478E-02 0.25761    
  KOPPLUNGSMATRIX FUER OPERATOR    4
-  0.39815E-01-0.36279E-01 0.26683E-02-0.83712E-04
- -0.36279E-01 0.64581E-01 0.67377E-02-0.87780E-03
-  0.26683E-02 0.67377E-02 0.51435E-01-0.92744E-05
- -0.83712E-04-0.87780E-03-0.92744E-05 0.19293E-01
+ -0.68423     0.12011    
+  0.12011     0.15018    
  KOPPLUNGSMATRIX FUER OPERATOR    6
-  0.15551     0.37002E-01-0.97360E-02 0.13462E-03
-  0.37002E-01 0.29719E-01-0.62059E-02-0.80422E-04
- -0.97360E-02-0.62059E-02 0.25191E-01-0.21558E-04
-  0.13462E-03-0.80422E-04-0.21558E-04 0.32020E-02
+  0.22088     0.89056E-01
+  0.89055E-01 0.39304    
  KOPPLUNGSMATRIX FUER OPERATOR    7
-  0.19879E-01-0.80657E-02 0.56608E-04-0.29519E-04
- -0.80657E-02-0.34503E-02 0.28431E-02-0.25980E-04
-  0.56608E-04 0.28431E-02 0.56997E-02 0.11902E-04
- -0.29519E-04-0.25980E-04 0.11902E-04 0.25403E-03
+ -0.12231    -0.47305E-01
+ -0.47305E-01-0.15456    
  KOPPLUNGSMATRIX FUER OPERATOR    8
-  0.10653E-01-0.28494E-01-0.14572E-01 0.41556E-03
- -0.28494E-01-0.16207E-02 0.67010E-02-0.46343E-03
- -0.14572E-01 0.67010E-02 0.36365E-01-0.25851E-02
-  0.41556E-03-0.46343E-03-0.25851E-02 0.24415E-02
+  0.36093E-02 0.24795E-01
+  0.24795E-01 0.11684    
  KOPPLUNGSMATRIX FUER OPERATOR    9
- -0.44592E-02-0.76169E-02-0.98840E-03-0.30261E-04
- -0.76169E-02-0.27512E-02 0.18559E-02-0.16049E-03
- -0.98840E-03 0.18559E-02 0.34601E-02-0.22525E-03
- -0.30261E-04-0.16049E-03-0.22525E-03 0.18590E-03
+ -0.44301E-01-0.13338E-01
+ -0.13338E-01-0.38357E-01
  KOPPLUNGSMATRIX FUER OPERATOR   10
- -0.30419E-01 0.13539E-01 0.11737E-01-0.14753E-03
-  0.13539E-01 0.84721E-02 0.46445E-03 0.30912E-02
-  0.11737E-01 0.46445E-03-0.14847E-01 0.42964E-02
- -0.14753E-03 0.30912E-02 0.42964E-02 0.25855E-04
+  -1.4166     -1.3615    
+  -1.3615     -2.3665    
  KOPPLUNGSMATRIX FUER OPERATOR   11
-  0.22932E-02-0.65773E-02-0.58069E-03-0.22258E-03
- -0.65773E-02-0.24145E-02 0.18800E-02-0.95008E-03
- -0.58069E-03 0.18800E-02 0.35061E-02-0.10522E-02
- -0.22258E-03-0.95008E-03-0.10522E-02-0.77293E-05
+ -0.10392    -0.17300E-01
+ -0.17300E-01-0.36711E-01
  KOPPLUNGSMATRIX FUER OPERATOR   12
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
+   0.0000      0.0000    
+   0.0000      0.0000    
  KOPPLUNGSMATRIX FUER OPERATOR   13
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
+   0.0000      0.0000    
+   0.0000      0.0000    
  KOPPLUNGSMATRIX FUER OPERATOR   14
-  0.23284E-03 0.33320E-04-0.21999E-04 0.13439E-06
-  0.33320E-04 0.40542E-04-0.20533E-05-0.50546E-06
- -0.21999E-04-0.20533E-05 0.52263E-04-0.17891E-07
-  0.13439E-06-0.50546E-06-0.17891E-07 0.11250E-04
+  0.15163E-02-0.19985E-03
+ -0.19985E-03 0.43512E-03
  KOPPLUNGSMATRIX FUER OPERATOR   16
-  0.11117E-01 0.27530E-03-0.30942E-02 0.18962E-05
-  0.27530E-03 0.57781E-02 0.71529E-03-0.34297E-04
- -0.30942E-02 0.71529E-03 0.60553E-02 0.23872E-05
-  0.18962E-05-0.34297E-04 0.23872E-05 0.96144E-03
+  0.33193E-03 0.34478E-03
+  0.34479E-03 0.23238E-02
  KOPPLUNGSMATRIX FUER OPERATOR   17
-  0.80874E-04 0.34690E-05-0.46694E-05 0.64656E-08
-  0.34690E-05 0.15053E-04 0.62252E-06 0.93652E-07
- -0.46694E-05 0.62252E-06 0.11565E-04 0.87593E-08
-  0.64656E-08 0.93652E-07 0.87593E-08-0.66298E-06
+ -0.21950E-03-0.69840E-05
+ -0.69840E-05 0.11191E-03
  KOPPLUNGSMATRIX FUER OPERATOR   18
-  0.25223E-10-0.57105E-09-0.27454E-10 0.98558E-08
- -0.57105E-09 0.12928E-07 0.62155E-09-0.22313E-06
- -0.27454E-10 0.62155E-09 0.29882E-10-0.10727E-07
-  0.98558E-08-0.22313E-06-0.10727E-07 0.38511E-05
+  0.24090E-03 0.67347E-05
+  0.67347E-05-0.85071E-05
  KOPPLUNGSMATRIX FUER OPERATOR   19
- -0.43148E-03 0.18857E-03 0.11569E-03 0.17882E-04
-  0.18857E-03-0.16983E-03-0.51944E-04-0.43344E-04
-  0.11569E-03-0.51944E-04-0.25606E-03-0.92471E-04
-  0.17882E-04-0.43344E-04-0.92471E-04-0.38755E-06
+  0.46285E-03 0.10000E-02
+  0.10000E-02-0.77174E-03
  KOPPLUNGSMATRIX FUER OPERATOR   20
- -0.43148E-03 0.18857E-03 0.11569E-03 0.17882E-04
-  0.18857E-03-0.16983E-03-0.51944E-04-0.43344E-04
-  0.11569E-03-0.51944E-04-0.25606E-03-0.92471E-04
-  0.17882E-04-0.43344E-04-0.92471E-04-0.38755E-06
+  0.46285E-03 0.10000E-02
+  0.10000E-02-0.77174E-03
  KOPPLUNGSMATRIX FUER OPERATOR   21
- -0.88255E-07 0.10134E-05 0.12581E-06-0.17242E-04
-  0.10134E-05-0.65101E-06-0.17765E-05 0.56161E-05
-  0.12581E-06-0.17765E-05-0.16931E-06 0.30390E-04
- -0.17242E-04 0.56161E-05 0.30390E-04 0.65808E-07
+ -0.27763E-04-0.85713E-03
+ -0.85713E-03-0.43046E-03
  KOPPLUNGSMATRIX FUER OPERATOR   22
- -0.88255E-07 0.10134E-05 0.12581E-06-0.17242E-04
-  0.10134E-05-0.65101E-06-0.17765E-05 0.56161E-05
-  0.12581E-06-0.17765E-05-0.16931E-06 0.30390E-04
- -0.17242E-04 0.56161E-05 0.30390E-04 0.65808E-07
+ -0.27763E-04-0.85713E-03
+ -0.85713E-03-0.43046E-03
  KOPPLUNGSMATRIX FUER OPERATOR   23
- -0.20688E-02-0.15936E-02 0.85674E-03-0.44533E-05
- -0.15936E-02 0.19851E-02 0.12261E-02-0.14348E-04
-  0.85674E-03 0.12261E-02 0.56135E-03 0.36114E-05
- -0.44533E-05-0.14348E-04 0.36114E-05 0.38210E-03
+  0.34854E-03 0.38632E-04
+  0.38632E-04 0.95642E-04
  KOPPLUNGSMATRIX FUER OPERATOR   24
- -0.92718E-09 0.20991E-07 0.10092E-08-0.36229E-06
-  0.20991E-07-0.47523E-06-0.22848E-07 0.82021E-05
-  0.10092E-08-0.22848E-07-0.10984E-08 0.39433E-06
- -0.36229E-06 0.82021E-05 0.39433E-06-0.14156E-03
+ -0.50846E-04-0.24222E-03
+ -0.24222E-03-0.30777E-03
  KOPPLUNGSMATRIX FUER OPERATOR   25
-  0.93720E-06-0.10500E-04-0.19304E-05 0.18325E-03
- -0.10500E-04-0.49257E-05 0.32038E-04 0.39155E-04
- -0.19304E-05 0.32038E-04 0.30919E-05-0.55515E-03
-  0.18325E-03 0.39155E-04-0.55515E-03 0.11571E-03
+  0.16662E-03-0.10533E-02
+ -0.10533E-02-0.18031E-02
  KOPPLUNGSMATRIX FUER OPERATOR   26
- -0.90951E-03 0.15452E-03 0.37277E-03-0.41332E-04
-  0.15452E-03 0.21307E-03-0.55813E-04-0.32923E-04
-  0.37277E-03-0.55813E-04-0.51469E-03 0.17813E-04
- -0.41332E-04-0.32923E-04 0.17813E-04-0.12525E-03
+ -0.22875E-03-0.77495E-03
+ -0.77495E-03-0.11296E-02
  KOPPLUNGSMATRIX FUER OPERATOR   27
-  0.51057E-02 0.32573E-02-0.12999E-03-0.11441E-03
-  0.32573E-02-0.11533E-02-0.12975E-02-0.27703E-03
- -0.12999E-03-0.12975E-02-0.16190E-02-0.35142E-03
- -0.11441E-03-0.27703E-03-0.35142E-03-0.22720E-05
+ -0.24992E-03-0.15456E-02
+ -0.15456E-02-0.43876E-02
  KOPPLUNGSMATRIX FUER OPERATOR   28
- -0.10746E-05 0.12759E-04 0.22641E-05-0.20994E-03
-  0.12759E-04-0.26949E-04-0.38666E-04 0.23249E-03
-  0.22641E-05-0.38666E-04-0.36556E-05 0.65615E-03
- -0.20994E-03 0.23249E-03 0.65615E-03 0.22244E-05
+ -0.11999E-03-0.13003E-02
+ -0.13003E-02-0.20119E-02
  KOPPLUNGSMATRIX FUER OPERATOR   29
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
-   0.0000      0.0000      0.0000      0.0000    
+  0.70190E-04 0.94692E-04
+  0.94692E-04 0.12903E-03
 0 DER   1 TE EIGENVEKTOR LIEFERT 
 
 
- KINETISCHE ENERGIE =       541.2648274
- COULOMB ENERGIE=             1.6090246
- ZENTRAL ENERGIE=            59.3501228
- L-QUADRAT    =             231.8053887
- LS**2 SKALAR  =             29.6326282
- SPINBAHN ENERGIE =          15.8805073
- LS**2 VEKTOR   =            -6.6471486
- TENSOR ENERGIE =           -45.3443620
- LS**2 TENSOR   =             3.4183657
+ KINETISCHE ENERGIE =         6.7465777
+ COULOMB ENERGIE=             0.2518888
+ ZENTRAL ENERGIE=            -0.6842267
+ L-QUADRAT    =               0.2208754
+ LS**2 SKALAR  =             -0.1223083
+ SPINBAHN ENERGIE =           0.0036093
+ LS**2 VEKTOR   =            -0.0443013
+ TENSOR ENERGIE =            -1.4165539
+ LS**2 TENSOR   =            -0.1039236
  ISO-TENSOR SKA =             0.0000000
  ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.3470788
- ZENTRAL  3TEIL =            16.5718905
- S-S-POTENTIAL 3N AK =        0.1205536
- S-S-POTENTIAL 3N KO =        0.0000000
- S-T-POTENTIAL IK 3N A       -0.6431892
- S-T-POTENTIAL IJ 3N A       -0.6431892
- S-T-POTENTIAL IK 3N K       -0.0001316
- S-T-POTENTIAL IJ 3N K       -0.0001316
- TENSOR-T RANG=0  3N A       -3.0838645
- TENSOR-T RANG=0  3N K       -0.0000014
- TENSOR-T RANG=1  3N A        0.0013970
- TENSOR-T RANG=1  3N K       -1.3557514
- TENSOR-T RANG=2  3N A        7.6108036
- TENSOR-T RANG=2  3N K       -0.0016018
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =     849.8932170
+ CHARGE ASYMMET =             0.0015163
+ ZENTRAL  3TEIL =             0.0003319
+ S-S-POTENTIAL 3N AK =       -0.0002195
+ S-S-POTENTIAL 3N KO =        0.0002409
+ S-T-POTENTIAL IK 3N A        0.0004628
+ S-T-POTENTIAL IJ 3N A        0.0004628
+ S-T-POTENTIAL IK 3N K       -0.0000278
+ S-T-POTENTIAL IJ 3N K       -0.0000278
+ TENSOR-T RANG=0  3N A        0.0003485
+ TENSOR-T RANG=0  3N K       -0.0000508
+ TENSOR-T RANG=1  3N A        0.0001666
+ TENSOR-T RANG=1  3N K       -0.0002288
+ TENSOR-T RANG=2  3N A       -0.0002499
+ TENSOR-T RANG=2  3N K       -0.0001200
+ TENSOR-T RANG=3  3N K        0.0000702
+ GESAMTE     ENERGIE =       4.8543129
 
  ENTWICKLUNG DES  1 TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN
 
-   1)       125
-   2)        96
-   3)       388
-   4)         0
+   1)        -4      55
+   2)         7
+   3)     -9937
+   4)      -877
+   5)   -119277
+   6)    548611
+   7)  -1655091
+   8)   5804355
+   9)  -8008930
+  10)   3840004
+  11)   -557243
+  12)    147650
+  13)       -88
+  14)        45
+  15)        -1
+  16)        17
+  17)       -40
+  18)        25
+  19)        10
+  20)       -25
+  21)        15
+  22)      -131
+  23)        51     -41
+  24)        13
+  25)    -10776
+  26)     14326
+  27)   -156701
+  28)    954783
+  29)  -8946595
+  30)  11130274
+  31)  -8768691
+  32)   9349235
+  33)  -5169034
+  34)   1759751
+  35)   -156617
+  36)        12
+  37)       -86
+  38)       -10
+  39)      1505
+  40)     -3408
+  41)     37275
+  42)    -47786
+  43)     56042
+  44)    -48021
+  45)      -139
+  46)      5439
+  47)     -1050
+  48)        62    -145
+  49)      -355
+  50)       -74
+  51)      -538
 0UEBERLAPP DES EIGENVEKTORS MIT NORM. BASISVEKTOREN
 
-   1)     -3662
-   2)     -2860
-   3)      8550
-   4)         2
+   1)        -6     -11
+   2)        -8
+   3)     -9935
+   4)      -886
+   5)        50
+   6)        55
+   7)        63
+   8)        73
+   9)        78
+  10)        85
+  11)       103
+  12)       115
+  13)       355
+  14)       606
+  15)         1
+  16)         2
+  17)         3
+  18)         4
+  19)         4
+  20)        11
+  21)        16
+  22)       196
+  23)        10     102
+  24)        20
+  25)        -6
+  26)        -6
+  27)        -9
+  28)       -11
+  29)       -13
+  30)       -13
+  31)       -15
+  32)       -16
+  33)       -18
+  34)       -19
+  35)       -21
+  36)       -45
+  37)       -71
+  38)       -33
+  39)        -9
+  40)       -10
+  41)       -14
+  42)       -15
+  43)       -19
+  44)       -20
+  45)      -163
+  46)       -26
+  47)       -30
+  48)       -52    -182
+  49)      -366
+  50)      -205
+  51)      -556
 0UEBERLAPP MIT KANAELEN
 
-      -94     -74     221       0
+      -11      -8    9935     886     -50      55     -63      73     -78      85
+     -103     115    -355     606      -1       2      -3       4       4     -11
+       16    -196     -70      20       6      -6       9     -11      13     -13
+       15     -16      18     -19      21     -45      71      33      -9      10
+      -14      15     -19      20     163     -26      30     195     366     205
+      556
 0 DER   2 TE EIGENVEKTOR LIEFERT 
 
 
- KINETISCHE ENERGIE =       606.1367132
- COULOMB ENERGIE=             1.5179643
- ZENTRAL ENERGIE=           461.6013642
- L-QUADRAT    =             212.4169188
- LS**2 SKALAR  =            -24.6615324
- SPINBAHN ENERGIE =         -11.5844382
- LS**2 VEKTOR   =           -19.6648179
- TENSOR ENERGIE =            60.5552585
- LS**2 TENSOR   =           -17.2581027
+ KINETISCHE ENERGIE =        15.8798615
+ COULOMB ENERGIE=             0.2576111
+ ZENTRAL ENERGIE=             0.1501763
+ L-QUADRAT    =               0.3930389
+ LS**2 SKALAR  =             -0.1545642
+ SPINBAHN ENERGIE =           0.1168426
+ LS**2 VEKTOR   =            -0.0383572
+ TENSOR ENERGIE =            -2.3665427
+ LS**2 TENSOR   =            -0.0367111
  ISO-TENSOR SKA =             0.0000000
  ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.2897751
- ZENTRAL  3TEIL =            41.2998408
- S-S-POTENTIAL 3N AK =        0.1075915
- S-S-POTENTIAL 3N KO =        0.0000924
- S-T-POTENTIAL IK 3N A       -1.2138799
- S-T-POTENTIAL IJ 3N A       -1.2138799
- S-T-POTENTIAL IK 3N K       -0.0046532
- S-T-POTENTIAL IJ 3N K       -0.0046532
- TENSOR-T RANG=0  3N A       14.1889588
- TENSOR-T RANG=0  3N K       -0.0033968
- TENSOR-T RANG=1  3N A       -0.0352071
- TENSOR-T RANG=1  3N K        1.5229375
- TENSOR-T RANG=2  3N A       -8.2435957
- TENSOR-T RANG=2  3N K       -0.1926210
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    1315.5566370
+ CHARGE ASYMMET =             0.0004351
+ ZENTRAL  3TEIL =             0.0023238
+ S-S-POTENTIAL 3N AK =        0.0001119
+ S-S-POTENTIAL 3N KO =       -0.0000085
+ S-T-POTENTIAL IK 3N A       -0.0007717
+ S-T-POTENTIAL IJ 3N A       -0.0007717
+ S-T-POTENTIAL IK 3N K       -0.0004305
+ S-T-POTENTIAL IJ 3N K       -0.0004305
+ TENSOR-T RANG=0  3N A        0.0000956
+ TENSOR-T RANG=0  3N K       -0.0003078
+ TENSOR-T RANG=1  3N A       -0.0018031
+ TENSOR-T RANG=1  3N K       -0.0011296
+ TENSOR-T RANG=2  3N A       -0.0043876
+ TENSOR-T RANG=2  3N K       -0.0020119
+ TENSOR-T RANG=3  3N K        0.0001290
+ GESAMTE     ENERGIE =      14.1923980
 
  ENTWICKLUNG DES  2 TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN
 
-   1)      -146
-   2)       226
-   3)        12
-   4)        -1
+   1)        23     115
+   2)         7
+   3)       967
+   4)     -9862
+   5)   -445103
+   6)   2005143
+   7)  -5912895
+   8)  20387059
+   9)  ********
+  10)  13340133
+  11)  -1923554
+  12)    509267
+  13)      -587
+  14)       462
+  15)        33
+  16)      -290
+  17)       698
+  18)      -897
+  19)       503
+  20)       -95
+  21)         0
+  22)        24
+  23)       129    -117
+  24)        39
+  25)     32760
+  26)    -43928
+  27)    516068
+  28)  -3169154
+  29)  29750385
+  30)  ********
+  31)  28941116
+  32)  ********
+  33)  16775506
+  34)  -5645322
+  35)    491229
+  36)      -283
+  37)       182
+  38)       120
+  39)     10773
+  40)    -24268
+  41)    262858
+  42)   -336852
+  43)    395885
+  44)   -339644
+  45)       131
+  46)     38603
+  47)     -7397
+  48)       -81     732
+  49)     -1273
+  50)       -76
+  51)      -675
 0UEBERLAPP DES EIGENVEKTORS MIT NORM. BASISVEKTOREN
 
-   1)      3358
-   2)      7575
-   3)     -2960
-   4)      -145
+   1)        -3      -1
+   2)        -8
+   3)       949
+   4)     -9819
+   5)        -8
+   6)        -8
+   7)        -8
+   8)        -8
+   9)        -8
+  10)        -8
+  11)        -6
+  12)        -5
+  13)        63
+  14)       103
+  15)        17
+  16)        26
+  17)        35
+  18)        47
+  19)        58
+  20)       228
+  21)       490
+  22)       -31
+  23)         1      75
+  24)        10
+  25)       -49
+  26)       -51
+  27)       -75
+  28)       -84
+  29)       -96
+  30)       -99
+  31)      -112
+  32)      -119
+  33)      -128
+  34)      -134
+  35)      -144
+  36)      -153
+  37)       112
+  38)       184
+  39)        42
+  40)        46
+  41)        62
+  42)        65
+  43)        82
+  44)        86
+  45)       158
+  46)       105
+  47)       122
+  48)       136      80
+  49)     -1261
+  50)      -241
+  51)      -694
 0UEBERLAPP MIT KANAELEN
 
-      -39      89     -35       1
-0 DER   3 TE EIGENVEKTOR LIEFERT 
-
-
- KINETISCHE ENERGIE =       920.2683716
- COULOMB ENERGIE=             2.4949451
- ZENTRAL ENERGIE=           808.5346778
- L-QUADRAT    =             395.9833334
- LS**2 SKALAR  =             89.5967368
- SPINBAHN ENERGIE =         571.6384381
- LS**2 VEKTOR   =            54.3910725
- TENSOR ENERGIE =          -233.3806548
- LS**2 TENSOR   =            55.1144188
- ISO-TENSOR SKA =             0.0000000
- ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             0.8215430
- ZENTRAL  3TEIL =            95.1866292
- S-S-POTENTIAL 3N AK =        0.1818002
- S-S-POTENTIAL 3N KO =        0.0000005
- S-T-POTENTIAL IK 3N A       -4.0251744
- S-T-POTENTIAL IJ 3N A       -4.0251744
- S-T-POTENTIAL IK 3N K       -0.0026614
- S-T-POTENTIAL IJ 3N K       -0.0026614
- TENSOR-T RANG=0  3N A        8.8241914
- TENSOR-T RANG=0  3N K       -0.0000173
- TENSOR-T RANG=1  3N A        0.0486034
- TENSOR-T RANG=1  3N K       -8.0907166
- TENSOR-T RANG=2  3N A      -25.4500036
- TENSOR-T RANG=2  3N K       -0.0574637
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    2728.0502342
-
- ENTWICKLUNG DES  3 TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN
-
-   1)       146
-   2)       -46
-   3)        47
-   4)         0
-0UEBERLAPP DES EIGENVEKTORS MIT NORM. BASISVEKTOREN
-
-   1)      8677
-   2)      5865
-   3)     -4256
-   4)       -10
-0UEBERLAPP MIT KANAELEN
-
-       69     -46     -33       0
-0 DER   4 TE EIGENVEKTOR LIEFERT 
-
-
- KINETISCHE ENERGIE =      1328.2685367
- COULOMB ENERGIE=             4.3676578
- ZENTRAL ENERGIE=          2182.9373140
- L-QUADRAT    =             362.3082374
- LS**2 SKALAR  =             28.7435864
- SPINBAHN ENERGIE =         276.2558490
- LS**2 VEKTOR   =            21.0347493
- TENSOR ENERGIE =             2.9254382
- LS**2 TENSOR   =            -0.8745615
- ISO-TENSOR SKA =             0.0000000
- ISO-TENSOR TEN =             0.0000000
- CHARGE ASYMMET =             1.2729160
- ZENTRAL  3TEIL =           108.7858081
- S-S-POTENTIAL 3N AK =       -0.0750153
- S-S-POTENTIAL 3N KO =        0.4357446
- S-T-POTENTIAL IK 3N A       -0.0438515
- S-T-POTENTIAL IJ 3N A       -0.0438515
- S-T-POTENTIAL IK 3N K        0.0074462
- S-T-POTENTIAL IJ 3N K        0.0074462
- TENSOR-T RANG=0  3N A       43.2340363
- TENSOR-T RANG=0  3N K      -16.0174925
- TENSOR-T RANG=1  3N A       13.0923448
- TENSOR-T RANG=1  3N K      -14.1719119
- TENSOR-T RANG=2  3N A       -0.2570799
- TENSOR-T RANG=2  3N K        0.2516865
- TENSOR-T RANG=3  3N K        0.0000000
- GESAMTE     ENERGIE =    4342.4450335
-
- ENTWICKLUNG DES  4 TEN EIGENVEKTORS,AUSGEDRUECKT DURCH NORMIERTE BASISVEKTOREN
-
-   1)         0
-   2)         0
-   3)         0
-   4)        29
-0UEBERLAPP DES EIGENVEKTORS MIT NORM. BASISVEKTOREN
-
-   1)        58
-   2)       117
-   3)       -50
-   4)      9998
-0UEBERLAPP MIT KANAELEN
-
-        0       0       0      29
+       -2      -8     949    9819       8      -8       8      -8       8      -8
+        6      -5     -63     103      17     -26      35     -47      58    -228
+      490     -31     -62      10     -49      51     -75      84     -96      99
+     -112     119    -128     134    -144     153     112     184      42     -46
+       62     -65      82     -86     158     105    -122      70    1261     241
+      694
 
 
  ENDE DER RECHNUNG VON ENDMAT

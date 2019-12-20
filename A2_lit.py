@@ -36,7 +36,7 @@ if 'construe_fresh_deuteron' in cal:
         nfrag=nzf0)
 
     os.system(BINBDGpath + 'DR2END_AK.exe')
-
+    exit()
     purge_basis(
         max_coeff=10000,
         min_coeff=150,
