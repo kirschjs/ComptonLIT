@@ -8,18 +8,16 @@ import rrgm_functions, parameters_and_constants
 from bridge import *
 
 
-def red_mod_3(
-        typ='',
-        max_coeff=11000,
-        min_coeff=150,
-        target_size=80,
-        nbr_cycles=20,
-        max_diff=0.01,
-        ord=0,
-        tniii=10,
-        delpred=1,
-        dr2executable=home +
-        '/kette_repo/rrgm/source/seriell/eft_sandkasten/DR2END_AK_I_2.exe'):
+def red_mod_3(typ='',
+              max_coeff=11000,
+              min_coeff=150,
+              target_size=80,
+              nbr_cycles=20,
+              max_diff=0.01,
+              ord=0,
+              tniii=10,
+              delpred=1,
+              dr2executable=''):
 
     basis_size = 400000
     bdg_end = 400000
@@ -119,7 +117,7 @@ def red_mod_3(
                                          len(bv_to_del) - 1))] + bv_to_del0:
             ll = ''
             # 2. calc line number in INEN where this vector is included
-            offs = 8 if tniii == 26 else 5
+            offs = 9 if tniii == 31 else 5
             repl_ind = offs + 2 * (rem[0] - 1)
             repl_line = lines_inen[repl_ind]
             repl_ine = []
@@ -465,7 +463,7 @@ def n3_inob(fr, anzO, fn='INOB'):
 
 
 def n3_inen_rhs(bas, jay, co, rw, fn='INEN', pari=0, nzop=31, tni=11):
-    head = '%3d  2 12%3d  1  1 +2  0  0 -1\n' % (tni, nzop)
+    head = '%3d  2 12%3d  1  1 +2  0  0 -1  0  1\n' % (tni, nzop)
     head += '  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1\n'
 
     head += co + '\n'
@@ -483,6 +481,34 @@ def n3_inen_rhs(bas, jay, co, rw, fn='INEN', pari=0, nzop=31, tni=11):
         for i in range(bv[1] - 1):
             tmp += '%3d' % (0)
         tmp += '  1\n'
+        out += tmp
+
+    with open(fn, 'w') as outfile:
+        outfile.write(head + out)
+
+
+def n3_inen_bdg(bas, jay, co, fn='INEN', pari=0, nzop=31, tni=11):
+    head = '%3d  2 12%3d  1  1 +2  0  0 -1  0  1\n' % (tni, nzop)
+    head += '  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1\n'
+
+    head += co + '\n'
+
+    out = ''
+    out += '%4d%4d   1   0%4d\n' % (int(2 * jay), len(bas), pari)
+
+    relset = False
+
+    for bv in bas:
+        out += '%4d%4d\n' % (1, bv[0])
+
+        tmp = ''
+        for n in range(1, 1 + max(bv[1])):
+            if n in bv[1]:
+                tmp += '%3d' % int(1)
+            else:
+                tmp += '%3d' % int(0)
+
+        tmp += '\n'
         out += tmp
 
     with open(fn, 'w') as outfile:
@@ -560,7 +586,13 @@ def lit_3inob(anzo=13, fr=[]):
     return
 
 
-def lit_3inqua(intwi=[], relwi=[], LREG='', anzo=13, withhead=True, bnd=''):
+def lit_3inqua(intwi=[],
+               relwi=[],
+               LREG='',
+               anzo=13,
+               withhead=True,
+               bnd='',
+               outfile='INQUA'):
     s = ''
     if (withhead):
         # NBAND1,NBAND2,NBAND3,NBAND4,NBAND5,NAUS,MOBAUS,LUPAUS,NBAUS
@@ -603,9 +635,9 @@ def lit_3inqua(intwi=[], relwi=[], LREG='', anzo=13, withhead=True, bnd=''):
                         s += '1.'.rjust(12 * (bb % 6 + 1))
                         s += '\n'
 
-    appe = 'w' if (withhead) else 'a'
-    with open('INQUA', appe) as outfile:
-        outfile.write(s)
+    appe = 'w'
+    with open(outfile, appe) as outfi:
+        outfi.write(s)
     return
     # r7 c2:   S  L           S_c
     #  1   :   0  0  1S0         0
@@ -629,7 +661,8 @@ def lit_3inen(BUECO,
               EK0=1e3,
               EKDIFF=20.0,
               withhead=True,
-              bnd=''):
+              bnd='',
+              outfile='INEN'):
     s = ''
     # NBAND1,ISTEU,IGAK,KEIND,IQUAK,IMETH
     s += ' 10  2  0  1  0  1\n'
@@ -673,9 +706,9 @@ def lit_3inen(BUECO,
         s += bdginen[2 * ln + 1]
         nueco += 1
 
-    with open('INEN', 'w') as outfile:
-        outfile.write(s)
-    outfile.close()
+    with open(outfile, 'w') as outfi:
+        outfi.write(s)
+    outfi.close()
     return
 
 

@@ -12,3 +12,7 @@ __pycache__*
 *.nfs*
 *endlit*
 *inenlit*
+FORMFA*
+QUAOUT
+DRQUAOUT
+QUAALT

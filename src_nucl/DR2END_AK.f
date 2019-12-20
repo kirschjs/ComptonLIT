@@ -137,6 +137,7 @@ C
 C
 C
       CHARACTER*36 VARFOR(NZOPER), UNSPLIT(7)
+C      CHARACTER*20 INFILE
 C
       CHARACTER*10 CHINT(2)
       DATA CHINT /'(26I3)','(20I4)'/
@@ -182,6 +183,8 @@ C
      *'('' TENSOR-T RANG=2  3N = '',F16.7)',
      *'('' TENSOR-T RANG=3  3N = '',F16.7)'/
 C
+C      call getarg(1,INFILE)
+C      OPEN(UNIT=5,FILE=INFILE,STATUS='OLD')      
       OPEN(UNIT=5,FILE='INEN',STATUS='OLD')
 C
       OPEN(UNIT=NOUT,FILE='OUTPUT')
@@ -686,7 +689,7 @@ C
       DO 41, MKC=1,NZOP
       KPUTZ=2
       IF(MKC.EQ.1 .OR. MKC.EQ.15) KPUTZ=1
-C     LOOP OPERATOREN
+C     LOOP OPERATOREN 
       IF(MKC.GT.14) NBAND1=11
 C
       IF(LREG(MKC).LE.0) GOTO 41
@@ -962,7 +965,7 @@ C     KEIN AUSDRUCK DER ENERGIEN FUER KAUSD .LT. 0
       KK = NZQ(K) + M
       A1=.0
       I=I+1
-      WRITE(NOUT,1009) M,K,I
+      WRITE(NOUT,1009)  M,K,I
       DO 72 L=LU,NZOP
       IF(IZWEI.EQ.1) OPWERT(L,KK )=OPWERT(L,KK )/OPWERT(1,KK )
       IF(IZWEI.EQ.0) OPWERT(L,KK )=OPWERT(L,KK )/OPWERT(15,KK )
@@ -1336,7 +1339,7 @@ C
       COMMON /STORE/ZH(NDIMD,NDIMD),H(NDIMD,NDIMD), EN(NDIMD,NDIMD)
 C
       DIMENSION FC1(8*NDIMD), Q(NXH), IWORK(5*NDIMD), IFAIL(NDIMD),
-     *          Qsrt(NXH) 
+     *          Qsrt(NXH),Qtmp(NXH) 
 
       INTEGER   LDA, LDVL, LDVR, LWMAX, INFO, LWORK,INFU(NXH)
 
@@ -1458,29 +1461,31 @@ C      IU= NZZ
       LDA = NXH
       LDVL = NXH
       LDVR = NXH
-C
-C      WRITE (NOUT,*) NX,NXH,(( H(M,N),M=1,NX ),N=1,NX)
 
-C      CALL DGEEV('Vectors','Vectors',NXH, H, NDIMD, WR, WI, VL, LDVL,
-C     *            VR, LDVR, WORK, LWORK, INFO )
-C      CALL DGEEV('Vectors','Vectors',NXH, EN,NDIMD, WR2,WI2,VL2,LDVL,
-C     *            VR2, LDVR, WORK, LWORK, INFO )
+      CALL DSYGVX(1,'V','A','U',NXH,H,NDIMD,EN,NDIMD,VL,VU,
+     *    IL,IU,ABSTOL,MOUT,Q,ZH,NDIMD,FC1,LWORK,IWORK,IFAIL,IERR)
+C      CALL DGGEV('V','V',NXH,H,NDIMD,EN,NDIMD,WR,WI,WR2,
+C     *    VL, LDVL,VR, LDVR,WORK,LWORK,INFO)      
 
-C   gen ev for real, non-symmetric matrix Hv=lNv
-      CALL DGGEV('V','V',NXH,H,NDIMD,EN,NDIMD,WR,WI,WR2,
-     *    VL, LDVL,VR, LDVR,WORK,LWORK,INFO)      
-C      CALL DSYGVX(ITYPE,JOBZ,RANGE,UPLO,NX,H,NDIMD,EN,NDIMD,VL,VU,
-C     *    IL,IU,ABSTOL,MOUT,Q,ZH,NDIMD,FC1,LWORK,IWORK,IFAIL,IERR)      
-      DO 147   M = 1,NX
-147   Q(M) = WR(M)/WR2(M)
-      DO 149   M = 1,NX
-149   Qsrt(M) = Q(M)
+C      DO 147   M = 1,NX
+C147   Q(M) = WR(M)/WR2(M)
+C      DO 149   M = 1,NX
+C        IF(ABS(Q(M)).LT.1.E10) THEN
+C        Qsrt(M) = Q(M)
+C        ELSE
+C          Qsrt(M)=42.0
+C          Q(M)=42.0
+C        ENDIF
+C149   CONTINUE
 
-      CALL dlasrt('I',NX,Qsrt,INFO)
-      CALL cmpvec( Q, Qsrt, NX, INFU )
+C     'I': increasing order ; NX: dimension ; Qsrt: unsorted input -> sorted after sucessful exit      
+C      CALL dlasrt('I',NX,Qsrt,INFO)
+
+C      CALL cmpvec( Q, Qsrt, NX, INFU )
 
       WRITE (NOUT,1101)
-      WRITE (NOUT,1000) ( Qsrt(M),M=1,NX )
+C      WRITE (NOUT,1000) ( Qsrt(M),M=1,NX )
+      WRITE (NOUT,1000) ( Q(M),M=1,NX )
 
       EOV = Q(1)
       IF(IERR.EQ.0) GOTO 950
@@ -1491,29 +1496,30 @@ C     *    IL,IU,ABSTOL,MOUT,Q,ZH,NDIMD,FC1,LWORK,IWORK,IFAIL,IERR)
 C
 C      NENTP=0,   STREURECHNUNG
 C      NENTP=1,   BINDUNGSRECHNUNG FUER UNGEKOPPELTE FUNKTIONEN
-C
+C 
       IF (NENTP.EQ.0) GOTO 802
 C     BINGUNGSRECHNUNG MIT UND OHNE GEKOPPELTE FUNKTIONEN
 c      NZZ = MIN0(MAX0(1,NZZ),NX,NDIMD)
 C if the eigensystem is solved without sorting, all EVs have to
 C       be calculated 
-      NZZ = NX
-C      NZZ = 1
+C      NZZ = NX
+      NZZ = 2
       DO 800  K=1,NZZ
       KK=K
       IF (IAUW.NE.0)  READ (INPUT,1002)  KK
       WRITE (NOUT,1008)  KK
  1008 FORMAT(//16H ENTWICKLUNG DES,I3,17H TEN EIGENVEKTORS/)
       DO 144   M = 1,NX
-144   QQ(M,K)=VR(M,INFU(KK))
-C 144   QQ(M,K)=ZH(M,KK)
+C 144   QQ(M,K)=VR(M,INFU(KK))
+144   QQ(M,K)=ZH(M,KK)
       WRITE(NOUT,1007) (QQ(M,K),M,M=1,NX)
   800 CONTINUE
  1007 FORMAT (4(1PE18.10,' /',I4,')'))
+
       IF (IPLO.LE.0) GOTO 801
       REWIND NBAND9
       READ (NBAND9) NY,((EN(N,M),M=1,NY),N=1,NY)
-C     HIER WIRD EN TRANSPONIERT EINGELESEN!!!!
+C      HIER WIRD EN TRANSPONIERT EINGELESEN!!!!
       DO 5 N=1,NY
 5     QQN(N)=0.
       DO 20 J=1,NY

@@ -10,8 +10,7 @@ from two_particle_functions import *
 
 import multiprocessing
 
-print("%d/%d cpus can/are goint to be used" % (len(os.sched_getaffinity(0)),
-                                               multiprocessing.cpu_count()))
+anzproc = 12  #int(len(os.sched_getaffinity(0)) / 1)
 
 home = os.getenv("HOME")
 
@@ -20,45 +19,53 @@ pathbase = home + '/kette_repo/ComptonLIT'
 av18path = pathbase + '/av18_deuteron'
 litpathD = pathbase + '/mul_deuteron/'
 
-v18uixpath = pathbase + '/v18uix_helium3/'  #the_odd_one/'
+v18uixpath = pathbase + '/v18uix_helium3/'
 litpath3He = pathbase + '/mul_helion/'
 
 BINBDGpath = pathbase + '/src_nucl/'
 BINLITpath = pathbase + '/src_elma/'
 
+potpath = '/home/kirscher/kette_repo/sim_par/potentials/'
 mpii = '137'
 potnn = 'AV18'
 potnnn = 'urbana9_AK_neu'
 
-anzproc = len(os.sched_getaffinity(0))
-
-cal = ['purge']
-cal = ['purge', 'construe_fresh_LIT_basis', 'construe_fresh_deuteron']
 cal = [
-    'purge', 'construe_fresh_helion', 'lit_lu-ob-qua',
-    'construe_fresh_LIT_basis'
+    'construe_fresh_helion', 'construe_fresh_deuteron', 'lhs_lu-ob-qua',
+    'rhs_lu-ob-qua', 'lhs', 'rhs', 'plt', 'dbg', 'new_rnd_bvset'
 ]
-cal = ['construe_fresh_helion', 'lhs', 'rhs']
-cal = ['plt']
+
+cal = ['lhs_lu-ob-qua', 'lhs', 'rhs', 'plt', 'dbg', 'rhs_lu-ob-qua']
+cal = [
+    'lhs',
+    'rhs',
+    'plt',
+    'dbg',
+]
 
 # convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
     # deuteron
     'np-3SD-J=1': [[1, 1, 2, 2], [1, 1, 2, 6]],
     # helion
-    'npp-J=0.5':
-    [[
+    'npp-J=0.5': [['000', ['he_no1', 'he_no6']], ['202', ['he_no2', 'he_no2']],
+                  ['022', ['he_no2']], ['111', ['he_no3']],
+                  ['112', ['he_no5']], ['111', ['he_no5']]],
+    # helion
+    'npp-J=0.5-lrg': [[
         '000',
         ['he_no1', 'he_no1', 'he_no1', 'he_no1', 'he_no6', 'he_no6', 'he_no6']
-    ], ['202', ['he_no2', 'he_no2', 'he_no2', 'he_no2', 'he_no2']],
-     ['022', ['he_no2', 'he_no2']], ['222', ['he_no2']], ['221', ['he_no1']],
-     ['220', ['he_no1']], ['221', ['he_no2']], ['220', ['he_no6']],
-     ['111', ['he_no3']], ['112', ['he_no5']], ['111', ['he_no5']]],
+    ], ['202', ['he_no2', 'he_no2', 'he_no2', 'he_no2',
+                'he_no2']], ['022', ['he_no2', 'he_no2']], ['222', ['he_no2']],
+                      ['221', ['he_no1']], ['220', ['he_no1']], [
+                          '221', ['he_no2']
+                      ], ['220', ['he_no6']], ['111', ['he_no3']],
+                      ['112', ['he_no5']], ['111', ['he_no5']]],
     # helion
-    'nppODD-J=0.5': [['222', ['he_no2']], ['221', ['he_no1']], [
-        '220', ['he_no1']
-    ], ['221', ['he_no2']], ['220', ['he_no6']], ['111', ['he_no3']],
-                     ['112', ['he_no5']], ['111', ['he_no5']]],
+    'nppODD-J=0.5':
+    [['222', ['he_no2']], ['221', ['he_no1']], ['220', ['he_no1']],
+     ['221', ['he_no2']], ['220', ['he_no6']], ['111', ['he_no3']],
+     ['112', ['he_no5']], ['111', ['he_no5']]],
 }
 
 # ECCE! bvnr for LIT basis states must be shifted after purge! (A2_lit)
@@ -80,17 +87,18 @@ streukanaeleD = {
 
 streukanaele3He = {
     #          [l1l2L,[compatible (iso)spin configurations]]
-    '0.5^-':
-    [['101', ['he_no3', 'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']]
-     #['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
-     #['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]
-     ],
-    '1.5^-': [['101', ['he_no3',
+    '0.5^-': [['101', ['he_no3',
                        'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
-              ['121', ['he_no3', 'he_no5']], ['122', ['he_no3', 'he_no5']],
-              ['123', ['he_no5']], ['211', ['he_no1', 'he_no2', 'he_no6']], [
-                  '212', ['he_no1', 'he_no2', 'he_no6']
-              ], ['213', ['he_no2']], ['303', ['he_no5']], ['033', ['he_no2']]]
+              ['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
+              ['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]],
+    '1.5^-': [
+        ['101', ['he_no3', 'he_no5']],
+        ['011', ['he_no1', 'he_no2', 'he_no6']],
+        #         ['121', ['he_no3', 'he_no5']], ['122', ['he_no3', 'he_no5']],
+        #         ['123', ['he_no5']], ['211', ['he_no1', 'he_no2', 'he_no6']], [
+        #             '212', ['he_no1', 'he_no2', 'he_no6']
+        #         ], ['213', ['he_no2']], ['303', ['he_no5']], ['033', ['he_no2']]
+    ]
 }
 
 streukas = ['0.5^-']  #['0^-', '1^-', '2^-']  #
@@ -103,10 +111,10 @@ multipolarity = 1
 
 anz_phot_e = 100
 phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
-phot_e_d = 10.  #
+phot_e_d = 25.  #
 
 # deuteron/initial-state basis -------------------------------------------
-basisdim0 = 15
+basisdim0 = 10
 
 laplace_loc, laplace_scale = 1., .4
 wLAPLACE = np.sort(
@@ -116,7 +124,7 @@ wini0 = w120  #wLAPLACE[::-1]
 addw = 1
 addwt = 'middle'
 scale = 1.
-min_spacing = 0.02
+min_spacing = 0.002
 min_spacing_to_LITWs = 0.001
 
 rw0 = wid_gen(
@@ -127,9 +135,9 @@ nzf0 = int(np.ceil(len(rw0) / 20.0))
 
 #LIT basis ---------------------------------------------------------------
 
-basisdimLITint = 8
+basisdimLITint = 5
 basisdimLITrel = 10
-LD = 4
+LD = 20
 
 basisdimLIT = 20
 wli = 'wd'
@@ -175,6 +183,11 @@ if wli == 'lap':
     winiLIT = sparsify(winiLITlaplace, min_spacing)
 
 # for the cleaner --------------------------------------------------------
+
+costr = ''
+for nn in range(1, 30):
+    cf = 1.0 if nn < 28 else 0.0
+    costr += '%12.7f' % cf if (nn % 7 != 0) else '%12.7f\n' % cf
 
 streukanalweiten = range(1, len(winiLIT) + 1)
 

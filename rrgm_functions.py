@@ -4,6 +4,7 @@ from matplotlib.ticker import FormatStrFormatter
 import numpy as np
 import random
 from parameters_and_constants import *
+from sklearn.cluster import KMeans
 
 
 def get_h_ev(n=1, ifi='OUTPUT'):
@@ -142,6 +143,34 @@ def sparsifyOnlyOne(menge_to_reduce, menge_fix, mindist):
             lockereMenge = np.concatenate((lockereMenge, [test_w]))
 
     return np.sort(lockereMenge)[::-1]
+
+
+def sparsifyPair(menge_a, menge_b, mindist, anzCL):
+
+    #print('Sorting\n', menge_a, '\n into\n', menge_b, '...\n\n')
+
+    seta = menge_a
+    setb = menge_b
+    dense = True
+
+    while dense:
+        widthremoved = False
+        for a in seta:
+            for b in setb:
+                if (np.abs(float(a) - float(b)) < mindist):
+
+                    if (len(seta) <= len(setb)):
+                        setb.remove(b)
+                    else:
+                        seta.remove(a)
+                    widthremoved = True
+                    break
+            if widthremoved:
+                break
+        if widthremoved == False:
+            dense = False
+
+    return np.sort(seta)[::-1], np.sort(setb)[::-1]
 
 
 def wid_gen(add=10, addtype='top', w0=w120, ths=[1e-5, 8e2, 0.1], sca=1.):
