@@ -107,7 +107,8 @@ def perturbseedwidths(seeds, anz=20):
     ws = []
     while (len(ws) <= anz):
         for seed in seeds:
-            ws.append(np.abs(seed * (2 * np.random.rand() + 9) / 10))
+            ws.append(np.abs(np.random.normal(loc=seed, scale=0.4, size=None)))
+            #ws.append(np.abs(seed * (2 * np.random.rand() + 9) / 10))
 
     return np.sort(ws)[::-1]
 
