@@ -35,7 +35,7 @@ cal = [
     'rhs_lu-ob-qua', 'lhs', 'rhs', 'plt', 'dbg', 'new_rnd_bvset'
 ]
 
-cal = ['lhs_lu-ob-qua', 'lhs', 'rhs', 'plt', 'dbg', 'rhs_lu-ob-qua']
+cal = ['rhs_lu-ob-qua', 'rhs', 'lhs_lu-ob-qua', 'lhs', 'plt', 'dbg']
 cal = [
     'lhs',
     'rhs',
@@ -51,7 +51,7 @@ rechtekanaele = {
     'npp-J=0.5': [['000', ['he_no1', 'he_no6']], ['202', ['he_no2', 'he_no2']],
                   ['022', ['he_no2']], ['111', ['he_no3']],
                   ['112', ['he_no5']], ['111', ['he_no5']]],
-    # helion
+    'nppsmall-J=0.5': [['000', ['he_no1', 'he_no6']], ['202', ['he_no2']]],
     'npp-J=0.5-lrg': [[
         '000',
         ['he_no1', 'he_no1', 'he_no1', 'he_no1', 'he_no6', 'he_no6', 'he_no6']
@@ -61,7 +61,6 @@ rechtekanaele = {
                           '221', ['he_no2']
                       ], ['220', ['he_no6']], ['111', ['he_no3']],
                       ['112', ['he_no5']], ['111', ['he_no5']]],
-    # helion
     'nppODD-J=0.5':
     [['222', ['he_no2']], ['221', ['he_no1']], ['220', ['he_no1']],
      ['221', ['he_no2']], ['220', ['he_no6']], ['111', ['he_no3']],
@@ -87,10 +86,14 @@ streukanaeleD = {
 
 streukanaele3He = {
     #          [l1l2L,[compatible (iso)spin configurations]]
-    '0.5^-': [['101', ['he_no3',
-                       'he_no5']], ['011', ['he_no1', 'he_no2', 'he_no6']],
-              ['121', ['he_no3', 'he_no5']], ['122', ['he_no5']],
-              ['211', ['he_no1', 'he_no2', 'he_no6']], ['212', ['he_no2']]],
+    '0.5^-': [
+        ['011', ['he_no1', 'he_no2', 'he_no6']],
+        ['211', ['he_no1', 'he_no2', 'he_no6']],
+        ['212', ['he_no2']],
+        ['101', ['he_no3', 'he_no5']],
+        ['121', ['he_no3', 'he_no5']],
+        ['122', ['he_no5']],
+    ],
     '1.5^-': [
         ['101', ['he_no3', 'he_no5']],
         ['011', ['he_no1', 'he_no2', 'he_no6']],
@@ -111,7 +114,7 @@ multipolarity = 1
 
 anz_phot_e = 100
 phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
-phot_e_d = 25.  #
+phot_e_d = 10.  #
 
 # deuteron/initial-state basis -------------------------------------------
 basisdim0 = 10
@@ -186,7 +189,7 @@ if wli == 'lap':
 
 costr = ''
 for nn in range(1, 30):
-    cf = 1.0 if nn < 28 else 0.0
+    cf = 1.0 if (nn < 28) else 0.0
     costr += '%12.7f' % cf if (nn % 7 != 0) else '%12.7f\n' % cf
 
 streukanalweiten = range(1, len(winiLIT) + 1)

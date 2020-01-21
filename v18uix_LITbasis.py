@@ -2,8 +2,10 @@ from bridge import *
 from three_particle_functions import *
 from triton_width_gen import *
 import operator
+from BasisVisualization import visbas
 
 os.chdir(v18uixpath)
+print('(working dir) %s' % v18uixpath)
 
 for streukanal in streukas:
 
@@ -21,28 +23,37 @@ for streukanal in streukas:
     he_iw, he_rw, frgs = retrieve_he3_widths(v18uixpath + 'INQUA_N_UIX')
 
     # generate widths for the two coordinates for every LIT-basis spin-/angular-momentum comfiguration
-    seedwidths1 = [
-        10.9702, 7.2388, 0.7274, 0.1739, 0.03548, 2.8716, 0.9217, 0.2435, 3.5,
-        4, 4.5, 5.5
-    ]
-    seedwidths2 = seedwidths1  #np.sort(np.unique(np.random.choice(w12, 15)))[::-1]
+    seedwidths1 = [2.1423, 1.70924, 1.35, 0.7274, 0.1739, 0.03548, 0.0005]
+    seedwidths2 = [
+        2.939, 2.1099, 1.6901745, 0.84300, 0.543, 0.03, 0.0001
+    ]  #seedwidths1  #np.sort(np.unique(np.random.choice(w12, 15)))[::-1]
 
     lfrags2 = []
     sfrags2 = []
-    min_single_width_dist = 0.15
-    min_eucl_pair_dist = .2
+    min_single_width_dist_int = 0.001
+    min_single_width_dist_rel = 0.001
+    min_eucl_pair_dist = .001
     lit_iw = []
     lit_rw = []
 
-    widthcluster = 15
+    widthcluster = 5
 
     for frg in range(len(lfrags)):
 
-        rho1widths = perturbseedwidths(seedwidths1, widthcluster).tolist()
-        rho2widths = perturbseedwidths(seedwidths2, widthcluster).tolist()
+        seedwidths1 = np.array(seedwidths1) + np.array(
+            seedwidths1) / 6 * np.random.randn()
+        seedwidths2 = np.array(seedwidths2) + np.array(
+            seedwidths2) / 6 * np.random.randn()
 
-        iw = sparsify(rho1widths, min_single_width_dist)
-        rw = sparsify(rho2widths, min_single_width_dist)
+        rho1widths = np.abs(
+            seedwidths1
+        )  #perturbseedwidths(seedwidths1, anz=widthcluster).tolist()
+        rho2widths = np.abs(
+            seedwidths2
+        )  #perturbseedwidths(seedwidths2, anz=widthcluster).tolist()
+
+        iw = sparsify(rho1widths, min_single_width_dist_int)
+        rw = sparsify(rho2widths, min_single_width_dist_rel)
 
         lit_iw += np.array(np.array_split(iw, int(np.ceil(
             len(iw) / 12.)))).tolist()
@@ -63,11 +74,11 @@ for streukanal in streukas:
 
     with open(litpath3He + 'intw3heLIT.dat', 'wb') as f:
         for ws in lit_iw:
-            np.savetxt(f, [ws], fmt='%12.4f', delimiter=' ; ')
+            np.savetxt(f, [ws], fmt='%12.6f', delimiter=' ; ')
     f.close()
     with open(litpath3He + 'relw3heLIT.dat', 'wb') as f:
         for ws in lit_rw:
-            np.savetxt(f, [ws], fmt='%12.4f', delimiter=' ; ')
+            np.savetxt(f, [ws], fmt='%12.6f', delimiter=' ; ')
     f.close()
 
     bas = []
@@ -89,8 +100,10 @@ for streukanal in streukas:
                 ]
                 w2 = [lit_iw[nz][set0[ei][0]], lit_rw[nz][set0[ei][1]]]
 
-                if np.linalg.norm(
-                        np.array(w1) - np.array(w2)) < min_eucl_pair_dist:
+                if ((np.linalg.norm(np.array(w1) - np.array(w2)) <
+                     min_eucl_pair_dist) |
+                    (len(w1 + w2) != len(np.flatnonzero(w1 + w2)))):
+                    print(w1 + w2, np.flatnonzero(w1 + w2))
                     reject = True
                     break
 
@@ -116,6 +129,11 @@ for streukanal in streukas:
         np.savetxt(f, [[jj[0], kk] for jj in sbas for kk in jj[1]], fmt='%d')
     f.close()
 
+    os.system('cp LITbas_full.dat LITbas_red.dat')
+
+    visbas(basispath=v18uixpath, widthpath=litpath3He, exepath=BINBDGpath)
+    print(np.shape(lit_iw))
+
     n3_inlu(21, fn='INLU', fr=lfrags2)
     os.system(BINBDGpath + 'DRLUD.exe')
     n3_inlu(21, fn='INLUCN', fr=lfrags2)
@@ -123,10 +141,12 @@ for streukanal in streukas:
     n3_inob(sfrags2, 20, fn='INOB')
     os.system(BINBDGpath + 'KOBER.exe')
     os.system(BINBDGpath + 'DROBER.exe')
+
     he3inqua(
         intwi=lit_iw,
         relwi=lit_rw,
         potf='/home/kirscher/kette_repo/sim_par/potentials/NN_pheno/AV18')
+
     os.system('time ' + BINBDGpath + 'QUAFL_N.exe')
     repl_line(
         'INQUA_N', 1,

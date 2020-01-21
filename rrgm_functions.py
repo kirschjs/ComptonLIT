@@ -109,8 +109,12 @@ def sparsify(menge, mindist):
 
     lockereMenge = []
     menge = np.sort(menge)
-    npointer = 1
+
+    if len(menge) == 1:
+        return menge
+
     nref = 0
+    npointer = 1
 
     while (npointer < len(menge)):
 
@@ -121,6 +125,9 @@ def sparsify(menge, mindist):
 
         else:
             npointer += 1
+
+    if lockereMenge == []:
+        return menge[0]
 
     if (np.abs(float(menge[-1]) - float(lockereMenge[-1])) > mindist):
         lockereMenge.append(float(menge[-1]))

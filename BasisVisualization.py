@@ -11,7 +11,10 @@ def visbas(basispath, widthpath, exepath):
     os.chdir(basispath)
 
     litbas_full = np.loadtxt(basispath + 'LITbas_full.dat').astype(int)
-    litbas_red = np.loadtxt(basispath + 'LITbas_red.dat').astype(int)
+    try:
+        litbas_red = np.loadtxt(basispath + 'LITbas_red.dat').astype(int)
+    except:
+        litbas_red = litbas_full
 
     basvs = {}
     for bv in litbas_red:
@@ -39,7 +42,7 @@ def visbas(basispath, widthpath, exepath):
     iws_red = []
     rws_red = []
 
-    print(' BV REL          wi          wr')
+    #print(' BV REL          wi          wr')
 
     for bv in litbas_full:
         for fr in range(len(intwLIT)):
@@ -55,8 +58,8 @@ def visbas(basispath, widthpath, exepath):
                 iw = bv[0] - sum([len(ws) for ws in intwLIT[:fr]])
                 iws_red.append(float(intwLIT[fr][iw - 1]))
                 rws_red.append(float(relwLIT[fr][bv[1] - 1]))
-                print('%3d%3d%12.4f%12.4f' % (bv[0], bv[1], iws_red[-1],
-                                              rws_red[-1]))
+                #print('%3d%3d%12.4f%12.4f' % (bv[0], bv[1], iws_red[-1],
+                #                              rws_red[-1]))
                 break
 
     fig = plt.figure()
@@ -90,7 +93,7 @@ def visbas(basispath, widthpath, exepath):
     plt.title(r'$\gamma_1<\gamma_2\Rightarrow$ 1 broader than 2')
 
     fig.savefig(basispath + 'WidthXY.pdf')
-    os.system(exepath + 'DR2END_AK.exe && grep -A 3 \'EIGENWER\' OUTPUT')
+    #os.system(exepath + 'DR2END_AK.exe && grep -A 3 \'EIGENWER\' OUTPUT')
 
 
-visbas(basispath=v18uixpath, widthpath=litpath3He, exepath=BINBDGpath)
+#visbas(basispath=v18uixpath, widthpath=litpath3He, exepath=BINBDGpath)
