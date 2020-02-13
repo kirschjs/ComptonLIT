@@ -36,13 +36,13 @@ cal = [
 ]
 
 cal = ['rhs_lu-ob-qua', 'rhs', 'lhs_lu-ob-qua', 'lhs', 'plt', 'dbg']
+
 cal = [
     'lhs',
     'rhs',
     'plt',
     'dbg',
 ]
-
 # convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
     # deuteron
@@ -104,7 +104,7 @@ streukanaele3He = {
     ]
 }
 
-streukas = ['0.5^-']  #['0^-', '1^-', '2^-']  #
+streukas = ['1.5^-']  #['0^-', '1^-', '2^-']  #
 
 #                  realistic    L>0 (only)         deuteron
 boundstatekanal = 'npp-J=0.5'  #'nppODD-J=0.5'  # 'np-3SD-J=1'
@@ -113,8 +113,12 @@ J0 = float(boundstatekanal.split('J=')[1])
 multipolarity = 1
 
 anz_phot_e = 100
-phot_e_0 = 0.2  #  enems_e converts to fm^-1, but HERE the value is in MeV
-phot_e_d = 10.  #
+phot_e_0 = 0.02  #  enems_e converts to fm^-1, but HERE the value is in MeV
+phot_e_d = 1.  #  delta E
+
+with open(v18uixpath + 'kRange.dat', 'wb') as f:
+    np.savetxt(f, [anz_phot_e, phot_e_0, phot_e_d], fmt='%f')
+f.close()
 
 # deuteron/initial-state basis -------------------------------------------
 basisdim0 = 10
