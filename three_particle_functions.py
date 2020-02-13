@@ -679,7 +679,7 @@ def lit_3inen(BUECO,
     # g faktoren (6)
     s += '5.586       -3.826      1.          0.          1.          0.\n'
     s += '%11.4f%11.4f\n%11.4f\n' % (ANORML, ANORMR, EB)
-    # nbrE , E0 , dE
+    # nbrE , E0 , dE  (in MeV)
     s += '%3d\n%-12.4f%-12.4f\n' % (NZE, EK0, EKDIFF)
     # JWSL,JWSR,NPARL,NPARR=1,2(-,+),JWSLM,MULM2
     s += '%3d%3d%3d%3d%3d%3d\n' % (2 * JWSL, 2 * JWSR, NPARL, NPARR, 2 * JWSLM,

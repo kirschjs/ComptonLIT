@@ -186,6 +186,8 @@ C     EINLESEN UND ZUWEISUNG DER RICHTIGEN G-FAKTOREN
       WRITE (6,1014) GEFAK(6), GEFAK(2), GEFAK(7), GEFAK(3)
 C
 C     BESTIMMUNG DER VORFAKTOREN FUER DIE MATRIXELEMENTE DER OPERATOREN
+C    g -> g * hc/(mc^2) => [g] = fm
+C    g(SIEGERT,MKC=10,11)=1(proton) and 0(neutron)
       DO 114 K=2,8,2
       GEFAK(K)=GEFAK(K)*H2MCP
 114   GEFAK(K+1)=GEFAK(K+1)*H2MCN
@@ -200,14 +202,18 @@ C
       IF (ISTEU.GT.2) READ (5,1002) LAD
 C     BEI QUARKRECHNUNG EINLESEN DER GESAMTLADUNG
 C
-C     EINLESEN DER NORMIERUNG DER ZUSTAENDE UND DER PHOTONENENERGIE
+C     EINLESEN DER NORMIERUNG DER ZUSTAENDE
       READ(5,1013) ANORML,ANORMR
+C     ENER = EK(1) (below) in MeV      
       READ(5,1013) ENER
+C     MeV -> fm^-1      
       EKNULL=ENER/HC
 C
       IF (ISTEU.EQ.1.OR.ISTEU.EQ.3) GOTO 10
 C     ELEKTRONENSTREUUNG
+C                   Anz. energies      
       READ (5,1002) NZEK, INR, ISRB
+C                   E(photon)_0 dE in MeV      
       READ (5,1013) EK(1), EKDIFF
       EK(1)=EK(1)/HC
       EKDIFF=EKDIFF/HC
@@ -215,7 +221,7 @@ C     ELEKTRONENSTREUUNG
        EK(NEK)=EK(NEK-1)+EKDIFF
       EKNULL = EK(1)
 9     CONTINUE
-C     EK: K-VEKTOR DES (VIRTUELLEN) PHOTONS
+C     EK: K-VEKTOR DES (VIRTUELLEN) PHOTONS  in fm^-1 !
       GOTO 11
 C
 C     PHOTOABSORBTION
@@ -668,6 +674,7 @@ C    PHASE FUER VERTAUSCHEN DER BASISVEKTOREN LINKS UND RECHTS
       ISRANK2=2
       IORANK2=MUL2
       IF(MKC.EQ.4.OR.MKC.EQ.5) IORANK2=MUL2+2-4*(JWIED-1)
+C see eq.(12) this is not the multipole-expansion L^      
       FK1new = SQRT(JWSR+1.)*SQRT(MUL2+1.)
      1        *F9J(LBL2,LBR2,IORANK2,ML,MR,ISRANK2,JWSL,JWSR,MUL2)
       GOTO 100
@@ -724,6 +731,7 @@ C      IF (LAUF.EQ.2) FK2=0.
 C     HIER WIRD DER FUER DIE NORM FALSCHE CLEBSCH-GORDAN-KOEFFIZIENT
 C     DES RED. MATR.-ELEMENTS HERAUSGEKUERZT.
 C     ALLE OPERATOREN
+C                 = hbarc/mn for siegert proton      
       F1=F*FK1new*GEFAK(MKC)
 C
       IF(F1.EQ.0.AND.F2.EQ.0.) THEN
@@ -874,8 +882,9 @@ C        write(6,*)'ECCE:',NZECFG(MKC),LL1MAX(MKC)
         DO 600, I1=1, NZECFG(MKC)
          OPH1=0
          DO 590, JJ=1,LL1MAX(MKC)
-C                1                                  Sp  Sn
-          GOTO(586,587,587,588,588,588,588,587,587,587,587,
+C              nrm el-spin  mag-spin el-bahn mag-bahn siegert
+C                  prot neu p   n    p   n   p   n    p   n
+          GOTO(586,587, 587,588,588, 588,588,587,587, 587,587,
      *                            586,588,588,587,587,584), MKC
 584       STOP 16
 C
@@ -960,17 +969,18 @@ c ----- old
 C DF=!! from long-wave-length limit of j_l (see Walecka Eq.(7.46))      
 C      VF1=1.
 C      IF (MUL.GT.0) VF1=(AK+1.)/AK
-C      (see Eq.(7.44) in Walecka)      
+C      (see Eq.(7.44) in Walecka) this factor compensates T^2 and hence
+C      (2L+1)!! has to be devided out twice
 C      VF=8.*PI*VF1/(DF(MUL2+1)**2)
 C      VF=HC/137.03604
 C      VF=VF*EKNULL
 C      VFE=VF1/(DF(MUL2+1)**2)
 
 c Siegert for LIT benchmark (Eq.(55) in Bampa)
-      VF = (1./(HC*EK(1)))*4.*SQRT(PI/137.03604)
-      WRITE (6,*)"E_0 = ", EK(1)
-      IF (MUL.GT.0) VF=VF*SQRT((FLOAT(MUL)+1.)/FLOAT(MUL))
-      WRITE (6,*)"Vorfaktor = ", VF
+      WRITE (6,*)"E_0[fm^-1] = ", EK(1)
+C  HC/mn has been considered via GEFAK earlier
+C  sqrt(2pi)L^ is included in the def. of P (see Bampa (29))
+C    Siegert Vorfaktor: (L+1)/L/(hbarc k) * e, e=(4pihbarc alpha)^0.5      
 c      WRITE (6,*)"Kopplungsfaktor(FA) = ", FA
 c      WRITE (6,*)"Kopplungsfaktor(FB) = ", FB
       VFE=VF     
@@ -1001,6 +1011,26 @@ C     AUSDRUCK FUER ELEKTRONENSTREUUNG
 
       DO 900, NEK=1, NZEK
 
+C   momentum in fm^-1 => the ME is returned as [] = fm b/c
+C 2x RGM wfkt -3/2 +3 from integral + this fm above        
+      VF = 1./EK(NEK)
+C      SQRT(4.*PI*HC/137.03604)
+      IF (MUL.GT.0) VF=VF*(FLOAT(MUL)+1)/FLOAT(MUL)
+      WRITE (6,*)"Vorfaktor = ", VF
+C      ELEKTRISCHE OPERATOREN MIT SIEGERTOPERATOR
+       IF (MREG(10)+MREG(11).EQ.0) STOP
+
+C sum        
+       OPE=OPWERT(NEK,10)+OPWERT(NEK,11)
+       OPE=OPE*VF
+       IF (KMETH(1).GT.0) CALL OUT(NEK,1,OPE,5)
+       IF (KMETH(2).GT.0) CALL OUT(NEK,1,OPE,6)
+C      ECCE: LIT benchmark => no other operators or corrections
+C            goto next energy
+       GOTO 900
+900   CONTINUE
+C    END and EXIT program for Siegert E1 benchmark
+      GOTO 980
 C
        VFUE=FLOAT(LAD**2)/(4.*PI)
 C      VORFAKTOR DES UEBERALLFORMFAKTORS
@@ -1020,19 +1050,6 @@ C      BERECHNUNG NACH: FRIAR AND NEGELE "DETERMINATION OF NUCLEAR CHARGE
 C      DISTRIBUTIONS" IN "ADVACES IN NUCLEAR PHYSICS", 8 (1975), S. 227
        GMP=(1./(1.+EK2*HC*HC/(840.*840.)))**2
        GMN=GMP
-C      ELEKTRISCHE OPERATOREN MIT SIEGERTOPERATOR
-       IF (MREG(10)+MREG(11).EQ.0) STOP
-
-C sum        
-       OPE=OPWERT(NEK,10)+OPWERT(NEK,11)
-       OPE=OPE*VF
-       IF (KMETH(1).GT.0) CALL OUT(NEK,1,OPE,5)
-       IF (KMETH(2).GT.0) CALL OUT(NEK,1,OPE,6)
-C      ECCE: LIT benchmark => no other operators or corrections
-C            goto next energy
-       GOTO 900
-900   CONTINUE
-      GOTO 980
 C
 940   CONTINUE
 C     AUSDRUCK FUER PHOTOABSORPTION

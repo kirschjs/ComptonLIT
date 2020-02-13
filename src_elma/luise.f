@@ -108,6 +108,7 @@ C
       DIMENSION KWL(2*NZCMAX-3,5), KWR(2*NZCMAX-3,5)
       DIMENSION F4(4), F5(4)
 C
+C     minus1 = +/- for even/odd
       MINUS1(I)=1-2*MOD((ABS(I)),2)
 C
 C     ZUWEISUNG DER STARTWERTE
@@ -278,7 +279,12 @@ C
       IF (LAUS.GT.1) PRINT 1023, F9
 C     F9=-(2MUL+1)!!*SQRT(MUL/(MUL+1))
 C     F10=(2MUL+1)!!
-C
+C  << F9,10 do not resemble the long-wavelength approx. >>      
+C  they are included, only to be excluded in enemb.f
+C  see Trini's theses waht structure was implemented originally!      
+C  29.1.20 joki: F9/10 = 1 because of my convention
+      F9 = 1.
+      F10 = 1.
 C
       DO 900 NFL=1,NZF
 C      LOOP ZERLEGUNGEN LINKS
@@ -418,7 +424,7 @@ C
            GOTO (194, 184, 186, 185, 184, 190, 191, 182), NOP
 182        STOP 5
 184        CONTINUE
-C          EL. SPIN UND MAGN. BAHN
+C          EL. SPIN UND MAGN. BAHN F9=(2L+1)!! *(L/(L+1))**1/2
            F=F*F9
            GOTO 194
 185        CONTINUE
@@ -460,9 +466,10 @@ C           LV(NZLL+1...NZLME): DREHIMPULSE IM KET DES MATR.-EL.
 198        CONTINUE
 C
 C     ENDE BESTIMMUNG FAKTOR F
-C     F=FAKTOR DES RED. MATR.-EL. * VORFAKTOR DER EL.-MAGN. OPERATORS *
-C     PRODUKT UEBER ALLE I ((-1/2)**LV(I) * SQRT(2*LV(I)+1) / SQRT(4*PI))
-C
+C     F = FAKTOR DES RED. MATR.-EL. 
+C       * VORFAKTOR DER EL.-MAGN. OPERATORS
+C       * PRODUKT UEBER ALLE I ((-1/2)**LV(I) * SQRT(2*LV(I)+1) / SQRT(4*PI))
+C         (see Edmnds 4.6.5)
 C
            DO 780 NPWL=1,NZPO(NFL)
 C           LOOP POLYNOME LINKS
@@ -517,7 +524,7 @@ C            PRUEFE, OB LMOD-TER DREHIMPULS ERNIEDRIGBAR
              IF (LAUS.GT.2) PRINT 1029, LMOD
              GOTO 770
 C
-C            BRECHNUNG VON FPOLAR
+C            BRECHNUNG VON FPOLAR (clebsch in Unkel's (38))
 217          L1=2*LOP
              L2=2
              L3=2*MUL
@@ -719,6 +726,11 @@ C
               IF(ABS(MW(NZMKOM,LMOD)).GT.(LV(LMOD)-1))
      *         STOP 8
               IF(ABS(MOP-IPOLAR).GT.LOP) STOP 9
+C F1     =  WFKT coupling KET
+C F2     =  WFKT coupling BRA  
+C F      =  red mat * MUL * IKUGEL
+C FAPO   =  polynom
+C FPOLAR =  FAKTOR from polarization sum (\nu, see Unkel (38ff))             
               C(NZMKOM)=F1*F2*F*FAPO*FPOLAR
 C
 C             ENDE LOOP M-WERTE POLYNOME
@@ -1659,10 +1671,10 @@ C
           MUNTEN=MUNTEN+MIMIN(K)
 10        MOBEN=MOBEN+MIMAX(K)
 C
-       IF(MOBEN  .LT. -M) GOTO999
-       IF(MUNTEN .GT. -M) GOTO999
+       IF(MOBEN  .LT. -M) GOTO 999
+       IF(MUNTEN .GT. -M) GOTO 999
 C
-20     IF(-M-MUNTEN .LE. MIMAX(I)-MIMIN(I)) GOTO30
+20     IF(-M-MUNTEN .LE. MIMAX(I)-MIMIN(I)) GOTO 30
          MHILF(I)=MIMAX(I)
          MPFEIL(I)=0
          MUNTEN=MUNTEN+MIMAX(I)-MIMIN(I)
@@ -1685,7 +1697,7 @@ C
        KUI= MIMAX(I)+MIMIN(I)-KOI
        MPFEIL(1)=MPFEIL(I)
 C
-       IF(MHILF(I) .NE. KOI) GOTO70
+       IF(MHILF(I) .NE. KOI) GOTO 70
 65        MPFEIL(I)=1-MPFEIL(I)
           MLINKS=(MLINKS-I)*MPFEIL(I)+I
           MRECHT=(I-MRECHT)*MPFEIL(I)+MRECHT
@@ -1696,7 +1708,7 @@ C
 80     KOJ=(MIMAX(J)-MIMIN(J))*MPFEIL(J)+MIMIN(J)
        KUJ= MIMAX(J)+MIMIN(J)-KOJ
 C
-       IF(MHILF(J) .EQ. KUJ) GOTO90
+       IF(MHILF(J) .EQ. KUJ) GOTO 90
 85        MHILF(I)=MHILF(I)+2*MPFEIL(I)-1
           MHILF(J)=MHILF(J)-2*MPFEIL(I)+1
           I=2
@@ -1704,12 +1716,12 @@ C
           MLINKS=1
           GOTO50
 C
-90     IF(J .EQ. 1) GOTO100
+90     IF(J .EQ. 1) GOTO 100
           J=J-1
        IF(MPFEIL(J)-MPFEIL(I)) 90,80,90
 C
 100    J=J+1
-       IF(J .EQ. I) GOTO65
+       IF(J .EQ. I) GOTO 65
          KOJ=(MIMAX(J)-MIMIN(J))*MPFEIL(I)+MIMIN(J)
           KUJ=MIMAX(J)+MIMIN(J)-KOJ
        IF(MHILF(J)-KUJ) 85,100,85

@@ -39,17 +39,17 @@ def read_uncoupled_source(streukanal, basisSET=''):
             #                                         mM[1], mM[0]))
             for ln in range(len(instream)):
                 if re.search('1AUSDRUCK', instream[ln]):
-                    JDEUT2 = int(instream[ln + 3].split()[4])
-                    JLIT2 = int(instream[ln + 3].split()[2])
-                    mJLIT2 = int(instream[ln + 3].split()[5])
-                    MUL2 = int(instream[ln + 3].split()[3])
-                    mMUL2 = int(instream[ln + 3].split()[6])
+                    JDEUT2 = int(instream[ln + 4].split()[4])
+                    JLIT2 = int(instream[ln + 4].split()[2])
+                    mJLIT2 = int(instream[ln + 4].split()[5])
+                    MUL2 = int(instream[ln + 4].split()[3])
+                    mMUL2 = int(instream[ln + 4].split()[6])
                     photon_energy = np.array([
-                        float(instream[ln + 3 + 2 * en].split()[1])
+                        float(instream[ln + 4 + 3 * en].split()[1])
                         for en in range(anz_phot_e)
                     ])
                     opME = np.array([
-                        float(instream[ln + 3 + 2 * en].split()[7])
+                        float(instream[ln + 4 + 3 * en].split()[7])
                         for en in range(anz_phot_e)
                     ])
                     sourceRHS[('%d-%d' % (bv[0],
