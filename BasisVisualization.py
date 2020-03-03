@@ -6,13 +6,16 @@ import operator
 import matplotlib.pyplot as plt
 
 
-def visbas(basispath, widthpath, exepath):
+def visbas(basispath, widthpath, exepath, Jstrstr='0.5'):
 
+    curd = os.getcwd()
     os.chdir(basispath)
 
-    litbas_full = np.loadtxt(basispath + 'LITbas_full.dat').astype(int)
+    litbas_full = np.loadtxt(
+        basispath + 'LITbas_full_J%s.dat' % Jstrstr).astype(int)
     try:
-        litbas_red = np.loadtxt(basispath + 'LITbas_red.dat').astype(int)
+        litbas_red = np.loadtxt(
+            basispath + 'LITbas_red_J%s.dat' % Jstrstr).astype(int)
     except:
         litbas_red = litbas_full
 
@@ -24,16 +27,17 @@ def visbas(basispath, widthpath, exepath):
             basvs[bv[0]] = [bv[1]]
     sbas = sorted(basvs.items(), key=operator.itemgetter(0))
 
-    n3_inen_bdg(sbas, 1. / 2., costr, fn='INEN', pari=0, nzop=31, tni=11)
+    n3_inen_bdg(
+        sbas, float(Jstrstr), costr, fn='INEN', pari=0, nzop=31, tni=11)
 
     intwLIT = [
         np.array(ln.split(';')).astype(float).tolist()
-        for ln in open(widthpath + 'intw3heLIT.dat')
+        for ln in open(widthpath + 'intw3heLIT_J%s.dat' % Jstrstr)
     ]
 
     relwLIT = [
         np.array(ln.split(';')).astype(float).tolist()
-        for ln in open(widthpath + 'relw3heLIT.dat')
+        for ln in open(widthpath + 'relw3heLIT_J%s.dat' % Jstrstr)
     ]
 
     iws_full = []
@@ -42,6 +46,7 @@ def visbas(basispath, widthpath, exepath):
     iws_red = []
     rws_red = []
 
+    numered_widths = []
     #print(' BV REL          wi          wr')
 
     for bv in litbas_full:
@@ -58,9 +63,20 @@ def visbas(basispath, widthpath, exepath):
                 iw = bv[0] - sum([len(ws) for ws in intwLIT[:fr]])
                 iws_red.append(float(intwLIT[fr][iw - 1]))
                 rws_red.append(float(relwLIT[fr][bv[1] - 1]))
-                #print('%3d%3d%12.4f%12.4f' % (bv[0], bv[1], iws_red[-1],
-                #                              rws_red[-1]))
+
+                numered_widths.append([bv[0], bv[1], iws_red[-1], rws_red[-1]])
                 break
+
+    numered_widths = np.array(numered_widths)
+
+    numered_widths = numered_widths[np.lexsort(([
+        numered_widths[:, i] for i in range(numered_widths.shape[1] - 2,
+                                            numered_widths.shape[1] - 1, +1)
+    ]))]
+
+    with open(v18uixpath + 'LITbas_red_J%s_doc.dat' % Jstrstr, 'w') as f:
+        np.savetxt(f, numered_widths, fmt='%5d  %5d  %12.8f  %12.8f')
+    f.close()
 
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
@@ -90,10 +106,26 @@ def visbas(basispath, widthpath, exepath):
 
     plt.legend(loc='best')
 
-    plt.title(r'$\gamma_1<\gamma_2\Rightarrow$ 1 broader than 2')
+    plt.title(
+        r'$\gamma_1<\gamma_2\Rightarrow$ 1 broader than 2   (J=%s)' % Jstrstr)
 
-    fig.savefig(basispath + 'WidthXY.pdf')
-    #os.system(exepath + 'DR2END_AK.exe && grep -A 3 \'EIGENWER\' OUTPUT')
+    fig.savefig(basispath + 'WidthXY_J%s.pdf' % Jstrstr)
+
+    os.chdir(curd)
 
 
-#visbas(basispath=v18uixpath, widthpath=litpath3He, exepath=BINBDGpath)
+#Jstreu = float(streukas[-1].split('^')[0])
+#Jstreustring = '%s' % str(Jstreu)[:3]
+#
+#os.chdir(v18uixpath)
+#
+#os.system('cp QUAOUT_J%s QUAOUT' % Jstreustring)
+#os.system('cp DRQUAOUT_J%s DRQUAOUT' % Jstreustring)
+#
+#visbas(
+#    basispath=v18uixpath,
+#    widthpath=litpath3He,
+#    exepath=BINBDGpath,
+#    Jstrstr=Jstreustring)
+#
+#os.system(BINBDGpath + 'DR2END_AK.exe && grep -A 3 \'EIGENWER\' OUTPUT')

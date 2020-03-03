@@ -609,11 +609,15 @@ def lit_3inqua(intwi=[],
 
     else:
         zerl_counter = 0
+        bv_counter = 1
         for n in range(len(relwi)):
             zerl_counter += 1
             s += '%3d%60s%s\n%3d%3d\n' % (len(intwi[n]), '',
-                                          'Z%d' % zerl_counter, len(intwi[n]),
-                                          len(relwi[n]))
+                                          'Z%d BVs %d - %d' %
+                                          (zerl_counter, bv_counter,
+                                           bv_counter - 1 + len(intwi[n])),
+                                          len(intwi[n]), len(relwi[n]))
+            bv_counter += len(intwi[n])
             for bv in intwi[n]:
                 s += '%36s%-12.6f\n' % ('', float(bv))
             for rw in range(0, len(relwi[n])):
@@ -718,10 +722,14 @@ def he3inqua(intwi=[], relwi=[], potf=''):
     s += ' 10  8  9  3 00  0  0  0  0\n%s\n' % potf
 
     zerl_counter = 0
+    bv_counter = 1
     for n in range(len(relwi)):
         zerl_counter += 1
-        s += '%3d%60s%s\n%3d%3d\n' % (len(intwi[n]), '', 'Z%d' % zerl_counter,
+        s += '%3d%60s%s\n%3d%3d\n' % (len(intwi[n]), '', 'Z%d  BVs %d - %d' %
+                                      (zerl_counter, bv_counter,
+                                       bv_counter - 1 + len(intwi[n])),
                                       len(intwi[n]), len(relwi[n]))
+        bv_counter += len(intwi[n])
         for bv in intwi[n]:
             s += '%36s%-12.6f\n' % ('', float(bv))
         for rw in range(0, len(relwi[n])):

@@ -10,6 +10,8 @@ from bridge import *
 # CG(j1, m1, j2, m2, j3, m3)
 from sympy.physics.quantum.cg import CG
 
+MeVfm = 197.3161329
+
 
 def read_uncoupled_source(streukanal, basisSET=''):
     # collects end OUTPUT files and stores them
@@ -19,8 +21,12 @@ def read_uncoupled_source(streukanal, basisSET=''):
     #
     # mM[0] = m(L) ; mM[1] = m(Jlit)
     Jstreu = float(streukanal.split('^')[0])
+
+    Jstrstr = '%s' % str(Jstreu)[:3]
+
     mLmJl, mLrange, mJlrange = non_zero_couplings(multipolarity, J0, Jstreu)
 
+    signf_overlap_bv = []
     sourceRHS = {}
     basdim = len(basisSET)
 
@@ -44,7 +50,7 @@ def read_uncoupled_source(streukanal, basisSET=''):
                     mJLIT2 = int(instream[ln + 4].split()[5])
                     MUL2 = int(instream[ln + 4].split()[3])
                     mMUL2 = int(instream[ln + 4].split()[6])
-                    photon_energy = np.array([
+                    photon_energy = MeVfm * np.array([
                         float(instream[ln + 4 + 3 * en].split()[1])
                         for en in range(anz_phot_e)
                     ])
@@ -52,11 +58,21 @@ def read_uncoupled_source(streukanal, basisSET=''):
                         float(instream[ln + 4 + 3 * en].split()[7])
                         for en in range(anz_phot_e)
                     ])
+
+                    if (((abs(opME) > 10**-1).all()) &
+                        ((abs(opME) < 10**1).all())):
+                        signf_overlap_bv.append(bv)
+
                     sourceRHS[('%d-%d' % (bv[0],
                                           bv[1]), '%d' % JLIT2, '%d' % mJLIT2,
                                '%d' % MUL2, '%d' % mMUL2)] = opME
                     #print('I read 2*(Jlit,mJlit,L,mL):', JLIT2, mJLIT2,
                     #      MUL2, mMUL2)
+
+    if signf_overlap_bv != []:
+        with open(v18uixpath + 'LITbas_red_J%s_sig.dat' % Jstrstr, 'w') as f:
+            np.savetxt(f, np.unique(signf_overlap_bv, axis=0), fmt='%5d  %5d')
+        f.close()
 
     return sourceRHS, photon_energy
 

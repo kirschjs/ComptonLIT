@@ -20,7 +20,7 @@ av18path = pathbase + '/av18_deuteron'
 litpathD = pathbase + '/mul_deuteron/'
 
 v18uixpath = pathbase + '/v18uix_helium3/'
-litpath3He = pathbase + '/mul_helion/'
+litpath3He = pathbase + '/mul_helion_10/'
 
 BINBDGpath = pathbase + '/src_nucl/'
 BINLITpath = pathbase + '/src_elma/'
@@ -35,14 +35,15 @@ cal = [
     'rhs_lu-ob-qua', 'lhs', 'rhs', 'plt', 'dbg', 'new_rnd_bvset'
 ]
 
-cal = ['rhs_lu-ob-qua', 'rhs', 'lhs_lu-ob-qua', 'lhs', 'plt', 'dbg']
-
 cal = [
+    #'lhs_lu-ob-qua',
     'lhs',
     'rhs',
     'plt',
     'dbg',
 ]
+cal = ['rhs_lu-ob-qua', 'rhs', 'lhs_lu-ob-qua', 'lhs', 'plt', 'dbg']
+
 # convention: bound-state-expanding BVs: (1-8), i.e., 8 states per rw set => nzf0*8
 rechtekanaele = {
     # deuteron
@@ -95,16 +96,18 @@ streukanaele3He = {
         ['122', ['he_no5']],
     ],
     '1.5^-': [
-        ['101', ['he_no3', 'he_no5']],
         ['011', ['he_no1', 'he_no2', 'he_no6']],
-        #         ['121', ['he_no3', 'he_no5']], ['122', ['he_no3', 'he_no5']],
-        #         ['123', ['he_no5']], ['211', ['he_no1', 'he_no2', 'he_no6']], [
-        #             '212', ['he_no1', 'he_no2', 'he_no6']
-        #         ], ['213', ['he_no2']], ['303', ['he_no5']], ['033', ['he_no2']]
+        #        ['211', ['he_no1', 'he_no2', 'he_no6']],
+        #        ['212', ['he_no1', 'he_no2', 'he_no6']],
+        #        ['101', ['he_no3', 'he_no5']],
+        #        ['121', ['he_no3', 'he_no5']],
+        #        ['122', ['he_no3', 'he_no5']],
+        #        ['213', ['he_no2']],
+        #        ['123', ['he_no5']],
     ]
 }
 
-streukas = ['1.5^-']  #['0^-', '1^-', '2^-']  #
+streukas = ['1.5^-']  #, '1.5^-']  #['0^-', '1^-', '2^-']  #
 
 #                  realistic    L>0 (only)         deuteron
 boundstatekanal = 'npp-J=0.5'  #'nppODD-J=0.5'  # 'np-3SD-J=1'
@@ -112,9 +115,9 @@ J0 = float(boundstatekanal.split('J=')[1])
 
 multipolarity = 1
 
-anz_phot_e = 100
-phot_e_0 = 0.02  #  enems_e converts to fm^-1, but HERE the value is in MeV
-phot_e_d = 1.  #  delta E
+anz_phot_e = 25
+phot_e_0 = 0.002  #  enems_e converts to fm^-1, but HERE the value is in MeV
+phot_e_d = 0.2  #  delta E
 
 with open(v18uixpath + 'kRange.dat', 'wb') as f:
     np.savetxt(f, [anz_phot_e, phot_e_0, phot_e_d], fmt='%f')
